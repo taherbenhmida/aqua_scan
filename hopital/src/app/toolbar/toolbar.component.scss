@@ -1,0 +1,42 @@
+.body{
+    width: calc(100% - 5rem);
+    margin-left: 5rem;
+    z-index: 0;
+    position:sticky;
+    top: 0;
+    background: #154761;
+    transition: all .3s ease;
+    
+}
+.body-trimmed{
+    width:calc(100% - 16.5625rem);
+    margin-left: 16.5625rem;
+    transition:all .5s ease;
+}
+.body-md-screen{
+    width: calc(100% - 5rem);
+    margin-left: 5rem;
+    transition:all .5s ease;
+}
+.body span{
+    transition:all .5s ease;
+    margin-left: 35%;
+    font-family: 'Katibeh';
+    font-size: 25px;
+}
+.body div{
+    position: absolute;
+    right: 20px;
+    transition:all .5s ease;
+    
+}
+.icon{
+    margin: 10px;
+}
+.message{
+    color: rgb(245, 61, 61);
+}
+.icon:hover{
+    color: greenyellow;
+    cursor: pointer;
+  }

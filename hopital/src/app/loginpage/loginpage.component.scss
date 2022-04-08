@@ -1,0 +1,16 @@
+.container{
+    width: 47%;
+    margin-right: 30%;
+}
+section{
+    background-image: url('../../assets/images/signin.svg');
+    background-repeat: no-repeat;
+    width: calc(100% - 5rem);
+    margin-left: 5rem;
+}
+dx-button{
+    background-color: rgb(94, 94, 179);
+    font-weight: bold;
+    margin:0 auto;
+    display:block;
+}

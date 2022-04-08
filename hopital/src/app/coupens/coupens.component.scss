@@ -1,0 +1,119 @@
+
+.coupensbody{
+    background-color: #f4f7fa;
+    padding: 3rem;
+    min-height: 100vh;
+}
+.titlecontainer{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+h1{
+    width: 50%;
+    margin: 0 auto;
+}
+.coupenscontainer{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    height: 20vh;
+    border-radius: 25px;
+    box-shadow:0 .25rem .5rem #e6edef;
+}
+
+.c {
+    position: relative; 
+    width: 20%;
+    
+    text-align: center;
+    width: 20%;
+    height: 100px;
+    font-weight: bold;
+    font-size: larger;
+    display: flex;
+    flex-direction:column;
+    border-radius:20px;
+    
+    margin: 1.25rem;
+    box-shadow:0 .25rem .5rem #e6edef;
+    padding: 20px;
+    
+}
+.c1::before {    
+    content: "";
+    background-image: url('../../assets/images/prime.png');
+    background-size: cover;
+    border-radius:20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
+    box-shadow:0 .25rem .5rem #e6edef;
+    transition: all .5s;
+}
+.c2::before {    
+    content: "";
+    background-image: url('../../assets/images/note.jpg');
+    background-size: cover;
+    border-radius:20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
+    box-shadow:0 .25rem .5rem #e6edef;
+    transition: all .5s;
+}
+.c3::before {    
+      content: "";
+      background-image: url('../../assets/images/upgrade.jpg');
+      background-size: cover;
+      border-radius:20px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.3;
+      box-shadow:0 .25rem .5rem #e6edef;
+      transition: all .5s;
+}
+.c4::before {    
+    content: "";
+    background-image: url('../../assets/images/medail.jpg');
+    background-size: cover;
+    border-radius:20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
+    box-shadow:0 .25rem .5rem #e6edef;
+    transition: all .5s;
+}
+.c:hover::before {    
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.1);
+    transition: all .3s;
+}
+
+p {
+    position: relative;
+    color: #000;  
+    font-weight: bold;
+    font-size: larger;
+    line-height: 0.9;
+    text-align: center;
+}
+p:hover{
+    cursor: pointer;
+}
+

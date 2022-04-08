@@ -1,0 +1,97 @@
+<div class="body" >
+    <div class="titlecontainer">
+        <h1>منظومة التصرف الآلي في الأفراد<img src="../../assets/images/ww_ccexpress.png" style="width: 55px;height:55px;margin-top: -10px;margin-left: 20px;"></h1>
+    </div>
+
+    <div class="card tableau">
+        <h2> : بحث موجه عن</h2>
+        <dx-tab-panel id="tabPanel" [deferRendering]="false" [rtlEnabled]="true">
+            <dxi-item title="العملة العسكريين ">
+                <dx-data-grid
+                #grid
+                id="gridContainer"
+                [dataSource]="PersonnelList"
+                keyExpr="cin"
+                [showBorders]="true"
+                [focusedRowEnabled]="true"
+                [rtlEnabled]="true"
+                [selectedRowKeys]="[]"
+                > 
+                <dxo-editing
+                    [allowUpdating]="true"
+                    [allowDeleting]="true"
+                    [selectTextOnEditStart]="true"
+                    [useIcons]="true"
+                >
+                </dxo-editing>
+
+                <dxo-header-filter [visible]="true"> </dxo-header-filter>
+
+                <dxo-filter-panel [visible]="true"> </dxo-filter-panel>
+
+                <dxo-filter-row [visible]="true"> </dxo-filter-row>
+
+                <dxo-paging [pageSize]="3"> </dxo-paging>
+                <dxo-selection mode="single"></dxo-selection>
+                <dxo-pager
+                    [allowedPageSizes]="[5, 10]"
+                    [showPageSizeSelector]="true"
+                    [showNavigationButtons]="true"
+                >
+                </dxo-pager>
+                
+                <dxi-column dataField="prenom" caption="الإسم" > </dxi-column>
+
+                <dxi-column dataField="nom" caption="اللقب"> </dxi-column>
+
+                <dxi-column dataField="matr_corps" caption="الرقم بالمستشفى"> </dxi-column>
+
+                <dxi-column dataField="matricule" caption="الرقم بالتجنيد" dataType="number">
+                    
+                </dxi-column>
+                <dxi-column dataField="OrderDate"  caption="بطاقة المرور">
+                    <dxo-lookup  [dataSource]="PersonnelList" valueExpr="ID" displayExpr="Name">
+                    </dxo-lookup>
+                </dxi-column>
+                
+                
+                <dxi-column dataField="SaleAmount" format="currency" dataType="number">
+                    <dxo-header-filter
+                    [dataSource]=""
+                    ></dxo-header-filter>
+                </dxi-column>
+                
+                <dxi-column dataField="FirstName" caption="تاريخ النقلة" dataType="date"> </dxi-column>
+            </dx-data-grid>
+            </dxi-item>
+            <dxi-item title="العملة المدنيين">
+
+            </dxi-item>
+        </dx-tab-panel>
+
+        <dx-button
+            icon="exportpdf"
+            text="Export to PDF"
+            width="15%"
+        ></dx-button>
+    </div>
+    
+    <div class="actions" >  
+        <button  mat-raised-button color="warn" (click)="opendialog(grid.instance.getSelectedRowsData()[0].FirstName)">حذف الشخص<mat-icon style="margin-left: 10px;">delete_outline</mat-icon></button> 
+        <button  mat-raised-button color="accent" routerLink="/modification">إضافة شخص جديد<mat-icon style="margin-left: 10px;">add_circle_outline</mat-icon></button>
+        <button  mat-raised-button color="primary" (click)="details(grid.instance.getSelectedRowsData()[0].FirstName)">عرض البيانات<mat-icon style="margin-left: 10px;">description</mat-icon></button>     
+    </div>
+    <div id="employeeInfo" *ngIf="grid.selectedRowKeys.length" >
+        <p>le nom de l' employee : </p>
+        <p class="employeeNotes">{{
+            grid.instance.getSelectedRowsData()[0].FirstName
+          }}</p>
+          
+    </div>
+    
+</div>
+
+
+
+
+  

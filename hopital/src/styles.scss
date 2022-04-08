@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+@import "~font-awesome/css/font-awesome.min.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('http://fonts.cdnfonts.com/css/roboto');
+@import url('https://fonts.googleapis.com/css?family=Katibeh');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+body{
+  position: relative;
+  font-family: 'Roboto',sans-serif;
+  
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  border-radius:20px;
+  background-color: #fff;
+  margin: 1.25rem 0 1.25rem 0;
+  box-shadow:0 .25rem .5rem #e6edef;
+  padding: 20px;
+
+  .card-head{
+    padding: 0.5rem 1rem 1.5rem;
+    border-bottom: 1px solid #edf1f7;
+    font-size: 40px;
+    
+    text-align: right;
+    font-family: 'Katibeh';
+  }
+
+  .card-body{
+    padding: 1rem 1.5rem;
+  }
+}
+
+
+
+    

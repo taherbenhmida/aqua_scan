@@ -1,0 +1,17 @@
+
+<div class="d-flex justify-content-between">
+        <div class="col-md chart">
+            <h5>Linear Chart</h5>
+            <p-chart type="line" [data]="lineData" [options]="lineOptions" ></p-chart>
+        </div>
+    
+        <div class="col-md chart">
+            <h5 class="text-left w-full">Pie Chart</h5>
+            <p-chart type="pie" [data]="data" [options]="chartOptions" [style]="{'width': '50%'}"></p-chart>
+        </div>
+
+        <div class="col-md chart">
+            <h5>Bar Chart</h5>
+            <p-chart type="bar" [data]="barData" [options]="barOptions"></p-chart>
+        </div> 
+</div>

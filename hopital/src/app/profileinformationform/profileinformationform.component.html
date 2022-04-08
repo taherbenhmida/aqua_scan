@@ -1,0 +1,41 @@
+<dx-form id="form" [formData]="employee" [rtlEnabled]="true">
+    <dxi-item itemType="group" cssClass="first-group" [colCount]="4">
+      <dxi-item>
+        <div class="form-avatar"></div>
+      </dxi-item>
+      <dxi-item itemType="group" [colSpan]="3">
+        <dxi-item dataField="FirstName" [label]="{text: 'المعرف الوحيد'}"></dxi-item>
+        <dxi-item dataField="LastName" [label]="{text: 'الإسم'}"></dxi-item>
+        <dxi-item dataField="LastName" [label]="{text: 'اللقب'}"></dxi-item>
+        <dxi-item
+          dataField="BirthDate"
+          editorType="dxDateBox"
+          [editorOptions]="{ width: '100%' }"
+          [label]="{text: 'تاريخ الميلاد'}"
+        ></dxi-item>
+      </dxi-item>
+    </dxi-item>
+    <dxi-item itemType="group" cssClass="second-group" [colCount]="2">
+      <dxi-item itemType="group">
+        <dxi-item dataField="" [label]="{text: 'الرتبة'}"></dxi-item>
+        <dxi-item dataField=""[label]="{text: 'رقم ب ت و'}"></dxi-item>
+        <dxi-item dataField="" [label]="{text: 'نهاية الصلوحية'}"></dxi-item>
+        
+      </dxi-item>
+      <dxi-item itemType="group">
+        <dxi-item dataField="" editorType="dxDateBox"[label]="{text: 'تاريخ الرتبة'}"></dxi-item>
+        
+        <dxi-item dataField="" editorType="dxDateBox"[label]="{text: 'تاريخ  ب ت و'}"></dxi-item>
+        <dxi-item dataField="" editorType="dxSelectBox" [label]="{text: 'الإنتماء'}"></dxi-item>
+      </dxi-item>
+      <dxi-item
+        dataField="Notes"
+        [colSpan]="2"
+        editorType="dxTextArea"
+        [editorOptions]="{ height: 50 }"
+        [label]="{text: 'المرجع'}"
+      ></dxi-item>
+    </dxi-item>
+    
+  </dx-form>
+  
