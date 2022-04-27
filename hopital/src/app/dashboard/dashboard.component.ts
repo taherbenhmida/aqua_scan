@@ -31,13 +31,12 @@ export class DashboardComponent implements OnInit{
     // this.states = this.DataService.getStates(); 
     this.disabled=true;
     this.refreshDepList(); 
-    
+   
+
   }
   refreshDepList(){
     this.service.getPersonnel().subscribe(data=>{
-      console.log(data);
       this.PersonnelList=data;
-      console.log(this.service.message)
     });
   }
   // ngAfterViewInit():void {

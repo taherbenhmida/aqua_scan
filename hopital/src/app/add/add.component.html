@@ -1,0 +1,32 @@
+<div class="body"> 
+    <div class="titlecontainer">
+        <h1>إضافة موظف</h1>
+    </div>
+    <div class="card2">
+        <div class="card" style="margin-right: 200px;">
+            <form2></form2>
+        </div>
+        <div class="card " style="margin-right: 50px;">
+            <app-profileinformationform></app-profileinformationform>
+        </div>
+    </div>
+    <div class="card3">
+        <div class="card formcivil">
+            <formcivil></formcivil>
+        </div>
+        <div class="card formmilitaire">
+            <formmilitaire></formmilitaire>
+        </div>
+        
+    </div>
+    <div class="card autreform" style="margin-right: 330px ;">
+        <autreform></autreform>
+    </div>
+    <div  style="position:absolute;margin-left:850px;margin-top: 1620px;" >
+        <button type="button" class="btn btn-success" (click)="onSubmit()" >إضافة</button>
+    </div>
+
+    <div  style="position:absolute;margin-left:700px;margin-top: 1620px;" >
+        <button type="button" class="btn btn-danger" (click)="reset()">مسح</button>
+    </div>
+</div>

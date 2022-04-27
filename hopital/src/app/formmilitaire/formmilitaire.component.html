@@ -1,82 +1,208 @@
 <div class="long-title">
     <h3>معلومات عسكرية</h3>
   </div>
-  <div id="form-container">
-    <dx-form id="form" [colCount]="2" [formData]="employee" [rtlEnabled]="true" >
+  <!-- <div id="form-container">
+    <dx-form id="form" [colCount]="2" [formData]="personnelForm" [rtlEnabled]="true" (onFieldDataChanged)="chargerPersonnerList()">
       <dxi-item
-        dataField="FirstName"
+        dataField="cim"
         [editorOptions]="{ disabled: true}"
         [editorOptions]="{ width: '100%' }"
         [label]="{text: 'رقم ب ت عسكرية'}"
       ></dxi-item>
       <dxi-item
-        dataField="FirstName"
+        dataField="dtefincim"
+        editorType="dxDateBox"
+        [editorOptions]="{ value: null, width: '100%' }"
+        [label]="{text: 'تاريخ إ ب ت ع'}"
+      >
+        <dxi-validation-rule
+          type="required"
+          message="CIM end date is required"
+        ></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item
+        dataField="matricule"
         [editorOptions]="{ disabled: true}"
         [editorOptions]="{ width: '100%' }"
         [label]="{text: 'رقم بالتجنيد'}"
       ></dxi-item>
       <dxi-item
-        dataField="Position"
+        dataField="armee"
         editorType="dxSelectBox"
-        [editorOptions]="{ items: positions, searchEnabled: true, value: '' }"
-        [label]="{text: 'رقم بالمستشفى'}"
-      >
-        <dxi-validation-rule
-          type="required"
-          message="Position is required"
-        ></dxi-validation-rule>
-      </dxi-item>
-      <dxi-item
-        dataField="LastName"
-        [editorOptions]="{ disabled: true }"
-        [label]="{text: 'رقم أ.ع.ص.ع'}"
-      ></dxi-item>
-      <dxi-item
-        dataField="HireDate"
-        editorType="dxDateBox"
-        [editorOptions]="{ value: null, width: '100%' }"
-        [label]="{text: 'بطاقة المرور'}"
-      >
-        <dxi-validation-rule
-          type="required"
-          message="Hire date is required"
-        ></dxi-validation-rule>
-      </dxi-item>
-      <dxi-item
-        dataField="Position"
-        editorType="dxSelectBox"
-        [editorOptions]="{ items: positions, searchEnabled: true, value: '' }"
-        [label]="{text: 'السلاح'}"
-      >
-        <dxi-validation-rule
-          type="required"
-          message="Position is required"
-        ></dxi-validation-rule>
-      </dxi-item>
-      <dxi-item
-        dataField="Position"
-        editorType="dxSelectBox"
-        [editorOptions]="{ items: positions, searchEnabled: true, value: '' }"
+        [editorOptions]="{ items: armee, searchEnabled: true, value: '' }"
         [label]="{text: 'جيش الإنتماء'}"
       >
-        <dxi-validation-rule
-          type="required"
-          message="Position is required"
-        ></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item
+        dataField="arme"
+        [editorOptions]="{ disabled: true }"
+        [editorOptions]="{ width: '100%' }"
+        [label]="{text: 'السلاح'}"
+      >
       </dxi-item>
 
       <dxi-item
-        dataField="Position"
+        dataField="groupe"
         editorType="dxSelectBox"
-        [editorOptions]="{ items: positions, searchEnabled: true, value: '' }"
-        [label]="{text: 'الصنف'}"
+        [editorOptions]="{ items: groupe, searchEnabled: true, value: '' }"
+        [label]="{text: 'الفرقة'}"
+      ></dxi-item>
+
+      <dxi-item
+        dataField="origine_recrutement"
+        [editorOptions]="{ disabled: true }"
+        [editorOptions]="{ width: '100%' }"
+        [label]="{text: 'أصل الإنتماء'}"
       >
-        <dxi-validation-rule
-          type="required"
-          message="Position is required"
-        ></dxi-validation-rule>
       </dxi-item>
+      <dxi-item
+        dataField="date_nomination"
+        editorType="dxDateBox"
+        [editorOptions]="{ value: null, width: '100%' }"
+        [label]="{text: 'تاريخ الإلتحاق'}"
+      >
+      </dxi-item>
+      <dxi-item
+        dataField="date_deb_contrat"
+        editorType="dxDateBox"
+        [editorOptions]="{ value: null, width: '100%' }"
+        [label]="{text: 'تاريخ بداية العقد'}"
+      >
+    </dxi-item>
+      <dxi-item
+        dataField="date_fin_contrat"
+        editorType="dxDateBox"
+        [editorOptions]="{ value: null, width: '100%' }"
+        [label]="{text: 'تاريخ نهاية العقد'}"
+      >
+    </dxi-item>
+    <dxi-item
+        dataField="qualification_militaire"
+        [editorOptions]="{ disabled: true }"
+        [editorOptions]="{ width: '100%' }"
+        [label]="{text: 'الشهادة العسكرية'}"
+      >
+      </dxi-item>
+      <dxi-item
+        dataField="date_qualif_militaire"
+        editorType="dxDateBox"
+        [editorOptions]="{ value: null, width: '100%' }"
+        [label]="{text: 'تاريخ الشهادة العسكرية'}"
+      >
+    </dxi-item>
+      
       
     </dx-form>
   </div>
+   -->
+
+
+
+   <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+    <!-- <label style="text-align:right;">الشهادة العلمية: </label> -->
+    <mat-form-field appearance="outline"   style="font-size: 12px ; width: 17vw;">
+      <mat-label style="color: black;  ">رقم ب ت عسكرية</mat-label>
+      <input matInput placeholder="رقم ب ت عسكرية"   [(ngModel)]="personnelForm.cim">
+      <mat-icon matSuffix>person</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline"   style="font-size: 12px ; width: 17vw;">
+      <mat-label style="color: black; ">تاريخ إ ب ت ع</mat-label>
+      <input matInput [matDatepicker]="picker"  [(ngModel)]="personnelForm.dtefincim">
+      <!-- <mat-hint>YYYY/MM/DD</mat-hint> -->
+      <mat-datepicker-toggle [for]="picker" matSuffix ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    
+    </div>
+    <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+      <!-- <label style="text-align:right;">الشهادة العلمية: </label> -->
+      <mat-form-field appearance="outline"   style="font-size: 12px ; width: 17vw;">
+        <mat-label style="color: black;  ">رقم بالتجنيد</mat-label>
+        <input matInput placeholder="رقم بالتجنيد"   [(ngModel)]="personnelForm.matricule">
+        <mat-icon matSuffix>person</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="font-size: 12px ; width: 17vw;">
+        <mat-label  style="color: black; ">جيش الإنتماء</mat-label>
+        <mat-select  [(ngModel)]="personnelForm.armee">
+          <mat-option value="جيش البر">جيش البر</mat-option>
+          <mat-option value="جيش الطيران ">جيش الطيران</mat-option>
+          <mat-option value="جيش البحر">جيش البحر</mat-option>
+          <mat-option value="المصالح المشتركة">المصالح المشتركة</mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+
+      <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+        <mat-form-field appearance="outline"   style="font-size: 12px ; width: 17vw;" >
+          <mat-label style="color: black; ">السلاح</mat-label>
+          <input matInput placeholder="السلاح" (click)="openDialog()"  [(ngModel)]="personnelForm.arme">
+          <mat-icon matSuffix>grade</mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
   
+        <mat-form-field appearance="fill" style="font-size: 12px ; width: 17vw;">
+          <mat-label  style="color: black; ">الفرقة</mat-label>
+          <mat-select  [(ngModel)]="personnelForm.groupe">
+            <mat-option value="الفرقة 1">الفرقة 1</mat-option>
+            <mat-option value="الفرقة 2">الفرقة 2</mat-option>
+            <mat-option value="الفرقة 3">الفرقة 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+        </div>
+
+        <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+          <mat-form-field appearance="outline"   style="font-size: 12px ; width: 17vw;">
+            <mat-label style="color: black;  ">أصل الإنتماء</mat-label>
+            <input matInput placeholder="أصل الإنتماء"   [(ngModel)]="personnelForm.origine_recrutement">
+            <mat-icon matSuffix>person</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+          <mat-form-field  appearance="outline"   style="font-size: 12px ; width: 17vw;">
+            <mat-label style="color: black; ">تاريخ الإلتحاق</mat-label>
+            <input matInput [matDatepicker]="picker1"  [(ngModel)]="personnelForm.date_nomination">
+            <!-- <mat-hint>YYYY/MM/DD</mat-hint> -->
+            <mat-datepicker-toggle [for]="picker1" matSuffix ></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          
+          </div>
+
+          <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+            <mat-form-field  appearance="outline"   style="font-size: 12px ; width: 17vw;">
+              <mat-label style="color: black; ">تاريخ بداية العقد</mat-label>
+              <input matInput [matDatepicker]="picker2"  [(ngModel)]="personnelForm.date_deb_contrat">
+              <!-- <mat-hint>YYYY/MM/DD</mat-hint> -->
+              <mat-datepicker-toggle [for]="picker2" matSuffix ></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field  appearance="outline"   style="font-size: 12px ; width: 17vw;">
+              <mat-label style="color: black; ">تاريخ نهاية العقد</mat-label>
+              <input matInput [matDatepicker]="picker3"  [(ngModel)]="personnelForm.date_fin_contrat">
+              <!-- <mat-hint>YYYY/MM/DD</mat-hint> -->
+              <mat-datepicker-toggle [for]="picker3" matSuffix ></mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>
+            
+            </div>
+
+            <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+              <mat-form-field appearance="outline"   style="font-size: 12px ; width: 17vw;" >
+                <mat-label style="color: black; ">الشهادة العسكرية</mat-label>
+                <input matInput placeholder="الشهادة العسكرية" (click)="openDialog1()"  [(ngModel)]="personnelForm.qualification_militaire">
+                <mat-icon matSuffix>grade</mat-icon>
+                <!-- <mat-hint>Hint</mat-hint> -->
+              </mat-form-field>
+              <mat-form-field  appearance="outline"   style="font-size: 12px ; width: 17vw;">
+                <mat-label style="color: black; ">تاريخ الشهادة العسكرية</mat-label>
+                <input matInput [matDatepicker]="picker4"  [(ngModel)]="personnelForm.date_qualif_militaire">
+                <!-- <mat-hint>YYYY/MM/DD</mat-hint> -->
+                <mat-datepicker-toggle [for]="picker4" matSuffix ></mat-datepicker-toggle>
+                <mat-datepicker #picker4></mat-datepicker>
+              </mat-form-field>
+              
+              </div>
+

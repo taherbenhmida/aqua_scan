@@ -32,8 +32,8 @@ import {ChartModule} from 'primeng/chart';
 import { NgChartsModule } from 'ng2-charts';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-
-
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatListModule} from '@angular/material/list';
@@ -65,6 +65,25 @@ import { DialogconfirmationsupComponent } from './dialogconfirmationsup/dialogco
 import { UpgrademilitaireComponent } from './upgrademilitaire/upgrademilitaire.component';
 import { UpgradecivilComponent } from './upgradecivil/upgradecivil.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DxDateBoxModule } from 'devextreme-angular';
+import {DatePipe} from '@angular/common';
+import { UpdateComponent } from './update/update.component';
+import { DeleteComponent } from './delete/delete.component';
+import { AddComponent } from './add/add.component';
+import { FormsModule } from '@angular/forms';
+import { PopComponent } from './pop/pop.component';
+import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import { MatNativeDateModule } from '@angular/material/core';
+import { ArmeComponent } from './arme/arme.component';
+import { QualificationMilitaireComponent } from './qualification-militaire/qualification-militaire.component';
+import { ServiceComponent } from './service/service.component';
+import { SpecialiteComponent } from './specialite/specialite.component';
+import { SituationComponent } from './situation/situation.component';
+import { FonctionComponent } from './fonction/fonction.component';
+import { BureauComponent } from './bureau/bureau.component';
+import { TerminalComponent } from './terminal/terminal.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+
 
 
 
@@ -98,6 +117,18 @@ import { HttpClientModule } from '@angular/common/http';
     DialogconfirmationsupComponent,
     UpgrademilitaireComponent,
     UpgradecivilComponent,
+    UpdateComponent,
+    DeleteComponent,
+    AddComponent,
+    PopComponent,
+    ArmeComponent,
+    QualificationMilitaireComponent,
+    ServiceComponent,
+    SpecialiteComponent,
+    SituationComponent,
+    FonctionComponent,
+    BureauComponent,
+    TerminalComponent,
     
   ],
   entryComponents:[MedaildialogComponent],
@@ -136,8 +167,19 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogModule,
     MatButtonModule,
     HttpClientModule,
+    DxDateBoxModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTabsModule,
+    MatSelectModule,
+    MatSnackBarModule,
+    
+    
+    
   ],
-  providers: [],
+  providers: [DatePipe],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

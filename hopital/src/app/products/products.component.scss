@@ -19,7 +19,40 @@ h1{
     display: flex;
     justify-content: space-between;
     background-color: #fff;
-    height: 50vh;
+    height: 80vh;
     border-radius: 25px;
     box-shadow:0 .25rem .5rem #e6edef;
 }
+
+table {
+     width: 100%;
+    
+    
+  }
+  .mat-row:hover {
+    background-color: #b4b4b433;
+  }
+  .mat-header-cell{
+      background-color: #4B515D;
+      color: #f4f7fa;
+      
+  }
+  .mat-table{
+    
+    border-radius: 8px;
+    overflow:hidden !important;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .container{
+    max-width: 1600px;
+    margin : 0 auto;
+}
+.highlight{
+    color: #0c020233;
+}
+

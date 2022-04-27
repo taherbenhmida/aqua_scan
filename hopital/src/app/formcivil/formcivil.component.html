@@ -1,86 +1,209 @@
 <div class="long-title">
     <h3>معطيات إجتماعية</h3>
   </div>
-  <div id="form-container">
-    <dx-form id="id" [(formData)]="employee" id="form" [colCount]="3" [formData]="employee" [rtlEnabled]="true" >
+  <!-- <div id="form-container">
+    <dx-form id="id" id="form" [colCount]="3" [formData]="personnelForm" [rtlEnabled]="true" (onFieldDataChanged)="chargerPersonnerList()" >
+
       <dxi-item
-      id="7alamadaniya"
+      dataField="prenom_pere"
+      [editorOptions]="{ disabled: true}"
+      [editorOptions]="{ width: '100%' }"
+      [label]="{text: 'إسم الأب'}"
+    ></dxi-item>
+
+      <dxi-item
+      id="prenom_mere"
         dataField="FirstName"
-        [editorOptions]="{ disabled: true}"
-        [editorOptions]="{ width: '100%' }"
-        [label]="{text: ' الحالة المدنية'}"
-      ></dxi-item>
-      <dxi-item
-        dataField="Position"
-        editorType="dxSelectBox"
-        [editorOptions]="{ items: positions, searchEnabled: true, value: '' }"
-        [label]="{text: 'صنف الدم'}"
-      >
-        <dxi-validation-rule
-          type="required"
-          message="Position is required"
-        ></dxi-validation-rule>
-      </dxi-item>
-      <dxi-item
-        dataField="Position"
-        editorType="dxSelectBox"
-        [editorOptions]="{ items: positions, searchEnabled: true, value: '' }"
-        [label]="{text: 'الجنس'}"
-      ></dxi-item>
-      <dxi-item
-        dataField=""
-        [editorOptions]="{ disabled: true}"
-        [editorOptions]="{ width: '100%' }"
-        [label]="{text: 'إسم القرين'}"
-      ></dxi-item>
-      <dxi-item
-        dataField=""
-        [editorOptions]="{ disabled: true}"
-        [editorOptions]="{ width: '100%' }"
-        [label]="{text: 'المهنة'}"
-      ></dxi-item>
-      <dxi-item
-        dataField=""
-        [editorOptions]="{ disabled: true}"
-        [editorOptions]="{ width: '100%' }"
-        [label]="{text: 'تاريخ الزواج'}"
-      ></dxi-item>
-      <dxi-item
-        dataField=""
-        [editorOptions]="{ disabled: true}"
-        [editorOptions]="{ width: '100%' }"
-        [label]="{text: 'إسم الأب'}"
-      ></dxi-item>
-      <dxi-item
-        dataField=""
-        [editorOptions]="{ disabled: true}"
-        [editorOptions]="{ width: '100%' }"
-        [label]="{text: 'إسم الجد'}"
-      ></dxi-item>
-      <dxi-item
-        dataField=""
-        [editorOptions]="{ disabled: true}"
-        [editorOptions]="{ width: '100%' }"
-        [label]="{text: 'عدد الأبناء'}"
-      ></dxi-item>
-      <dxi-item
-        dataField=""
         [editorOptions]="{ disabled: true}"
         [editorOptions]="{ width: '100%' }"
         [label]="{text: 'إسم الأم'}"
       ></dxi-item>
+
       <dxi-item
-        dataField=""
-        [editorOptions]="{ disabled: true}"
-        [editorOptions]="{ width: '100%' }"
-        [label]="{text: 'لقبها'}"
+      dataField="situation_familiale"
+      [editorOptions]="{ disabled: true}"
+      [editorOptions]="{ width: '100%' }"
+      [label]="{text: 'الحالة الإجتماعية'}"
+     ></dxi-item>
+
+     <dxi-item
+        dataField="etatcivil"
+        editorType="dxSelectBox"
+        [editorOptions]="{ items: etat, searchEnabled: true, value: '' }"
+        [label]="{text: 'الحالة المدنية'}"
       ></dxi-item>
+
+      <dxi-item
+      dataField="prenom_partenaire"
+      [editorOptions]="{ disabled: true}"
+      [editorOptions]="{ width: '100%' }"
+      [label]="{text: 'إسم القرين'}"
+    ></dxi-item>
+
+      <dxi-item
+      dataField="prenom_grandpere"
+      [editorOptions]="{ disabled: true}"
+      [editorOptions]="{ width: '100%' }"
+      [label]="{text: 'إسم الجد'}"
+    ></dxi-item>
+
+      <dxi-item
+      dataField="nbr_enfant"
+      [editorOptions]="{ disabled: true}"
+      [editorOptions]="{ width: '100%' }"
+      [label]="{text: 'عدد الأبناء'}"
+    ></dxi-item>
+
+      <dxi-item
+          dataField="sexe"
+          editorType="dxSelectBox"
+          [editorOptions]="{ items: sexe, searchEnabled: true, value: '' }"
+          [label]="{text: 'الجنس'}"
+        ></dxi-item>
+
+
+      <dxi-item
+        dataField="gpsanguin"
+        editorType="dxSelectBox"
+        [editorOptions]="{ items: grp_s, searchEnabled: true, value: '' }"
+        [label]="{text: 'صنف الدم'}"
+      >
+      </dxi-item>
+
+      <dxi-item
+      dataField="taille"
+      [editorOptions]="{ disabled: true}"
+      [editorOptions]="{ width: '100%' }"
+      [label]="{text: 'الطول(بصم)'}"
+     ></dxi-item>
+
+      <dxi-item
+      dataField="poids"
+      [editorOptions]="{ disabled: true}"
+      [editorOptions]="{ width: '100%' }"
+      [label]="{text: 'الوزن'}"
+      ></dxi-item>
+
+      <dxi-item
+      dataField="pointure"
+      [editorOptions]="{ disabled: true}"
+      [editorOptions]="{ width: '100%' }"
+      [label]="{text: 'مقاس الحذاء'}"
+     ></dxi-item>
+      
+      
     </dx-form>
     
-  </div>
-  <!-- <p>الإسم الجديد :</p>
-       <p>{{employee.FirstName}}</p>
+  </div> -->
+
+
+  <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl" style="margin-top: 60px;">
   
-  <button (click)="acceptdata(employee.FirstName)">valider from .ts </button>
-  <p>confirmation from .ts</p>
-  <p>{{newname}}</p> -->
+    <mat-form-field appearance="outline"   style="font-size: 12px ; width: 14vw;">
+      <mat-label style="color: black; ">إسم الأب</mat-label>
+      <input matInput placeholder="إسم الأب"   [(ngModel)]="personnelForm.prenom_pere">
+      <mat-icon matSuffix>person</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline"   style="font-size: 12px ;width: 14vw;" >
+      <mat-label style="color: black;  ">إسم الأم</mat-label>
+      <input matInput placeholder="إسم الأم"   [(ngModel)]="personnelForm.prenom_mere">
+      <mat-icon matSuffix>person</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+
+    <mat-form-field appearance="outline"   style="font-size: 12px ;width: 14vw; margin-right: 40px;" >
+      <mat-label style="color: black;  ">الحالة الإجتماعية</mat-label>
+      <input matInput placeholder="الحالة الإجتماعية"   [(ngModel)]="personnelForm.situation_familiale">
+      <!-- <mat-icon matSuffix>person</mat-icon> -->
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  
+  </div>
+
+  <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+  
+    <mat-form-field appearance="fill" style="font-size: 12px ; width: 14vw;">
+      <mat-label  style="color: black; ">الحالة المدنية</mat-label>
+      <mat-select  [(ngModel)]="personnelForm.etatcivil">
+        <mat-option value="متزوج">متزوج</mat-option>
+        <mat-option value="أعزب">أعزب</mat-option>
+        <mat-option value="مطلق">مطلق</mat-option>
+        <mat-option value="أرمل">أرمل</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline"    style="font-size: 12px ;width: 14vw;" >
+      <mat-label style="color: black;  ">إسم القرين</mat-label>
+      <input matInput placeholder="إسم القرين"   [(ngModel)]="personnelForm.prenom_partenaire">
+      <mat-icon matSuffix>person</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+
+    <mat-form-field appearance="outline"   style="font-size: 12px ;width: 14vw; margin-right: 40px;" >
+      <mat-label style="color: black;  ">إسم الجد</mat-label>
+      <input matInput placeholder="إسم الجد"   [(ngModel)]="personnelForm.prenom_grandpere">
+      <!-- <mat-icon matSuffix>person</mat-icon> -->
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  
+  </div>
+
+  <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+
+    <mat-form-field appearance="outline"    style="font-size: 12px ;width: 14vw;" >
+      <mat-label style="color: black;  ">عدد الأبناء</mat-label>
+      <input matInput placeholder="عدد الأبناء"   [(ngModel)]="personnelForm.nbr_enfant">
+      <mat-icon matSuffix>child_care</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" style="font-size: 12px ; width: 14vw;">
+      <mat-label  style="color: black; ">الجنس</mat-label>
+      <mat-select  [(ngModel)]="personnelForm.sexe">
+        <mat-option value="ذكر">ذكر</mat-option>
+        <mat-option value="أنثى">أنثى</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" style="font-size: 12px ; width: 14vw;margin-right: 40px;">
+      <mat-label  style="color: black; ">صنف الدم</mat-label>
+      <mat-select  [(ngModel)]="personnelForm.gpsanguin">
+        <mat-option value="A+">A+</mat-option>
+        <mat-option value="A-">A-</mat-option>
+        <mat-option value="B+">B+</mat-option>
+        <mat-option value="B-">B-</mat-option>
+        <mat-option value="O+">O+</mat-option>
+        <mat-option value="O-">O-</mat-option>
+        <mat-option value="AB+">AB+</mat-option>
+        <mat-option value="AB-">AB-</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+  </div>
+
+  <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+  
+    <mat-form-field appearance="outline"   style="font-size: 12px ; width: 14vw;">
+      <mat-label style="color: black; ">الطول(بصم)</mat-label>
+      <input matInput placeholder="الطول(بصم)"   [(ngModel)]="personnelForm.taille">
+      <!-- <mat-icon matSuffix>person</mat-icon> -->
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline"   style="font-size: 12px ;width: 14vw;" >
+      <mat-label style="color: black;  ">الوزن</mat-label>
+      <input matInput placeholder="الوزن"   [(ngModel)]="personnelForm.poids">
+      <!-- <mat-icon matSuffix>person</mat-icon> -->
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+
+    <mat-form-field appearance="outline"   style="font-size: 12px ;width: 14vw; margin-right: 40px;" >
+      <mat-label style="color: black;  ">مقاس الحذاء</mat-label>
+      <input matInput placeholder="مقاس الحذاء"   [(ngModel)]="personnelForm.pointure">
+      <!-- <mat-icon matSuffix>person</mat-icon> -->
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  
+  </div>

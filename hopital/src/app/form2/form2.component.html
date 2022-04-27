@@ -1,58 +1,173 @@
 <div class="long-title">
     <h3>معطيات عامة</h3>
   </div>
-  <div id="form-container">
-    <dx-form id="form" [colCount]="2" [formData]="employee" [rtlEnabled]="true">
+  <!-- <div id="form-container">
+    <dx-form id="form" [colCount]="2" [formData]="personnelForm"  [rtlEnabled]="true" (onFieldDataChanged)="chargerPersonnerList()" >
       <dxi-item
-        dataField="FirstName"
-        [editorOptions]="{ disabled: true }"
-        [label]="{text: 'مكان الولادة'}"
+        dataField="adresse"
+        [editorOptions]="{ disabled: true}"
+        [editorOptions]="{ width: '100%' }"
+        [label]="{text: 'العنوان'}"
       ></dxi-item>
       <dxi-item
-        dataField="Position"
-        editorType="dxSelectBox"
-        [editorOptions]="{ items: positions, searchEnabled: true, value: '' }"
-        [label]="{text: 'الولاية'}"
+        dataField="niv_intel"
+        [editorOptions]="{ disabled: true}"
+        [editorOptions]="{ width: '100%' }" 
+        [label]="{text: 'المستوي التعليمي'}"
       >
-        <dxi-validation-rule
-          type="required"
-          message="Position is required"
-        ></dxi-validation-rule>
       </dxi-item>
       <dxi-item
-        dataField="Position"
-        editorType="dxSelectBox"
-        [editorOptions]="{ items: positions, searchEnabled: true, value: '' }"
-        [label]="{text: 'الإختصاص'}"
+        dataField="qualification"
+        [editorOptions]="{ disabled: true}"
+        [editorOptions]="{ width: '100%' }"
+        [label]="{text: 'الشهادة العلمية'}"
       ></dxi-item>
+
       <dxi-item
-        dataField=""
-        [label]="{text: 'الإختصاص الممارس'}"
-      ></dxi-item>
-      <dxi-item
-        dataField="BirthDate"
-        [label]="{text: 'المستوى التعليمي'}"
-      ></dxi-item>
-      <dxi-item dataField="Address"
-      [label]="{text: 'الوحدة'}"
-      ></dxi-item>
+        dataField="date_diplome"
+        editorType="dxDateBox"
+        [editorOptions]="{ value: null, width: '100%' }"
+        [label]="{text: 'تاريخ الشهادة العلمية'}"
+      >
+    </dxi-item>
+
+    <dxi-item
+        dataField="date_specialite"
+        editorType="dxDateBox"
+        [editorOptions]="{ value: null, width: '100%' }"
+        [label]="{text: 'تاريخ الإختصاص'}"
+      >
+    </dxi-item>
+
+    <dxi-item
+    dataField="obsrv"
+    [editorOptions]="{ disabled: true}"
+    [editorOptions]="{ width: '100%' }"
+    [label]="{text: 'الملاحظات'}"
+  ></dxi-item>
       
       <dxi-item itemType="group"  style="margin-top: 200px;">
-        <dxi-item [label]="{text: 'وسائل الإتصال'}"></dxi-item> 
+        <dxi-item [label]="{text: ''}"></dxi-item> 
         <dxi-item itemType="tabbed" >
           <dxo-tab-panel-options [deferRendering]="false">
           </dxo-tab-panel-options>
-          <dxi-tab title="الهاتف">
-            <dxi-item dataField="Phone"[label]="{text: 'الهاتف'}"></dxi-item>
+          <dxi-tab title="الهاتف 1">
+            <dxi-item dataField="telephone"[label]="{text: 'الهاتف 1'}"></dxi-item>
           </dxi-tab>
-          <dxi-tab title="Skype">
-            <dxi-item dataField="Skype"></dxi-item>
+          <dxi-tab title="الهاتف 2">
+            <dxi-item dataField="telephone2"[label]="{text: 'الهاتف 2'}"></dxi-item>
           </dxi-tab>
-          <dxi-tab title="البريد الإلكتروني">
-            <dxi-item dataField="Email" [label]="{text: 'البريد الإلكتروني'}"></dxi-item>
+          <dxi-tab title="جواز السفر 1">
+            <dxi-item dataField="passp1"[label]="{text: 'جواز السفر 1'}"></dxi-item>
           </dxi-tab>
+          <dxi-tab title="جواز السفر 2" >
+            <dxi-item dataField="passp2"[label]="{text: 'جواز السفر 2'}"></dxi-item>
+          </dxi-tab>
+        
         </dxi-item>
       </dxi-item>
     </dx-form>
   </div>
+   -->
+
+
+
+
+<div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+<!-- <label style="text-align:right;">العنوان: </label> -->
+<mat-form-field appearance="outline"   style="font-size: 12px ; width: 17vw;">
+  <mat-label style="color: black;  ">العنوان</mat-label>
+  <input matInput placeholder="العنوان"   [(ngModel)]="personnelForm.adresse">
+  <mat-icon matSuffix>person</mat-icon>
+  <!-- <mat-hint>Hint</mat-hint> -->
+</mat-form-field>
+<!-- <label style="text-align:left;">المستوى التعليمي: </label> -->
+<mat-form-field appearance="outline"   style="font-size: 12px ;width: 17vw;" >
+  <mat-label style="color: black;  ">المستوى التعليمي</mat-label>
+  <input matInput placeholder="المستوى التعليمي"   [(ngModel)]="personnelForm.niv_intel">
+  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+  <!-- <mat-hint>Hint</mat-hint> -->
+</mat-form-field>
+
+</div>
+
+
+<div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+  <!-- <label style="text-align:right;">الشهادة العلمية: </label> -->
+  <mat-form-field appearance="outline"   style="font-size: 12px ; width: 17vw;">
+    <mat-label style="color: black;  ">الشهادة العلمية</mat-label>
+    <input matInput placeholder="الشهادة العلمية"   [(ngModel)]="personnelForm.qualification">
+    <mat-icon matSuffix>person</mat-icon>
+    <!-- <mat-hint>Hint</mat-hint> -->
+  </mat-form-field>
+  <mat-form-field  appearance="outline"   style="font-size: 12px ; width: 17vw;">
+    <mat-label style="color: black; ">تاريخ الشهادة العلمية</mat-label>
+    <input matInput [matDatepicker]="picker1"  [(ngModel)]="personnelForm.date_diplome">
+    <!-- <mat-hint>YYYY/MM/DD</mat-hint> -->
+    <mat-datepicker-toggle [for]="picker1" matSuffix ></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
   
+  </div>
+
+
+  <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+    <mat-form-field  appearance="outline"   style="font-size: 12px ; width: 17vw;">
+      <mat-label style="color: black; ">تاريخ الإختصاص</mat-label>
+      <input matInput [matDatepicker]="picker"  [(ngModel)]="personnelForm.date_specialite">
+      <!-- <mat-hint>YYYY/MM/DD</mat-hint> -->
+      <mat-datepicker-toggle [for]="picker" matSuffix ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- <label style="text-align:right;">الملاحظات : </label> -->
+    <mat-form-field appearance="outline"   style="font-size: 12px ; width: 17vw;">
+      <mat-label style="color: black;  ">الملاحظات</mat-label>
+      <input matInput placeholder="الملاحظات"   [(ngModel)]="personnelForm.obsrv">
+      <mat-icon matSuffix>person</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  
+    
+    </div>
+
+
+    <div dir="rtl"   >
+      <mat-tab-group >
+        <mat-tab label="الهاتف 1" style="color: black;  ">  
+          <mat-form-field appearance="outline"   style="font-size: 12px ; width: 37vw;">
+          <mat-label style="color: black;  ">الهاتف 1</mat-label>
+          <input matInput placeholder="الهاتف 1"   [(ngModel)]="personnelForm.telephone">
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field></mat-tab>
+        <mat-tab label="الهاتف 2" style="color: black;  ">
+          <mat-form-field appearance="outline"   style="font-size: 12px ; width: 37vw;">
+            <mat-label style="color: black;  ">الهاتف 2</mat-label>
+            <input matInput placeholder="الهاتف 2"   [(ngModel)]="personnelForm.telephone2">
+            <mat-icon matSuffix>person</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </mat-tab>
+        <mat-tab label="جواز السفر 1 " style="color: black;  ">
+          <mat-form-field appearance="outline"   style="font-size: 12px ; width: 37vw;">
+            <mat-label style="color: black;  ">جواز السفر 1</mat-label>
+            <input matInput placeholder="جواز السفر 1"   [(ngModel)]="personnelForm.passp1">
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+        </mat-tab>
+        <mat-tab label="جواز السفر 2" style="color: black;  ">
+          <mat-form-field appearance="outline"   style="font-size: 12px ; width: 37vw;">
+            <mat-label style="color: black;  ">جواز السفر 2</mat-label>
+            <input matInput placeholder="جواز السفر 2"   [(ngModel)]="personnelForm.passp2">
+            <mat-icon matSuffix>person</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </mat-tab>
+      </mat-tab-group>
+      
+      
+    </div>
+
+
+
+

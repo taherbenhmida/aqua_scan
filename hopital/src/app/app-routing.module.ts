@@ -12,6 +12,9 @@ import { ProfiledetailaffichageComponent } from './profiledetailaffichage/profil
 import { ProfiledetailsmodificationComponent } from './profiledetailsmodification/profiledetailsmodification.component';
 import { UpgrademilitaireComponent } from './upgrademilitaire/upgrademilitaire.component';
 import { UpgradecivilComponent } from './upgradecivil/upgradecivil.component';
+import { UpdateComponent } from './update/update.component';
+import { DeleteComponent } from './delete/delete.component';
+import { AddComponent } from './add/add.component';
 
 const routes: Routes = [
   {path : '' ,redirectTo:'dashboard',pathMatch:'full'},
@@ -28,6 +31,9 @@ const routes: Routes = [
   {path : 'login' , component:LoginpageComponent},
   {path : 'details' , component:ProfiledetailaffichageComponent},
   {path : 'modification',component:ProfiledetailsmodificationComponent},
+  {path : 'update',component:UpdateComponent},
+  {path : 'delete',component:DeleteComponent},
+  {path : 'add',component:AddComponent},
   
 ];
  

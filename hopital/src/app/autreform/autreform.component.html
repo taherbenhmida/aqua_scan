@@ -1,41 +1,243 @@
-<div class="long-title">
-    <h3>معطيات ٱخرى</h3>
+  <div class="long-title">
+    <h3>معطيات خاصة بالمستشفى</h3>
   </div>
-  <div id="form-container">
-    <dx-form id="form" [colCount]="3" [formData]="employee" [rtlEnabled]="true" >
+  <!-- <div id="form-container">
+    <dx-form id="form"  [formData]="personnelForm" [rtlEnabled]="true" (onFieldDataChanged)="chargerPersonnerList()" >
+      <dxi-item itemType="group" [colCount]="3" >
       <dxi-item
+        dataField="matr_corps"
+        [editorOptions]="{ disabled: true}"
+        [editorOptions]="{ width: '100%' }"
+        [label]="{text: 'رقم على مستشفى'}"
+      ></dxi-item>
+
+      <dxi-item
+      dataField="specialite"
+      [editorOptions]="{ disabled: true}"
+      [editorOptions]="{ width: '100%' }"
+      [label]="{text: 'الإختصاص'}"
+    ></dxi-item>
+
+      <dxi-item
+      dataField="date_entr_hopi"
+      editorType="dxDateBox" 
+      [label]="{text: 'تاريخ الإلتحاق بالمستشفى'}"
+    ></dxi-item>
+      
+      <dxi-item
+          dataField="date_entr_serv"
+          editorType="dxDateBox" 
+          [label]="{text: 'تاريخ الإلتحاق بالقسم'}"
+     ></dxi-item>
+
+     <dxi-item
+        dataField="service"
+        [editorOptions]="{ disabled: true}"
+        [editorOptions]="{ width: '100%' }"
+        [label]="{text: 'القسم'}"
+      ></dxi-item>
+
+      <dxi-item
+        dataField="office"
+        [editorOptions]="{ disabled: true}"
+        [editorOptions]="{ width: '100%' }"
+        [label]="{text: 'المكتب'}"
+      ></dxi-item>
+
+      
+     </dxi-item>
+     <dxi-item itemType="group" [colCount]="2"  >
+     <dxi-item
+        dataField="base"
+        editorType="dxSelectBox"
+    
+        [editorOptions]="{ items: base, searchEnabled: true, value: '' }"
+
+        [label]="{text: 'القاعدة'}"
+      ></dxi-item>
+    </dxi-item> -->
+
+
+      <!-- <dxi-item
         dataField="FirstName"
         editorType="dxSelectBox"
         [editorOptions]="{ disabled: true}"
         [editorOptions]="{ width: '100%' }"
         [label]="{text: 'القسم أو المصلحة'}"
-      ></dxi-item>
-      <dxi-item editorType="dxDateBox" [label]="{text: 'التاريخ'}"></dxi-item>
-      <dxi-item
+      ></dxi-item> -->
+      <!-- <dxi-item editorType="dxDateBox" [label]="{text: 'التاريخ'}"></dxi-item> -->
+      <!-- <dxi-item
         dataField="Position"
         editorType="dxSelectBox"
-        [editorOptions]="{ items: positions, searchEnabled: true, value: '' }"
+        [editorOptions]="{ items: base, searchEnabled: true, value: '' }"
         [label]="{text: 'المؤهل أو الشهادة'}"
-      ></dxi-item>
-      <dxi-item
+      ></dxi-item> -->
+      <!-- <dxi-item
         dataField=""
         editorType="dxDateBox" 
         [label]="{text: 'تاريخ الشهادة'}"
-      ></dxi-item>
-      <dxi-item  dataField="" [label]="{text: 'الأوسمة'}" [colSpan]="2"></dxi-item>
-      <dxi-item itemType="group" colCount="2" colSpan="2" cssClass="group">
-            <dxi-item  dataField="" [label]="{text: 'مكان العمل'}"></dxi-item>
-            <dxi-item editorType="dxDateBox" [label]="{text: 'تاريخ الإنخراط'}"></dxi-item>
-            <dxi-item editorType="dxDateBox" [label]="{text: 'تاريخ نهاية العقد'}"></dxi-item>
-            <dxi-item editorType="dxDateBox" [label]="{text: 'تاريخ أع ص ع'}"></dxi-item>
-            <dxi-item dataField="" [label]="{text: 'الخطة'}"></dxi-item>
-            <dxi-item dataField="" editorType="dxDateBox" [label]="{text: 'تاريخ الخطة'}"></dxi-item>
+      ></dxi-item> -->
+      <!-- <dxi-item  dataField="" [label]="{text: 'الأوسمة'}" [colSpan]="2"></dxi-item> -->
+      <!-- <dxi-item itemType="group" [colCount]="2" [colSpan]="2" cssClass="second-group ">
+                <dxi-item
+                dataField="unite"
+                [editorOptions]="{ disabled: true}"
+                [editorOptions]="{ width: '100%' }" 
+                [label]="{text: 'القسم'}"
+              ></dxi-item>
+
+                <dxi-item
+                dataField="position"
+                [editorOptions]="{ disabled: true}"
+                [editorOptions]="{ width: '100%' }" 
+                [label]="{text: 'الموقع'}"
+              ></dxi-item>
+
+                <dxi-item
+                dataField="etat"
+                [editorOptions]="{ disabled: true}"
+                [editorOptions]="{ width: '100%' }"
+                [label]="{text: 'الصفة'}"
+              ></dxi-item>
+                
+                <dxi-item
+                dataField="situation"
+                [editorOptions]="{ disabled: true}"
+                [editorOptions]="{ width: '100%' }"
+                [label]="{text: 'الوضعية'}"
+              ></dxi-item>
+
+                <dxi-item
+                dataField="fonction"
+                [editorOptions]="{ disabled: true}"
+                [editorOptions]="{ width: '100%' }"
+                [label]="{text: 'الخطة'}"
+              ></dxi-item>
+
+                <dxi-item
+                dataField="date_fonction"
+                editorType="dxDateBox" 
+                [label]="{text: 'تاريخ الخطة'}"
+              ></dxi-item>
+
+            
     </dxi-item>
-    <dxi-item itemType="group">
-        <dxi-item [label]="{text: 'المنحة تتبع المستشفى'}"><mat-slide-toggle></mat-slide-toggle></dxi-item>
-        <dxi-item editorType="dxSelectBox" [label]="{text: 'منحة الإنتاج تسند من'}" ></dxi-item>
-    </dxi-item>
+    
     </dx-form>
     
   </div>
+   -->
+   <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+    <!-- <label style="text-align:right;">الشهادة العلمية: </label> -->
+    <mat-form-field appearance="outline"   style="font-size: 12px ; width: 17vw;">
+      <mat-label style="color: black;  ">رقم على مستشفى</mat-label>
+      <input matInput placeholder="رقم على مستشفى"   [(ngModel)]="personnelForm.matr_corps">
+      <mat-icon matSuffix>person</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+
+    <mat-form-field appearance="outline"   style="font-size: 12px ; width: 17vw;" >
+      <mat-label style="color: black; ">الإختصاص</mat-label>
+      <input matInput placeholder="الإختصاص" (click)="openDialog1()"  [(ngModel)]="personnelForm.specialite">
+      <mat-icon matSuffix>grade</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline"   style="font-size: 12px ; width: 17vw;margin-right: 40px;">
+      <mat-label style="color: black; ">تاريخ الإلتحاق بالمستشفى</mat-label>
+      <input matInput [matDatepicker]="picker1"  [(ngModel)]="personnelForm.date_entr_hopi">
+      <!-- <mat-hint>YYYY/MM/DD</mat-hint> -->
+      <mat-datepicker-toggle [for]="picker1" matSuffix ></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    
+    </div>
+
+    <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+      <!-- <label style="text-align:right;">الشهادة العلمية: </label> -->
+      <mat-form-field appearance="outline"   style="font-size: 12px ; width: 17vw;" >
+        <mat-label style="color: black; ">المكتب</mat-label>
+        <input matInput placeholder="المكتب" (click)="openDialog()"  [(ngModel)]="personnelForm.office">
+        <mat-icon matSuffix>grade</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
   
+  
+      <mat-form-field appearance="outline"   style="font-size: 12px ; width: 17vw;">
+        <mat-label style="color: black;  ">القسم</mat-label>
+        <input matInput placeholder="القسم"  (click)="openDialog2()" [(ngModel)]="personnelForm.service">
+        <mat-icon matSuffix>person</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+  
+      <mat-form-field  appearance="outline"   style="font-size: 12px ; width: 17vw;margin-right: 40px;">
+        <mat-label style="color: black; ">تاريخ الإلتحاق بالقسم</mat-label>
+        <input matInput [matDatepicker]="picker2"  [(ngModel)]="personnelForm.date_entr_serv">
+        <!-- <mat-hint>YYYY/MM/DD</mat-hint> -->
+        <mat-datepicker-toggle [for]="picker2" matSuffix ></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      
+      </div>
+
+      <div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+        <mat-form-field appearance="fill" style="font-size: 12px ; width: 30vw;">
+          <mat-label  style="color: black; ">القاعدة</mat-label>
+          <mat-select  [(ngModel)]="personnelForm.base">
+            <mat-option value="المستشفى العسكري الأصلي للتعليم بتونس">المستشفى العسكري الأصلي للتعليم بتونس</mat-option>
+          </mat-select>
+        </mat-form-field>
+        </div>
+
+  <div Class="second-group ">
+    <div (change)="chargerPersonnerList()" class="mat-form-field--inline"  dir="rtl">
+      <mat-form-field appearance="outline"   style="font-size: 12px ; width: 25vw;">
+        <mat-label style="color: black;  ">الوحدة</mat-label>
+        <input matInput placeholder="الوحدة"   [(ngModel)]="personnelForm.unite">
+        <mat-icon matSuffix>person</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+
+      <mat-form-field appearance="outline"   style="font-size: 12px ; width: 25vw;">
+        <mat-label style="color: black;  ">الموقع</mat-label>
+        <input matInput placeholder="الموقع"   [(ngModel)]="personnelForm.position">
+        <mat-icon matSuffix>person</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+    </div>
+
+    <div (change)="chargerPersonnerList()" class="mat-form-field--inline"  dir="rtl">
+      <mat-form-field appearance="outline"   style="font-size: 12px ; width: 25vw;">
+        <mat-label style="color: black;  ">الصفة</mat-label>
+        <input matInput placeholder="الصفة"   [(ngModel)]="personnelForm.etat">
+        <mat-icon matSuffix>person</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+
+      <mat-form-field appearance="outline"   style="font-size: 12px ; width: 25vw;">
+        <mat-label style="color: black;  ">الوضعية</mat-label>
+        <input matInput placeholder="الوضعية"  (click)="openDialog4()" [(ngModel)]="personnelForm.situation">
+        <mat-icon matSuffix>person</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+    </div>
+
+    <div (change)="chargerPersonnerList()" class="mat-form-field--inline"  dir="rtl">
+      <mat-form-field appearance="outline"   style="font-size: 12px ; width: 25vw;">
+        <mat-label style="color: black;  ">الخطة</mat-label>
+        <input matInput placeholder="الخطة"  (click)="openDialog3()" [(ngModel)]="personnelForm.fonction">
+        <mat-icon matSuffix>person</mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+
+      <mat-form-field appearance="outline"   style="font-size: 12px ; width: 25vw;">
+        <mat-label style="color: black; ">تاريخ الخطة</mat-label>
+        <input matInput [matDatepicker]="picker3"  [(ngModel)]="personnelForm.date_fonction">
+        <!-- <mat-hint>YYYY/MM/DD</mat-hint> -->
+        <mat-datepicker-toggle [for]="picker3" matSuffix ></mat-datepicker-toggle>
+        <mat-datepicker #picker3></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    
+  </div>
