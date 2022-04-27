@@ -12,23 +12,64 @@ import { ProfiledetailaffichageComponent } from './profiledetailaffichage/profil
 import { ProfiledetailsmodificationComponent } from './profiledetailsmodification/profiledetailsmodification.component';
 import { UpgrademilitaireComponent } from './upgrademilitaire/upgrademilitaire.component';
 import { UpgradecivilComponent } from './upgradecivil/upgradecivil.component';
+import { AfterloginComponent } from './afterlogin/afterlogin.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { EdituserComponent } from './edituser/edituser.component';
+import { AdminComponent } from './admin/admin.component';
+import { HasRoleGuard } from 'src/security/has-role.guard';
+import { AuthGuard } from 'src/security/auth.guard';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { HomeComponent } from './home/home.component';
+import { DirectionComponent } from './direction/direction.component';
+import { AfterloginUserComponent } from './afterlogin-user/afterlogin-user.component';
+
 
 const routes: Routes = [
-  {path : '' ,redirectTo:'dashboard',pathMatch:'full'},
-  {path : 'dashboard' , component:DashboardComponent},
-  {path : 'products' , component:ProductsComponent},
-  {path : 'statistics' , component:StatisticsComponent},
-  {path : 'coupens' , component:CoupensComponent, children :[
-    {path : 'upgrademilitaire' ,outlet:'outlet2' ,component:UpgrademilitaireComponent},
-    {path : 'upgradecivil' ,outlet:'outlet2',component:UpgradecivilComponent},
-  ]},
-  {path : 'pages' , component:PagesComponent},
-  {path : 'media' , component:MediaComponent},
-  {path : 'settings' , component:SettingsComponent},
-  {path : 'login' , component:LoginpageComponent},
-  {path : 'details' , component:ProfiledetailaffichageComponent},
-  {path : 'modification',component:ProfiledetailsmodificationComponent},
-  
+  { path : '' ,redirectTo:'login',pathMatch:'full'},
+  { path:'notfound',component:PagenotfoundComponent},
+  { path : 'login', component:LoginpageComponent},
+  { path : 'admin', 
+    component:AdminComponent,
+    canActivate:[AuthGuard,HasRoleGuard],
+    
+  },
+
+  {path : 'edit/:id', component:EdituserComponent},
+  {path : 'afterlogin' , component:AfterloginComponent,children:[
+    {path : 'home' , component:HomeComponent},
+    {path : 'dashboard' , component:DashboardComponent},
+    {path : 'products' , component:ProductsComponent},
+    {path : 'statistics' , component:StatisticsComponent},
+    {path : 'coupens' , component:CoupensComponent, children :[
+      {path : 'upgrademilitaire' ,outlet:'outlet2' ,component:UpgrademilitaireComponent},
+      {path : 'upgradecivil' ,outlet:'outlet2',component:UpgradecivilComponent},
+    ]},
+    {path : 'pages' , component:PagesComponent},
+    {path : 'media' , component:MediaComponent},
+    {path : 'settings' , component:SettingsComponent},
+    {path : 'direction' , component:DirectionComponent},
+    {path : 'editprofile' , component:EditprofileComponent},
+    {path : 'details' , component:ProfiledetailaffichageComponent},
+    {path : 'modification',component:ProfiledetailsmodificationComponent},
+  ],canActivate:[AuthGuard,HasRoleGuard]},
+ 
+  {path : 'afterloginuser' , component:AfterloginUserComponent,children:[
+    {path : 'home' , component:HomeComponent},
+    {path : 'dashboard' , component:DashboardComponent},
+    {path : 'products' , component:ProductsComponent},
+    {path : 'coupens' , component:CoupensComponent, children :[
+      {path : 'upgrademilitaire' ,outlet:'outlet2' ,component:UpgrademilitaireComponent},
+      {path : 'upgradecivil' ,outlet:'outlet2',component:UpgradecivilComponent},
+    ]},
+    {path : 'pages' , component:PagesComponent},
+    {path : 'media' , component:MediaComponent},
+    {path : 'direction' , component:DirectionComponent},
+    {path : 'editprofile' , component:EditprofileComponent},
+    {path : 'details' , component:ProfiledetailaffichageComponent},
+    {path : 'modification',component:ProfiledetailsmodificationComponent},
+  ],canActivate:[AuthGuard]},
+
+    { path: '**', redirectTo: '/notfound'},
 ];
  
 @NgModule({

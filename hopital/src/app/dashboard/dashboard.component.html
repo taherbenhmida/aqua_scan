@@ -4,14 +4,15 @@
     </div>
 
     <div class="card tableau">
+        {{message}}
         <h2> : بحث موجه عن</h2>
         <dx-tab-panel id="tabPanel" [deferRendering]="false" [rtlEnabled]="true">
             <dxi-item title="العملة العسكريين ">
                 <dx-data-grid
                 #grid
                 id="gridContainer"
-                [dataSource]="PersonnelList"
-                keyExpr="cin"
+                [dataSource]="employee"
+                keyExpr="ID"
                 [showBorders]="true"
                 [focusedRowEnabled]="true"
                 [rtlEnabled]="true"
@@ -40,17 +41,17 @@
                 >
                 </dxo-pager>
                 
-                <dxi-column dataField="prenom" caption="الإسم" > </dxi-column>
+                <dxi-column dataField="FirstName" caption="الإسم" > </dxi-column>
 
-                <dxi-column dataField="nom" caption="اللقب"> </dxi-column>
+                <dxi-column dataField="LastName" caption="اللقب"> </dxi-column>
 
-                <dxi-column dataField="matr_corps" caption="الرقم بالمستشفى"> </dxi-column>
+                <dxi-column dataField="Position" caption="الرقم بالمستشفى"> </dxi-column>
 
-                <dxi-column dataField="matricule" caption="الرقم بالتجنيد" dataType="number">
+                <dxi-column dataField="StateID" caption="الرقم بالتجنيد" dataType="number">
                     
                 </dxi-column>
                 <dxi-column dataField="OrderDate"  caption="بطاقة المرور">
-                    <dxo-lookup  [dataSource]="PersonnelList" valueExpr="ID" displayExpr="Name">
+                    <dxo-lookup  [dataSource]="states" valueExpr="ID" displayExpr="Name">
                     </dxo-lookup>
                 </dxi-column>
                 
@@ -78,7 +79,7 @@
     
     <div class="actions" >  
         <button  mat-raised-button color="warn" (click)="opendialog(grid.instance.getSelectedRowsData()[0].FirstName)">حذف الشخص<mat-icon style="margin-left: 10px;">delete_outline</mat-icon></button> 
-        <button  mat-raised-button color="accent" routerLink="/modification">إضافة شخص جديد<mat-icon style="margin-left: 10px;">add_circle_outline</mat-icon></button>
+        <button  mat-raised-button color="accent" routerLink="/afterlogin/modification">إضافة شخص جديد<mat-icon style="margin-left: 10px;">add_circle_outline</mat-icon></button>
         <button  mat-raised-button color="primary" (click)="details(grid.instance.getSelectedRowsData()[0].FirstName)">عرض البيانات<mat-icon style="margin-left: 10px;">description</mat-icon></button>     
     </div>
     <div id="employeeInfo" *ngIf="grid.selectedRowKeys.length" >
@@ -88,7 +89,7 @@
           }}</p>
           
     </div>
-    <p>TEST GIT</p>
+    
 </div>
 
 

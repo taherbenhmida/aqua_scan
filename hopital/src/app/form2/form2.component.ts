@@ -3,14 +3,11 @@ import {
 } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import {
-  DxSelectBoxModule,
-  DxTextAreaModule,
-  DxFormModule,
-  DxFormComponent,
-} from 'devextreme-angular';
+import { DxFormComponent} from 'devextreme-angular';
 
 import { Employee, Service } from './form2.service';
+
+
 
 if (!/localhost/.test(document.location.host)) {
   enableProdMode();
@@ -32,7 +29,9 @@ export class form2 implements AfterViewInit {
 
   rules: Object;
 
-  constructor(service: Service) {
+  
+
+  constructor(service: Service ) {
     this.employee = service.getEmployee();
     this.positions = service.getPositions();
     this.rules = { X: /[02-9]/ };

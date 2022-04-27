@@ -47,7 +47,8 @@ export class SidenavComponent implements OnInit {
   screenWidth=0;
   navData=navbarData;
 
- 
+
+  showsubmenu!:boolean;
 
   @HostListener('window:resize', ['$event'])
   onResize(event:any) {
@@ -71,5 +72,8 @@ export class SidenavComponent implements OnInit {
     this.onToggleSideNav.emit({collapsed:this.collapsed , screenWidth:this.screenWidth});
   }
   
+  show(){
+    this.showsubmenu=!this.showsubmenu;
+  }
     
 }

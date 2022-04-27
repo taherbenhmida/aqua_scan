@@ -1,0 +1,192 @@
+<div class="pagesbody">
+    <div class="titlecontainer">
+        <h1>الملف الشخصي</h1>
+    </div>
+   
+      
+<main class="content">
+
+          
+            
+            <div class="row">
+                <div class="col-12 col-xl-8">
+                    <div class="card card-body border-0 shadow mb-4">
+                        <h2 class="h5 mb-4">معطيات عامة</h2>
+                        <form [formGroup]="angForm" (ngSubmit)="update(angForm)">
+                            <div class="row">
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div>
+                                        <label for="last_name">اللقب</label>
+                                        <input formControlName="last_name" class="form-control" id="last_name" type="text" placeholder="Also your last name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div>
+                                        <label for="first_name">الإسم</label>
+                                        <input formControlName="name" class="form-control" id="first_name" type="text" placeholder="Enter your first name" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-md-6 mb-3">
+                                    <label for="birthday">تاريخ الميلاد</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                        </span>
+                                        <input formControlName="date_de_naissance" data-datepicker="" class="form-control" id="birthday" type="text" placeholder="dd/mm/yyyy" required>                                               
+                                     </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="gender">الجنس</label>
+                                    <select formControlName="sexe" class="form-select mb-0" id="gender" aria-label="Gender select example">
+                                        <option value="ذكر">ذكر</option>
+                                        <option value="ٱنثى">ٱنثى</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="email">البريد الإلكتروني</label>
+                                        <input formControlName="email" class="form-control" id="email" type="email" placeholder="name@company.com" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="grade">الرتبة</label>
+                                        <input formControlName="grade" class="form-control" id="grade"  placeholder="الرتبة" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label for="phone">الهاتف</label>
+                                        <input formControlName="phone" class="form-control" id="phone"  placeholder="+12-345 678 910" required>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <h2 class="h5 my-4">العنوان</h2>
+                            <div class="row">
+                                <div class="col-sm-3 mb-3">
+                                    
+                                </div>
+                                <div class="col-sm-9 mb-3">
+                                    <div class="form-group">
+                                        <label for="address">مكان السكن</label>
+                                        <input formControlName="adresse" class="form-control" id="address" type="text" placeholder="Enter your home address" required>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    
+                                </div>
+                                <div class="col-sm-4 mb-3">
+                                    <div class="form-group">
+                                        <label for="city">المدينة</label>
+                                        <input formControlName="city" class="form-control" id="city" type="text" placeholder="المدينة" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 mb-3">
+                                    <label for="state">الولاية</label>
+                                    <select formControlName="state" class="form-select w-100 mb-0" id="state" name="state" aria-label="State select example">
+                                        <option selected>الولاية</option>
+                                        <option value="بنزرت">بنزرت</option>
+                                        <option value="تونس">تونس</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-sm mt-3">
+                                    <button mat-raised-button color="warn" type="reset">
+                                        <mat-icon>delete_sweep</mat-icon>
+                                        إلغاء
+                                    </button>
+                                </div>
+                                <div class="col-sm-2 mt-3">
+                                    <button mat-raised-button color="primary" type="submit"  >
+                                        <mat-icon>edit</mat-icon>
+                                        تحيين
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <div class="card shadow border-0 text-center p-0">
+                                <div class="upper"> <img src="../../assets/images/cover.jpg" > </div>
+                                <div class="card-body pb-5">
+                                    <img src="../../assets/images/user-avatar.png" class="rounded-circle z-depth-2" alt="Neil Portrait" style="height: 100px;width: 100px;margin-top: -40px;">
+                                    <h4 class="h3">{{grade}}ال</h4>
+                                    <h5 class="fw-normal">رئيس قسم إدارة الأفراد</h5>
+                                    <p class="text-gray mb-4">بالمستشفى العسكري الأصلي للتعليم بتونس</p>
+                                    
+                                </div>
+                             </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card card-body border-0 shadow mb-4">
+                                <h2 class="h5 mb-4">تغيير الصورة</h2>
+                                <div class="d-flex align-items-center">
+                                   
+                                    <div class="file-field">
+                                        <div class="d-flex justify-content-xl-center ms-xl-3">
+                                            <div class="d-flex">
+                                                <mat-icon> insert_photo</mat-icon>
+                                                <input type="file">
+                                                
+                                            </div>
+                                        </div>
+                                     </div>                                        
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card card-body border-0 shadow mb-4">
+                                <h2 class="h5 mb-4">تغيير كلمة السر</h2>
+                                <div class="d-flex align-items-center">
+                                   
+                                    <div class="file-field">
+                                        <div class="d-flex justify-content-xl-center ms-xl-3">
+                                            <div class="d-flex">
+                                                <form [formGroup]="passForm" (ngSubmit)="verify_oldpass()">
+                                                    <input   matInput  formControlName="email">
+                                                    <mat-form-field class="example-full-width" appearance="fill">
+                                                      <mat-label>old password</mat-label>
+                                                      <input matInput placeholder="old password" formControlName="password">
+                                                    </mat-form-field>
+                                                  
+                                                    <mat-form-field class="example-full-width" appearance="fill">
+                                                      <mat-label>new password</mat-label>
+                                                      <input matInput placeholder="new password" formControlName="newpass">
+                                                    </mat-form-field>
+
+                                                    <mat-form-field class="example-full-width" appearance="fill">
+                                                        <mat-label>confirm password</mat-label>
+                                                        <input matInput placeholder="confirm password" formControlName="confirmpass">
+                                                    </mat-form-field>
+                                                    <br>
+                                                    <button mat-raised-button color="primary">enregister</button>                                                  </form>
+                                            </div>
+                                        </div>
+                                     </div>                                        
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+           
+        </main>
+   </div>
+

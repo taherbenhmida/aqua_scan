@@ -1,0 +1,32 @@
+<div class="container">
+    <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+        <table class="table">
+            <tr>
+                <td colspan="2">
+                    <h1 class="textcenter">Edit User</h1>
+
+                </td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td><input type="text" formControlName="name" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td><input type="text" formControlName="email" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td><input type="text" formControlName="password" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>service</td>
+                <td><input type="text" formControlName="service" class="form-control"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="text-center"></td>
+                <input type="submit" name="submit" value="edit user" class="btn btn-success">
+            </tr>
+        </table>
+    </form>
+</div>

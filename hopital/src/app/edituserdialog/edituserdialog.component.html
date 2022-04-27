@@ -1,0 +1,101 @@
+<div class="container">
+    <mat-icon class="close" mat-dialog-close>close</mat-icon>
+    <h2>تحيين معطيات المستخدم</h2>
+    <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+        <div class="row">
+            <mat-form-field class="col field" hintLabel="Max 10 characters" appearance="outline">
+              <mat-label>name</mat-label>
+              <input  formControlName="name" matInput #input maxlength="10" placeholder="name">
+              <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+    
+            <mat-form-field class="col field" hintLabel="Max 10 characters" appearance="outline">
+              <mat-label>last_name</mat-label>
+              <input  formControlName="last_name" matInput #input maxlength="10" placeholder="name">
+              <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+          </div>
+  
+          <div class="row">
+            <mat-form-field class="col field" hintLabel="Max 10 characters" appearance="outline">
+              <mat-label>date de naissance</mat-label>
+              <input  formControlName="date_de_naissance" matInput #input maxlength="10" placeholder="12/12/1999">
+              <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+            
+            <mat-form-field class="col field" hintLabel="Max 10 characters" appearance="outline">
+              <mat-label>phone</mat-label>
+              <input  formControlName="phone" matInput #input maxlength="10" placeholder="22000000">
+              <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+          </div>
+  
+          <div class="row">
+            <mat-form-field class="col field" appearance="outline">
+              <mat-label>role</mat-label>
+              <mat-select formControlName="role">
+                <mat-option value="user">user</mat-option>
+                <mat-option value="teminal">terminal</mat-option>
+              </mat-select>
+            </mat-form-field>
+    
+            <mat-form-field class="col field" appearance="outline">
+              <mat-label>service</mat-label>
+              <mat-select formControlName="service">
+                <mat-option value="pediatre">pediatre</mat-option>
+                <mat-option value="neuro">neuro</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+  
+          <div class="row">
+            <mat-form-field class="col field" appearance="outline">
+              <mat-label>sexe</mat-label>
+              <mat-select formControlName="sexe">
+                <mat-option value="pediatre">pediatre</mat-option>
+                <mat-option value="neuro">neuro</mat-option>
+              </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field class="col field" appearance="outline">
+              <mat-label>state</mat-label>
+              <mat-select formControlName="state">
+                <mat-option value="bizerte">bizerte</mat-option>
+                <mat-option value="tunis">tunis</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+  
+          <div class="row">
+            <mat-form-field class="col field" hintLabel="Max 10 characters" appearance="outline">
+              <mat-label>adresse</mat-label>
+              <input  formControlName="adresse" matInput #input maxlength="10" placeholder="adresse">
+              <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+    
+            <mat-form-field class="col field" hintLabel="Max 10 characters" appearance="outline">
+              <mat-label>city</mat-label>
+              <input  formControlName="city" matInput #input maxlength="10" placeholder="city">
+              <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+            </mat-form-field>
+          </div>
+  
+          <div class="row">
+            <mat-form-field class="col field" appearance="outline">
+              <mat-label>Enter your email</mat-label>
+              <input formControlName="email" type="email" matInput placeholder="pat@example.com" [formControl]="email" required>
+              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+    
+            <mat-form-field class="col field" appearance="outline">
+              <mat-label>Enter your password</mat-label>
+              <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          </div> 
+        <input  type="submit" name="submit" value="تحيين " class="btn btn-success">
+
+    </form>
+</div>

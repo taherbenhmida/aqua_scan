@@ -1,0 +1,61 @@
+.form {
+    width: 100%;
+  }
+  
+.example-full-width {
+    width: 100%;
+    text-align: right;
+  }
+.date{
+    width: 64%;
+}
+input{
+    height: 15px;
+    text-align:right ;
+  }
+ 
+.label{
+    padding-top: 10px;
+}
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.3em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform:  scale(.5);
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: white;
+  }
+::ng-deep .mat-datepicker-input-container {
+    width: 50px;
+}
+
+.container{
+    display: flex;
+    justify-content:space-around;
+}
+.row{
+    height: 50px;
+}
+::ng-deep .form-avatar {
+    height: 128px;
+    min-height: 128px;
+    width: 128px;
+    min-width: 128px;
+    margin-right: 8px;
+    margin-top: 30px;
+    border: 1px solid #d2d3d5;
+    border-radius: 50%;
+    background-image: url('../../assets/images/doctor.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+.comp2{
+    margin-left: 0px;
+    
+}
+::ng-deep .second-group {
+    background-color: rgba(191, 191, 191, 0.15);
+  }

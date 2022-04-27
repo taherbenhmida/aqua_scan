@@ -29,7 +29,7 @@ export class formcivil implements AfterViewInit {
 
   rules: Object;
 
-  // newname!:any;
+  newname!:any;
 
   constructor(service: Service) {
     this.employee = service.getEmployee();
@@ -42,10 +42,10 @@ export class formcivil implements AfterViewInit {
     this.myform.instance.validate();
     
   }
-  // acceptdata(variable:any){
-  //   this.newname=variable;
+  acceptdata(variable:any){
+    this.newname=variable;
     
-  // }
+  }
 }
 
 

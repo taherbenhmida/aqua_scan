@@ -1,4 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from unicodedata import name
+
+
 
 # Create your models here.
 
@@ -72,3 +76,29 @@ class Personnel(models.Model):
     class Meta:
         managed = False
         db_table = 'personnel'
+
+
+class User(AbstractUser):
+    id = models.AutoField(primary_key=True)
+    logged = models.CharField(max_length=255,null=True,blank=True)
+    name = models.CharField(max_length=255,null=True,blank=True)
+    last_name = models.CharField(max_length=255,null=True,blank=True)
+    email = models.CharField(max_length=255, unique=True,blank=True)
+    password = models.CharField(max_length=255,null=True,blank=True)
+    service = models.CharField(max_length=255,null=True,blank=True)
+    role = models.CharField(max_length=255,null=True,blank=True)
+    phone = models.CharField(max_length=255,null=True,blank=True)
+    date_de_naissance = models.CharField(max_length=255,null=True,blank=True)
+    adresse = models.CharField(max_length=255,null=True,blank=True)
+    sexe = models.CharField(max_length=255,null=True,blank=True)
+    state = models.CharField(max_length=255,null=True,blank=True)
+    city = models.CharField(max_length=255,null=True,blank=True)
+    grade = models.CharField(max_length=255,null=True,blank=True)
+    last_login = models.DateField(null=True,blank=True)
+    username = None
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    
+        

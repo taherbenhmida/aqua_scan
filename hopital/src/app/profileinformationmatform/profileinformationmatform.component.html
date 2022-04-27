@@ -1,0 +1,42 @@
+
+<form class="form" >
+    <div class="container">
+        <div class="com2">
+            <div class="row ">
+                <mat-form-field class="example-full-width col" appearance="outline">
+                    <input matInput >            
+                </mat-form-field>
+                <label for="" class="label col">المعرف الوحيد</label>  
+            </div>
+            <div class="row">
+                <mat-form-field class=" col" appearance="outline">
+                    <input matInput >            
+                </mat-form-field>
+                <label for="" class="label col">الإسم</label>  
+            </div>
+            <div class="row">
+                <mat-form-field class=" col" appearance="outline">
+                    <input matInput >            
+                </mat-form-field>
+                <label for="" class="label col">اللقب</label>  
+            </div>
+            <div class="row">
+                <mat-form-field  class="date col" appearance="outline">
+                    <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <input  matInput [matDatepicker]="picker">            
+                </mat-form-field>
+                <label for=""  class="label col">تاريخ الميلاد</label>  
+            </div>
+        </div>
+        <div class="form-avatar "></div>
+    </div>
+    <div class="second-group">
+        <mat-grid-list cols="2" rowHeight="2:1">
+            <mat-grid-tile>1</mat-grid-tile>
+            <mat-grid-tile>2</mat-grid-tile>
+            <mat-grid-tile>3</mat-grid-tile>
+            <mat-grid-tile>4</mat-grid-tile>
+          </mat-grid-list>
+    </div>
+</form>

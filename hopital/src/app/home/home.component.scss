@@ -1,0 +1,27 @@
+
+.pagesbody{
+    background-color: #f4f7fa;
+    padding: 3rem;
+    min-height: 100vh;
+}
+.titlecontainer{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+h1{
+    width: 50%;
+    margin: 0 auto;
+}
+.card1{
+    height: 70vh;
+    background-image: url('../../assets/images/16952-group-working.gif');
+    background-position: center;
+}
+.card2{
+    height: 70vh;
+    background-image: url('../../assets/images/41291-human-resources-approval-animation.gif');
+    background-position: center;
+}
+

@@ -1,17 +1,45 @@
 
 <div class="d-flex justify-content-between">
+ 
         <div class="col-md chart">
-            <h5>Linear Chart</h5>
-            <p-chart type="line" [data]="lineData" [options]="lineOptions" ></p-chart>
-        </div>
-    
-        <div class="col-md chart">
-            <h5 class="text-left w-full">Pie Chart</h5>
+            <h5 class="w-full">عدد العملة حسب الأعمار</h5>
             <p-chart type="pie" [data]="data" [options]="chartOptions" [style]="{'width': '50%'}"></p-chart>
         </div>
 
         <div class="col-md chart">
-            <h5>Bar Chart</h5>
+            <h5>عدد العملة حسب المصالح</h5>
             <p-chart type="bar" [data]="barData" [options]="barOptions"></p-chart>
         </div> 
 </div>
+
+<div class="d-flex justify-content-between">
+    <div class="col-md chart">
+        <h5>Linear Chart</h5>
+        <p-chart type="line" [data]="lineData" [options]="lineOptions" ></p-chart>
+    </div>
+
+    <div class="col-md chart   ">
+        <h5 > عدد العملة حسب الرتبة العسكرية</h5>
+       
+            <h4>إختر الصنف</h4>
+            <mat-form-field appearance="fill">
+            
+            <mat-select [(value)]="selected" (selectionChange)="onCategorieChange($event)">
+                <mat-option *ngFor="let categorie of categories" [value]="categorie.value">
+                {{categorie.viewValue}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+        
+        <div class="categorie">
+            <p-chart type="doughnut" [data]="doughnut_data" [options]="chartOptions" [style]="{'width': '50%','height':'50%'}"></p-chart>
+            <mat-list>
+                <h5>ضباط أعوان</h5>
+                <mat-list-item> ملازم </mat-list-item>
+                <mat-list-item> ملازم أول </mat-list-item>
+                <mat-list-item> نقيب </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+</div>
+

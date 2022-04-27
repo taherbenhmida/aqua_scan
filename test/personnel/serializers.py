@@ -1,5 +1,9 @@
 from rest_framework import serializers
 from personnel.models import Personnel
+#user
+from pyexpat import model
+from rest_framework import serializers
+from .models import User
 
 
 
@@ -73,4 +77,21 @@ class personnelSerializer(serializers.ModelSerializer):
                 'date_qualif_militaire',
 
         )
+
+#user
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'name', 'last_name','email', 'password','service','role','phone','date_joined','date_de_naissance','adresse','sexe','city','state','city','logged','grade','last_login']
+        extra_kwargs = {
+            'password': {'write_only': True}
+        }
+
+    def create(self, validated_data):
+        password = validated_data.pop('password', None)
+        instance = self.Meta.model(**validated_data)
+        if password is not None:
+            instance.set_password(password)
+        instance.save()
+        return instance
 

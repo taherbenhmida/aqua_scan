@@ -1,36 +1,56 @@
-
-.pagesbody{
-    background-color: #f4f7fa;
-    padding: 3rem;
-    min-height: 100vh;
-}
-.titlecontainer{
-    width: 100%;
-    text-align: center;
+.component{
+    text-align: right;
     display: flex;
-    justify-content: center;
-}
-h1{
-    width: 50%;
-    margin: 0 auto;
-}
-.pagescontainer{
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
+    flex-direction:column;
+    border-radius:20px;
     background-color: #fff;
-    height: 50vh;
-    border-radius: 25px;
+    margin: 1.25rem;
     box-shadow:0 .25rem .5rem #e6edef;
+    padding: 20px;
 }
-.upper {
-    height: 100px;
-   
+table {
+    width: 100%;
+    text-align: right;
+  }
+.header{
+    font-size: larger;
+    font-weight: bold;
+}
+:host ::ng-deep .mat-sort-header-container { 
+    display: flex;  
+    justify-content:flex-end;
 }
 
-.upper img {
+.sevice {
+    font-family: arial, sans-serif;
     width: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    height: 100px;
+  }
+  
+td, th {
+    text-align: right;
+  }
+
+.delete{
+  margin-right: 20px;
+}
+.field{
+  width:20px;
+  height: 100px;
+  text-align: right;
+}
+input{
+  text-align: right;
+}
+.example-stepper {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+.active{
+  color: rgb(23, 253, 7);
+}
+.inactive{
+  color: rgb(217, 72, 72);
 }
