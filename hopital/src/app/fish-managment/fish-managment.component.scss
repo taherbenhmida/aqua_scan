@@ -1,0 +1,70 @@
+/* Structure */
+.dialog_body{
+    width: 70vh;
+}
+h2{
+    text-align: center;
+}
+.search{
+    width: 100%;
+}
+table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  td{
+    text-align: center;
+  }
+  .mat-row:hover {
+    background-color: #8adeda33;
+  }
+  .mat-header-cell{
+      background-color: #06245e;
+      color: #f4f7fa;
+      font-size: 15px;
+  }
+  :host ::ng-deep .mat-sort-header-container { 
+    display: flex;  
+    justify-content:center;
+}
+.centered-header{
+    text-align: center;
+}
+.centered-tabs .mat-tab-header {
+    justify-content: center;
+  }
+.number{
+  width: 50px;
+}
+.seabream_image{
+  width: 80%;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+.seabass_image{
+  width: 80%;
+}
+.seabream{
+  text-align: center;
+  }
+.seabass{
+  text-align: center;
+}
+.fish_types{
+  display: flex;
+  justify-content: space-around;
+}
+.mat-table .mat-cell, .mat-table .mat-header-cell {
+  text-align: center;
+}
+.table_fish{
+  margin-bottom: 10px;
+}
+.mat-header-cell, .mat-cell {
+  padding: 8px;
+  text-align: center;
+}

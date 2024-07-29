@@ -1,0 +1,24 @@
+<h5>Alimentation</h5>
+<div class="room-tab-container">
+  <!-- rooms.component.html -->
+  <mat-tab-group class="mat-primary" *ngIf="rooms.length > 0" mat-align-tabs="center">
+    <mat-tab *ngFor="let room of rooms" [label]="room.name" >
+      <!-- Include the Tanks component within each room tab -->
+      <app-tanks></app-tanks>
+      <button mat-raised-button color="success" (click)="removeRoom(room.id)">
+        <mat-icon>delete</mat-icon>{{ room.name }}</button>
+
+    </mat-tab>
+  </mat-tab-group>
+
+  <div class="buttons">
+    <div class="room-buttons-container" *ngIf="rooms.length > 0">
+      <!-- Iterate over the rooms and display the buttons for each room -->
+      <button mat-raised-button color="success" (click)="addRoom()">
+          <mat-icon>add</mat-icon>Room</button>
+    </div>
+    <button mat-raised-button color="success">
+      <mat-icon>send</mat-icon>confirmer</button>
+  </div>
+
+</div>

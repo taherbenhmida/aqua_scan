@@ -1,4 +1,5 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Output ,EventEmitter, Host, HostListener} from '@angular/core';
 import {faPeopleGroup} from '@fortawesome/free-solid-svg-icons'
 
@@ -25,6 +26,9 @@ export class SidenavUserComponent implements OnInit {
   showsubarchive!:boolean;
   showsubsettings!:boolean;
 
+  grade!:any
+  name!:any
+  role!:any
   @HostListener('window:resize', ['$event'])
   onResize(event:any) {
     this.screenWidth = window.innerWidth;
@@ -33,9 +37,17 @@ export class SidenavUserComponent implements OnInit {
       this.onToggleSideNav.emit({collapsed:this.collapsed , screenWidth:this.screenWidth});
     }
   }
+  constructor(private http: HttpClient,){}
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
-    
+    this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
+      (data: any) => {
+        
+        this.grade=data.grade;
+        this.name=data.name;
+        this.role=data.role;
+      },
+    );
   }
   toggleCollapse():void{
     this.collapsed= !this.collapsed;

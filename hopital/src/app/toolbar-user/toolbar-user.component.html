@@ -2,8 +2,8 @@
     <mat-progress-bar mode="indeterminate" color=warn></mat-progress-bar>
 </div>
 <mat-toolbar class="body" color="primary" [ngClass]="getBodyClass()">
-    <mat-icon class="icon" >menu</mat-icon>
-    <span>المستشفى العسكري الأصلي للتعليم بتونس</span>
+   
+    <span><img class="acad" src="../../assets/images/acd.png" alt="">المستشفى العسكري الأصلي للتعليم بتونس<img class="hopital" src="../../assets/images/hopital.png" alt=""></span>
     <div>
         <mat-icon 
             routerLink="/afterloginuser/home"
@@ -13,29 +13,11 @@
             matTooltipClass="tooltipclass">
             home
         </mat-icon>
-        <mat-icon 
-            class="icon" 
-            [ngClass]="{'message' :true}" 
-            matBadge="15" 
-            matBadgeColor="warn" 
-            class="icon"
-            routerLink='login'
-            matTooltip="البريد الإلكتروني"
-            matTooltipPosition="below"
-            matTooltipClass="tooltipclass"> 
-            mail_outline
-        </mat-icon>
-        <mat-icon 
-            class="icon"
-            matTooltip="الإشعارات"
-            matTooltipPosition="below"
-            matTooltipClass="tooltipclass">
-            notifications
-        </mat-icon>
+        
         <mat-icon 
             routerLink="/afterloginuser/editprofile"
             class="icon" 
-            matTooltip="إدخال تغييرات في الملف الشخصي"
+            matTooltip="الملف الشخصي"
             matTooltipPosition="below"
             matTooltipClass="tooltipclass">
             person

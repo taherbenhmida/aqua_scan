@@ -1,0 +1,174 @@
+<div class="body"> 
+    <div class="titlecontainer">
+        <h1 class="title">تحيين وضعيات</h1>
+    </div>
+
+  <div class="container">
+      
+      <div class="card">
+        <div  class="mat-form-field--inline"  dir="rtl">
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">الرتبة</mat-label>
+            <input matInput placeholder="الرتبة"   readonly="true" [(ngModel)]="personnelForm.grade" >
+            <mat-icon matSuffix>grade</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">الإسم</mat-label>
+            <input matInput placeholder="الإسم"   readonly="true" [(ngModel)]="personnelForm.prenom">
+            <mat-icon matSuffix>person</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">اللقب</mat-label>
+            <input matInput placeholder="اللقب"   readonly="true" [(ngModel)]="personnelForm.nom">
+            <mat-icon matSuffix>person</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">cin</mat-label>
+            <input matInput placeholder="cin"   readonly="true" [(ngModel)]="personnelForm.cin">
+            <mat-icon matSuffix>credit_card</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+          
+        </div>
+        <mat-divider class="divider"></mat-divider>
+        <form [formGroup]="mission_Form" (ngSubmit)="confirm_mission(mission_Form)">
+          <h5>إضافة مهمات أو تربصات</h5>
+        <div  class="mat-form-field--inline"  dir="rtl">
+            
+            <mat-form-field appearance="outline" style="font-size: 12px" >
+              <mat-label>نوع المهمة</mat-label>
+              <mat-select formControlName="type_mission" required>
+                <mat-option  value="مهمة">مهمة</mat-option>
+                <mat-option  value="تربص داخلي">تربص داخلي</mat-option>
+                <mat-option  value="تربص خارجي">تربص خارجي</mat-option>
+              </mat-select> 
+            </mat-form-field> 
+            
+          
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">تاريخ البداية</mat-label>
+            <input  matInput [matDatepicker]="picker_debut" formControlName="date_debut" required>
+            <mat-datepicker-toggle matSuffix [for]="picker_debut"></mat-datepicker-toggle>
+            <mat-datepicker #picker_debut></mat-datepicker>
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">تاريخ النهاية</mat-label>
+            <input  matInput [matDatepicker]="picker_fin" formControlName="date_fin" required>
+            <mat-datepicker-toggle matSuffix [for]="picker_fin"></mat-datepicker-toggle>
+            <mat-datepicker #picker_fin></mat-datepicker>
+          </mat-form-field>
+
+         
+        </div>
+        
+        <div  class="mat-form-field--inline"  dir="rtl">
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">الملاحظات</mat-label>
+            <textarea matInput placeholder="الملاحظات"    formControlName="remarque"></textarea>
+            <mat-icon matSuffix>book</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <div class="actions">
+            <button mat-raised-button class="mission_button" color="primary" type="submit" [disabled]="select">تأكيد المهمة</button>
+        </div>
+        </form>
+        <mat-divider class="divider"></mat-divider>
+        
+        <form [formGroup]="punition_Form" (ngSubmit)="confirm_punition(punition_Form)">
+          <h5>إضافة عقوبات</h5>
+          <div  class="mat-form-field--inline"  dir="rtl">
+              
+              <mat-form-field appearance="outline" style="font-size: 12px">
+                <mat-label>نوع العقوبة</mat-label>
+                <mat-select formControlName="type_punition" required>
+                  <mat-option value="سجن">سجن </mat-option>
+                  <mat-option value="إنذار">إنذار</mat-option>
+                  <mat-option value="توبيخ">توبيخ</mat-option>
+                </mat-select> 
+              </mat-form-field>  
+
+            <mat-form-field appearance="outline"   class="field">
+              <mat-label style="color: black; ">اليوم </mat-label>
+              <input formControlName="date" matInput [matDatepicker]="picker" required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline"   class="field">
+              <mat-label style="color: black; ">عدد أيام السجن</mat-label>
+              <input  matInput type="number" formControlName="nbre_jour" required>
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+          </div>
+          
+          <div  class="mat-form-field--inline"  dir="rtl">
+            <mat-form-field appearance="outline"   class="field">
+              <mat-label style="color: black; ">الملاحظات</mat-label>
+              <textarea matInput placeholder="الملاحظات"    formControlName="remarque"></textarea>
+              <mat-icon matSuffix>book</mat-icon>
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
+          <div class="actions">
+              <button mat-raised-button class="mission_button" color="warn" type="submit" [disabled]="select">تأكيد العقوبة</button>
+          </div>
+        </form>
+
+      </div>
+      <div class="ta">
+        <mat-form-field appearance="standard"  >
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input  >
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8" >
+          <table mat-table [dataSource]="dataSource" matSort   >
+            <ng-container matColumnDef="adresse" >
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>العنوان</th>
+              <td mat-cell *matCellDef="let row" > {{row.adresse}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="nom" >
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>اللقب</th>
+              <td mat-cell *matCellDef="let row" > {{row.nom}} </td>
+            </ng-container>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="prenom" >
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>الإسم</th>
+              <td mat-cell *matCellDef="let row" > {{row.prenom}} </td>
+            </ng-container>
+        
+            <!-- Progress Column -->
+            <ng-container matColumnDef="grade">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header > الرتبة </th>
+              <td mat-cell *matCellDef="let row"> {{row.grade}} </td>
+            </ng-container>
+        
+          
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">"{{input.value}}" معلومات غير متوفرة </td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+        
+      </div>
+  </div>
+
+
+</div>

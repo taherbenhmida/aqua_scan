@@ -1,0 +1,239 @@
+.card-chart {
+    .card-header{
+      .card-title{
+        margin-top: 10px;
+        margin-bottom: 0px;
+      }
+      .card-category{
+        color: #837c7c;
+        margin-bottom: 5px;
+      }
+    }
+  
+    .table{
+      margin-bottom: 0;
+  
+      td{
+        border-top: none;
+        border-bottom: 1px solid #e9ecef;
+      }
+    }
+  
+    .card-progress {
+      margin-top: 30px;
+    }
+  
+    .chart-area {
+      height: 100px;
+      width: calc(100% + 30px);
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+    .card-footer {
+      margin-top: 0px;
+  
+      .stats{
+        color: #3d3c3c;
+      }
+    }
+  
+    .dropdown{
+      position: absolute;
+      right: 20px;
+      top: 20px;
+  
+      .btn{
+        margin: 0;
+      }
+    }
+  }
+  %card-stats{
+    hr{
+      height: 0.5px;
+      background-color: #3d3c3c;
+      margin: 5px 15px;
+    }
+  }
+  
+  
+  .card-stats{
+      .card-body{
+          padding: 0px 0px 0px;
+  
+          .numbers{
+            text-align: right;
+            font-size: 2em;
+  
+              p{
+                  margin-bottom: 0;
+              }
+              .card-category {
+                color: #3d3c3c;
+                font-size: 16px;
+                line-height: 1.4em;
+              }
+              .card-title{
+                font-size: 25px;
+              }
+          }
+      }
+      .card-footer{
+          padding: 0px 15px 0px;
+  
+          .stats{
+            color: #3d3c3c;
+          }
+  
+          hr{
+            height: 0.5px;
+            background-color: #3d3c3c;
+            margin-top: 5px;
+            margin-bottom: 10px;
+          }
+      }
+      .icon-big {
+          font-size: 3em;
+          min-height: 64px;
+  
+          i{
+              line-height: 59px;
+          }
+      }
+      transition: background-color 0.3s ease;
+  
+  }
+  .card-stats:hover{
+    background-color: rgba(120, 213, 215, 0.6);
+    cursor: pointer;
+  }
+  //////////////////////pie chart
+  .chartEmail{
+    display: flex;
+    justify-content: center;
+    //height: 187px;
+  }
+  
+  
+  .card{
+    border-radius: 5px;
+    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+    background-color: #FFFFFF;
+    color: #000;
+    margin-bottom: 20px;
+    position: relative;
+    border: 0 none;
+    
+    -webkit-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    -moz-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    -o-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    -ms-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+  
+      .card-body{
+          padding: 0px 15px 0px ;
+  
+          &.table-full-width{
+              padding-left: 0;
+              padding-right: 0;
+          }
+      }
+  
+      .card-header{
+        &:not([data-background-color]){
+          background-color: transparent;
+        }
+        padding: 0px 15px 0px;
+        border: 0;
+  
+        .card-title{
+            margin-top: 0px;
+            
+        }
+        .card-category{
+          padding: 0px 5px;
+          color: #837c7c;
+        }
+        .pie{
+          margin-top: -12px;
+        }
+      }
+  
+      .numbers {
+        font-size: 2em;
+      }
+  
+      .big-title {
+        font-size: 12px;
+        text-align: center;
+        font-weight: 500;
+        padding-bottom: 15px;
+      }
+  
+      label{
+          font-size: small;
+          margin-bottom: 5px;
+          color: #3d3c3c;
+      }
+  
+      .card-footer{
+          background-color: transparent;
+          border: 0;
+        
+  
+          .stats{
+              i{
+                  margin-right: 0px;
+                  position: relative;
+                  top: 0px;
+                  color: #000;
+              }
+          }
+  
+          .btn{
+              margin: 0;
+          }
+      }
+  
+      &.card-plain{
+          background-color: transparent;
+          box-shadow: none;
+          border-radius: 0;
+  
+  
+          .card-body{
+              padding-left: 5px;
+              padding-right: 5px;
+          }
+  
+          img{
+              border-radius: 5px;
+          }
+      }
+  }
+
+.mortality_span{
+  color: #F17E5D;
+  font-weight: bold;
+  font-size: 25px;
+}
+.food_span{
+  color: #048940;
+  font-weight: bold;
+  font-size: 25px;
+}
+.card-statsk{
+  margin-top: -12px;
+  margin-bottom: -6px;
+}
+.stats{
+  margin-top: -12px;
+  margin-bottom: -12px;
+}
+.stats_category{
+  font-size: 14px;
+}
+.legend{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: -15px;
+}

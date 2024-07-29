@@ -1,25 +1,83 @@
+<!-- Include Font Awesome CSS in the head section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 <div class="pagesbody">
-    <div class="titlecontainer">
-        <h1>الصفحة الرئيسية</h1>
-    </div>
+
+  <mat-tab-group mat-align-tabs="center" class="full-width-tabs" (selectedTabChange)="onTabChange($event)">
+    <mat-tab label="Tab 1">
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">store_mall_directory</mat-icon>
+        P G Department
+      </ng-template>
+      <div class="tab-content">
+        <!-- Content for Tab 1 -->
+        <div class="titlecontainer">
+          <h1>Pregrossissment  Department <img src="../../assets/images/Server_Analysis.gif" alt="" style="width: 80px;height: 80px;margin-top: -15px;"></h1>
+        </div>
+
+        <main class="content">
+          <div class="row">
+              <div class="col-12 ">
+                  <div class="card1 card-body border-0 shadow mb-4 nursery_stats"> 
+                      <app-nursery-dashboard-stats></app-nursery-dashboard-stats>
+                  </div>
+              </div>
+          </div>
+      
+        </main>
+
+      </div>
+    </mat-tab>
+
+<!-- Content for Tab 2  Rooms overview -->
+
+    <mat-tab label="Tab 2">
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">meeting_room</mat-icon>
+         Rooms overview 
+      </ng-template>
+      <div class="tab-content">
+        <!-- Content for Tab 2 -->
+        <div class="titlecontainer">
+          <h1>Rooms Overview <img src="../../assets/images/room.gif" alt="" style="width: 70px;height: 70px;margin-top: -15px;"></h1>
+        </div>
+        <div class="row">
+          <div class="col-12 ">
+              <div class="card1 card-body border-0 shadow mb-4 rooms_overview"> 
+                  <app-rooms-overview></app-rooms-overview>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </mat-tab>
+    <mat-tab label="Tab 3">
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">gradient</mat-icon>
+         Tanks overview 
+      </ng-template>
+      <div class="tab-content">
+        <!-- Content for Tab 3 -->
+        <div class="titlecontainer">
+          <h1>Tanks Overview <img src="../../assets/images/wired-flat-1841-algae.gif" alt="" style="width: 60px;height: 60px;margin-top: -15px;"></h1>
+        </div>
+        <div class="row">
+          <div class="col-12 ">
+              <div class="card1 card-body border-0 shadow mb-4 rooms_overview"> 
+                  <app-tanks-overview></app-tanks-overview>
+              </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  
+  
+      
+
+    
    
       
-<main class="content">
-
-          
-            
-            <div class="row">
-                <div class="col-12 col-xl">
-                    <div class="card1 card-body border-0 shadow mb-4">   
-                    </div>
-                </div>
-                <div class="col-12 col-xl">
-                    <div class="card2 card-body border-0 shadow mb-4">   
-                    </div>
-                </div>
-                
-            </div>
-           
-        </main>
-   </div>
+    
+</div>
 

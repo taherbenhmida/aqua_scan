@@ -1,0 +1,129 @@
+
+.rendementbody{
+    background-color: #f4f7fa;
+    padding: 3rem;
+    height: 200vh;
+}
+.titlecontainer{
+    width: 100%;
+    text-align: center;
+    
+}
+.arrow{
+    width: 40px;
+}
+.card{
+    padding-top: 5px;
+}
+h1{
+    width: 50%;
+    margin: 0 auto;
+    
+}
+h4{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.card-body{
+    display: flex;
+    justify-content: space-between;
+}
+.mat-elevation-z8{
+    width: 45%;
+    height: 40vh;
+}
+.card-head{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.card-head2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.mat-print {
+    margin-top: 5px;
+    background-color: #5D576B;
+    color: #fff; 
+}
+.mat-generate {
+    width: 30%;
+    background-color: #2EC4B6;
+    color: #000;
+}
+.transfert{
+    width: 150px;
+}
+.Dispatched{
+    width: 40%;
+    margin: 0 auto;
+}
+.Received{
+    width:50%;
+    margin-bottom: -35px;
+}
+.mat-elevation-z8_body{
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+form{
+    width: 45%;
+}
+.button{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+h5{
+    margin-top: 5px;
+}
+
+.table{
+    width: 100%;
+    margin-top: 20px;
+}
+.filter{
+    width: 100%;
+}
+.mat-row{
+    text-align: center;
+}
+  .mat-row:hover {
+    background-color: #40e2da33;
+  }
+  .mat-header-cell{
+      background-color: #2EC4B6;
+      color: #000000;
+      font-size: 15px;
+  }
+  :host ::ng-deep .mat-sort-header-container { 
+    display: flex;  
+    justify-content:center;
+}
+.mat-sort-header:hover .mat-sort-header-arrow {
+    color: #ff0000; /* Change to your desired hover color */
+  }
+  
+  /* Change color of sort arrow on click */
+  .mat-sort-header-active .mat-sort-header-arrow {
+    color: #00ff00; /* Change to your desired active/clicked color */
+  }
+  .mat-table{
+    border-radius: 8px;
+    overflow:hidden !important;
+  }
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+.list{
+    width: 100%;
+}
+  

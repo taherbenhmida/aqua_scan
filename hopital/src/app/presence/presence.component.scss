@@ -1,0 +1,87 @@
+table {
+    width: 100%;
+    text-align: right;
+    
+  }
+.mat-row:hover {
+    background-color: #b4b4b433;
+  }
+.mat-header-cell{
+    background-color: #508484;
+    color: #f4f7fa;
+    font-size: 15px;
+  }
+.mat-table{
+    border-radius: 8px;
+    overflow:hidden !important;
+  }
+  
+.mat-form-field {
+    font-size: 14px;
+    text-align: right;
+  }
+.titlecontainer{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.body{
+    background-color: #f4f7fa;
+    padding: 3rem;
+}
+
+.card{
+    margin: auto;
+    width: 60%;
+    display: flex;
+    margin-top:20px;
+    // margin-right: auto;
+    // margin: 15px;
+    border-radius: 20px;
+}
+
+.mat-form-field--inline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+.date{
+  text-align: right;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+.date mat-form-field{
+  width :150px
+}
+.filter{
+  width: 100%;
+}
+:host ::ng-deep .mat-sort-header-container { 
+  display: flex;  
+  justify-content:flex-end;
+}
+mat-option{
+  text-align: right;
+}
+.situation{
+  margin-top: 5px;
+}
+td{
+  font-weight: bold;
+  height: 10px !important;
+}
+.tablecontainer{
+  margin-top: 30px;
+}
+.historique{
+  background-color: #607466;
+  color: #fff;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.demo-inline-calendar-card {
+  width: 300px;
+}

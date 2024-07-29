@@ -1,0 +1,45 @@
+
+<h5 > عدد العملة حسب الرتبة العسكرية</h5>
+
+    <h4><mat-form-field class="select" appearance="fill">
+            <mat-select  [(value)]="selected" (selectionChange)="onCategorieChange($event)">
+                <mat-option *ngFor="let categorie of categories" [value]="categorie.value">
+                {{categorie.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>إختر الصنف
+    </h4>
+    
+
+<div class="categorie">
+    <p-chart type="doughnut" [data]="doughnut_data" [options]="chartOptions" [style]="{'width': '70%','height':'70%'}"></p-chart>
+    <div class="list_officier" *ngIf="selected=='troup_data'">
+        <h5>رجال جيش</h5>
+            <p><span>{{grade.g1}} :</span> جندي أول</p>
+            <p><span>{{grade.g2}} :</span> رقيب</p>
+            <p><span>{{grade.g3}} :</span>رقيب أول</p>
+    </div>
+    <div class="list_officier" *ngIf="selected=='sous_off_data'">
+        <h5>ضباط صف</h5>
+            <p><span>{{grade.g4}} :</span>عريف</p>
+            <p><span>{{grade.g5}} :</span>عريف أول</p>
+            <p><span>{{grade.g6}} :</span>وكيل</p>
+            <p><span>{{grade.g7}} :</span>وكيل أول</p>
+            <p><span>{{grade.g8}} :</span>وكيل أعلى</p>
+    </div>
+    <div class="list_officier" *ngIf="selected=='officier_data'">
+        <h5>ضباط أعوان</h5>
+            <p><span>{{grade.g9}} :</span>ملازم</p>
+            <p><span>{{grade.g10}} :</span>ملازم أول </p>
+            <p><span>{{grade.g11}} :</span>نقيب</p>
+        <h5>ضباط سامون</h5>
+            <p><span>{{grade.g12}} :</span>رائد</p>
+            <p><span>{{grade.g13}} :</span>مقدم</p>
+            <p><span>{{grade.g14}} :</span>عقيد</p>
+            <p><span>{{grade.g15}} :</span>عميد</p>
+        <h5>ضباط قادة</h5>
+            <p><span>{{grade.g16}} :</span>أمير لواء </p>
+            <p><span>{{grade.g17}} :</span>فريق</p>
+            <p><span>{{grade.g18}} :</span>فريق أول</p>
+    </div>
+</div>

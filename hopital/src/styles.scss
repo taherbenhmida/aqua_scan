@@ -9,6 +9,7 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import url('http://fonts.cdnfonts.com/css/roboto');
 @import url('https://fonts.googleapis.com/css?family=Katibeh');
+@import '~@fortawesome/fontawesome-free/css/all.css';
 
 *{
   margin: 0;
@@ -33,7 +34,7 @@ body{
   .card-head{
     padding: 0.5rem 1rem 1.5rem;
     border-bottom: 1px solid #edf1f7;
-    font-size: 40px;
+    font-size: 20px;
     
     text-align: right;
     font-family: 'Katibeh';
@@ -68,4 +69,24 @@ body{
   background: rgb(17, 97, 159);  
 }
 //////////////////////////////////////
-    
+.notif-success {
+  color: #071309 !important; // green
+  background-color: #06a32b !important;
+  border-color: #c3e6cb !important;
+  .mat-simple-snackbar-action {
+      color: #000000 !important;
+  }
+}
+
+.notif-delete {
+  color: #071309 !important; // green
+  background-color: #f50a29 !important;
+  border-color: #c3e6cb !important;
+  .mat-simple-snackbar-action {
+      color: #000000 !important;
+  }
+}  
+
+.mat-table .mat-cell, .mat-table .mat-header-cell {
+  text-align: right;
+}

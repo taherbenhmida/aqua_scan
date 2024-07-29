@@ -1,0 +1,237 @@
+<!-- Include Font Awesome CSS in the head section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<div class="pagesbody">
+    <div class="titlecontainer">
+        <h1>Fish Health <img src="../../assets/images/wired-flat-1249-heart-beat.gif" alt=""></h1>
+    </div>
+   
+      
+        <main class="content">
+            <div class="row ">
+              <div class="col-6">
+                <div class="card1 card-body border-0 shadow ">
+                    <h5>Lesions and Symptoms</h5>
+                    <mat-form-field  class="tank_selection">
+                      <mat-label>Select tanks</mat-label>
+                      <mat-select [formControl]="selectedItems" multiple>
+                        <!-- Iterate over groups -->
+                        <mat-optgroup *ngFor="let group of optionGroups" [label]="group.name">
+                          <!-- "Select all" checkbox for each group -->
+                          <mat-checkbox (change)="toggleGroup(group.name, $event)">
+                            Select all
+                          </mat-checkbox>
+                          <!-- Iterate over options within each group -->
+                          <mat-option *ngFor="let option of group.options" [value]="option">
+                            {{ option }}
+                          </mat-option>
+                        </mat-optgroup>
+                      </mat-select>
+                    </mat-form-field>
+                    <div class="file-upload-container"
+                        (drop)="onFileDrop($event)"
+                        (dragover)="onDragOver($event)"
+                        (dragleave)="onDragLeave($event)">
+                    <p>Drag and drop files here or click to upload</p>
+                    <input type="file" (change)="onFileSelect($event)" multiple />
+                    </div>
+                    <mat-form-field class="textarea">
+                      <mat-label>Write here if you have something to add ! </mat-label>
+                      <textarea matInput placeholder="Write here if you have something to add !"></textarea>
+                    </mat-form-field>
+                    <mat-form-field >
+                      <mat-label>Action taken ! </mat-label>
+                      <input matInput placeholder="Action taken !">
+                    </mat-form-field><br>
+                    <button mat-raised-button color="success" class="send">
+                      <mat-icon>send</mat-icon>
+                      Send Data </button>
+                </div>
+              </div>
+
+              <div class="col-3">
+                <div class="card2 card-body border-0 shadow "> 
+                    
+                  <h5> Daily Morbidity</h5> 
+                  <!-- food-return.component.html -->
+                  <div class="food-return-container">
+                      <!-- Iterate over the rooms and display input fields to specify the quantity of food returned -->
+                      <div  class="food-return-room">
+                      
+                      <!-- Form to specify tank and room -->
+                      <form >
+                        <mat-form-field  class="tank_selection">
+                          <mat-label>Select tanks</mat-label>
+                          <mat-select [formControl]="selectedItems" multiple>
+                            <!-- Iterate over groups -->
+                            <mat-optgroup *ngFor="let group of optionGroups" [label]="group.name">
+                              <!-- "Select all" checkbox for each group -->
+                              <mat-checkbox (change)="toggleGroup(group.name, $event)">
+                                Select all
+                              </mat-checkbox>
+                              <!-- Iterate over options within each group -->
+                              <mat-option *ngFor="let option of group.options" [value]="option">
+                                {{ option }}
+                              </mat-option>
+                            </mat-optgroup>
+                          </mat-select>
+                        </mat-form-field>
+                        <mat-form-field >
+                            <input matInput type="number"  name="foodReturned" placeholder="Quantity">
+                        </mat-form-field>
+
+                        <mat-form-field >
+                          <input matInput  placeholder="Type of Morbidity">
+                        </mat-form-field>
+                          
+                      </form>
+                      <div class="buttons">
+                          <button mat-raised-button color="confirmer">Confirm</button>
+                          <button mat-raised-button color="historique">View Morbidity History</button>
+                      </div>
+                      </div>
+                  </div>
+
+      
+                </div>
+                <div class="fish_morbidity"></div>  
+              </div>
+
+              <div class="col-3">
+                <div class="card2 card-body border-0 shadow "> 
+                    
+                  <h5> Daily Death</h5> 
+                  <!-- food-return.component.html -->
+                  <div class="food-return-container">
+                      <!-- Iterate over the rooms and display input fields to specify the quantity of food returned -->
+                      <div  class="food-return-room">
+                      
+                      <!-- Form to specify tank and room -->
+                      <form >
+                        <mat-form-field  class="tank_selection">
+                          <mat-label>Select tanks</mat-label>
+                          <mat-select [formControl]="selectedItems" multiple>
+                            <!-- Iterate over groups -->
+                            <mat-optgroup *ngFor="let group of optionGroups" [label]="group.name">
+                              <!-- "Select all" checkbox for each group -->
+                              <mat-checkbox (change)="toggleGroup(group.name, $event)">
+                                Select all
+                              </mat-checkbox>
+                              <!-- Iterate over options within each group -->
+                              <mat-option *ngFor="let option of group.options" [value]="option">
+                                {{ option }}
+                              </mat-option>
+                            </mat-optgroup>
+                          </mat-select>
+                        </mat-form-field>
+                        <mat-form-field >
+                            <input matInput type="number"  name="foodReturned" placeholder="Quantity">
+                        </mat-form-field>
+                        <mat-form-field >
+                          <input matInput  placeholder="Cause of Death">
+                        </mat-form-field>
+                          
+                      </form>
+                      <div class="buttons">
+                          <button mat-raised-button color="confirmer">Confirm</button>
+                          <button mat-raised-button color="historique">View Death History</button>
+                      </div>
+                      </div>
+                  </div>
+
+      
+                </div>
+                <div class="fish_death"></div>  
+              </div>                      
+            </div>
+            
+            
+            <div class="row">
+              <div class="col-12 card_performances card-body border-0 shadow">
+                <div class="row row-1">
+                  <h5>Laboratory :</h5>
+                  
+                </div>
+                <div class="row row_2">
+                  
+                  <div class="col-7">
+                    <div class="card_pathogen card-body border-0 shadow ">
+                      <mat-form-field  class="tank_selection">
+                        <mat-label>Select tanks</mat-label>
+                        <mat-select [formControl]="selectedItems" multiple>
+                          <!-- Iterate over groups -->
+                          <mat-optgroup *ngFor="let group of optionGroups" [label]="group.name">
+                            <!-- "Select all" checkbox for each group -->
+                            <mat-checkbox (change)="toggleGroup(group.name, $event)">
+                              Select all
+                            </mat-checkbox>
+                            <!-- Iterate over options within each group -->
+                            <mat-option *ngFor="let option of group.options" [value]="option">
+                              {{ option }}
+                            </mat-option>
+                          </mat-optgroup>
+                        </mat-select>
+                      </mat-form-field>
+                      <form [formGroup]="patogenForm" (ngSubmit)="onSubmit()">
+                        <div class="form-container">
+                          <div class="category">
+                            <h6>Parasite</h6>
+                            <mat-radio-group formControlName="parasite" aria-label="Select a parasite">
+                              <mat-radio-button value="Sparicotyle">Sparicotyle</mat-radio-button>
+                              <mat-radio-button value="Dactylogyrus">Dactylogyrus</mat-radio-button>
+                              <mat-radio-button value="Cryptocarion">Cryptocarion</mat-radio-button>
+                              <mat-radio-button value="Enteromyxum">Enteromyxum</mat-radio-button>
+                              <mat-radio-button value="Amyloodimium">Amyloodimium</mat-radio-button>
+                              <mat-radio-button value="Trichodines">Trichodines</mat-radio-button>
+                            </mat-radio-group>
+                          </div>
+    
+                          <div class="category">
+                            <h6>Bacteria</h6>
+                            <mat-radio-group formControlName="bacteria" aria-label="Select a bacteria">
+                              <mat-radio-button value="Allivibrio">Allivibrio</mat-radio-button>
+                              <mat-radio-button value="Photobacteria">Photobacteria</mat-radio-button>
+                              <mat-radio-button value="Steptococcus">Steptococcus</mat-radio-button>
+                              <mat-radio-button value="Tenacybaculom">Tenacybaculom</mat-radio-button>
+                              <mat-radio-button value="Aeromona">Aeromona</mat-radio-button>
+                            </mat-radio-group>
+                          </div>
+                          
+                          <div class="category">
+                            <h6>Virus</h6>
+                            <mat-radio-group formControlName="virus" aria-label="Select a virus">
+                              <mat-radio-button value="Nodavirus">Nodavirus</mat-radio-button>
+                              <mat-radio-button value="Lymphocystis">Lymphocystis</mat-radio-button>
+                            </mat-radio-group>
+                          </div>
+                          <div class="category">
+                            <mat-radio-group formControlName="other" aria-label="Select other">
+                              <mat-radio-button value="Other">Other</mat-radio-button>
+                            </mat-radio-group>
+                          </div>
+                        </div>
+                        <button mat-raised-button color="success" class="send" type="submit">
+                          <mat-icon>send</mat-icon>
+                          Send Data </button>
+                      </form>
+                      
+                          
+                      <div class="laboratory"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="col-4">
+                    <div class="card1-gauge card-body border-0 shadow ">
+                      <h6>not yet !</h6>
+                      
+                    </div>  
+                  </div> 
+                </div>
+                
+              </div>
+            </div>
+
+            
+        </main>
+   </div>
+

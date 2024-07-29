@@ -1,41 +1,111 @@
-<dx-form id="form" [(formData)]="employee" [formData]="employee" [rtlEnabled]="true">
-    <dxi-item itemType="group" cssClass="first-group" [colCount]="4">
-      <dxi-item>
-        <div class="form-avatar"></div>
-      </dxi-item>
-      <dxi-item itemType="group" [colSpan]="3">
-        <dxi-item dataField="FirstName" [label]="{text: 'المعرف الوحيد'}"></dxi-item>
-        <dxi-item dataField="LastName" [label]="{text: 'الإسم'}"></dxi-item>
-        <dxi-item dataField="LastName" [label]="{text: 'اللقب'}"></dxi-item>
-        <dxi-item
-          dataField="BirthDate"
-          editorType="dxDateBox"
-          [editorOptions]="{ width: '100%' }"
-          [label]="{text: 'تاريخ الميلاد'}"
-        ></dxi-item>
-      </dxi-item>
-    </dxi-item>
-    <dxi-item itemType="group" cssClass="second-group" [colCount]="2">
-      <dxi-item itemType="group">
-        <dxi-item dataField="" [label]="{text: 'الرتبة'}"></dxi-item>
-        <dxi-item dataField=""[label]="{text: 'رقم ب ت و'}"></dxi-item>
-        <dxi-item dataField="" [label]="{text: 'نهاية الصلوحية'}"></dxi-item>
-        
-      </dxi-item>
-      <dxi-item itemType="group">
-        <dxi-item dataField="" editorType="dxDateBox"[label]="{text: 'تاريخ الرتبة'}"></dxi-item>
-        
-        <dxi-item dataField="" editorType="dxDateBox"[label]="{text: 'تاريخ  ب ت و'}"></dxi-item>
-        <dxi-item dataField="" editorType="dxSelectBox" [label]="{text: 'الإنتماء'}"></dxi-item>
-      </dxi-item>
-      <dxi-item
-        dataField="Notes"
-        [colSpan]="2"
-        editorType="dxTextArea"
-        [editorOptions]="{ height: 50 }"
-        [label]="{text: 'المرجع'}"
-      ></dxi-item>
-    </dxi-item>
+<div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
     
-  </dx-form>
+    <div class="image">
+      <input type="file" style="display:none" (change)="onFileSelected($event)" #fileInput>
+      <img src="../../assets/images/{{personnelForm.img}}" alt="default" class="avatar" (click)="fileInput.click()">
+    </div>
+
+  <mat-form-field appearance="outline"   class="field" >
+    <mat-label style="color: black;  ">الإسم</mat-label>
+    <input matInput placeholder="الإسم"   [(ngModel)]="personnelForm.prenom">
+    <mat-icon matSuffix>person</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline"   class="field">
+    <mat-label style="color: black;  ">اللقب</mat-label>
+    <input matInput placeholder="اللقب"   [(ngModel)]="personnelForm.nom">
+    <mat-icon matSuffix>person</mat-icon>
+  </mat-form-field>
+  
+</div>
+
+<div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+  
+  <mat-form-field appearance="outline"   class="field">
+    <mat-label style="color: black; ">Prenom</mat-label>
+    <input matInput placeholder="Prenom"   [(ngModel)]="personnelForm.prenomf">
+    <mat-icon matSuffix>translate</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline"   class="field" >
+    <mat-label style="color: black;  ">Nom</mat-label>
+    <input matInput placeholder="Nom"   [(ngModel)]="personnelForm.nomf">
+    <mat-icon matSuffix>translate</mat-icon>
+  </mat-form-field>
+
+</div>
+
+<div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+
+
+
+  <mat-form-field  appearance="outline"   class="field">
+    <mat-label style="color: black; ">تاريخ  ب ت و</mat-label>
+    <input matInput [matDatepicker]="picker"  [(ngModel)]="personnelForm.dtecin">
+    <mat-datepicker-toggle [for]="picker" matSuffix ></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  
+  
+  <mat-form-field appearance="outline"   class="field">
+    <mat-label style="color: black; ">ر ب ت و</mat-label>
+    <input matInput placeholder="ر ب ت و"   (change)="a()"    [(ngModel)]="personnelForm.cin">
+    <mat-icon matSuffix>credit_card</mat-icon>
+  </mat-form-field>
+
+</div>
+
+<div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+  <mat-form-field appearance="outline"   class="field">
+    <mat-label style="color: black;  ">المعرف الوحيد</mat-label>
+    <input matInput placeholder="المعرف الوحيد"   [(ngModel)]="personnelForm.iu">
+    <mat-icon matSuffix>credit_card</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="outline"   class="field" >
+    <mat-label style="color: black; ">الرتبة</mat-label>
+    <input matInput placeholder="الرتبة" (click)="openDialog()"  [(ngModel)]="personnelForm.grade">
+    <mat-icon matSuffix>grade</mat-icon>
+  </mat-form-field>
+
+</div>
+
+<div (change)="chargerPersonnerList()" class="mat-form-field--inline" dir="rtl">
+
+
+
+  <mat-form-field  appearance="outline"   class="field">
+    <mat-label style="color: black; ">تاريخ الولادة</mat-label>
+    <input matInput [matDatepicker]="picker1"  [(ngModel)]="personnelForm.date_naissance">
+    <mat-datepicker-toggle [for]="picker1" matSuffix ></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  
+  
+  <mat-form-field appearance="outline"   class="field">
+    <mat-label style="color: black; ">مكان الولادة</mat-label>
+    <input matInput placeholder="مكان الولادة"    [(ngModel)]="personnelForm.lieu_naiss">
+    <mat-icon matSuffix>location_on</mat-icon>
+  </mat-form-field>
+
+</div>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   

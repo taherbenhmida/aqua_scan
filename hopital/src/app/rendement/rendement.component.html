@@ -1,0 +1,142 @@
+<div class="rendementbody">
+  <div class="titlecontainer">
+      <h1>Fish Transfer <img src="../../assets/images/wired-flat-220-arrow-9.gif" class="arrow"></h1>
+  </div>
+  <div class="card">
+      
+        <div class="card-head">
+          <img src="../../assets/images/transfert_arrow.png" class="transfert">
+        </div>
+     
+
+      <div class="card-body">
+        <div class="mat-elevation-z8" >
+              
+            <h4>Dispatched tank</h4>
+            <hr>
+            <div class="mat-elevation-z8_body">
+              <img src="../../assets/images/untitled-1.gif" class="Dispatched">
+              <form >
+                <mat-form-field class="select_tank" >
+                  <mat-label>Select a tank</mat-label>
+                  <mat-select [(ngModel)]="tankFromId" name="tankFromId" placeholder="Select Tank">
+                    <mat-optgroup *ngFor="let room of tanksByRoom" [label]="room.room.name">
+                      <mat-option *ngFor="let tank of room.tanks" [value]="tank.id">
+                        {{ tank.name }} ({{ tank.type }}, Capacity: {{ tank.capacity }}, Fish: {{ tank.number_of_fish }})
+                      </mat-option>
+                    </mat-optgroup>
+                  </mat-select>
+                </mat-form-field>                  
+                    
+                <mat-form-field >
+                  <mat-label>nb fish</mat-label>
+                    <input matInput type="number"  name="nb fish" [(ngModel)]="numberOfFish" placeholder="Nb fish">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput placeholder="Average Weight of Fish" [(ngModel)]="averageWeight" name="averageWeight" type="number">
+                </mat-form-field>
+
+                </form>
+                
+            </div>
+        </div>
+
+        <div class="mat-elevation-z8" >
+              
+              <h4>Received tank</h4>
+              <hr>
+              <div class="mat-elevation-z8_body">
+                <img src="../../assets/images/Fish in a bowl.gif" class="Received">
+                <form >
+                    <mat-form-field class="select_tank" >
+                      <mat-label>Select a tank</mat-label>
+                      <mat-select [(ngModel)]="tankToId" name="tankToId" placeholder="Select Tank">
+                        <mat-optgroup *ngFor="let room of tanksByRoom" [label]="room.room.name">
+                          <mat-option *ngFor="let tank of room.tanks" [value]="tank.id">
+                            {{ tank.name }} ({{ tank.type }}, Capacity: {{ tank.capacity }}, Fish: {{ tank.number_of_fish }})
+                          </mat-option>
+                        </mat-optgroup>
+                      </mat-select>
+
+                      
+                    </mat-form-field>                  
+                  
+                </form>
+              </div>
+              <div class="button">
+                <button mat-raised-button color="generate"  (click)="openConfirmDialog()" >
+                  <mat-icon>send</mat-icon>Confirm Transfer</button>
+              </div>
+        </div>
+           
+      </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head2">
+      <h5>List of transfer</h5>
+      <button mat-raised-button color="print" (click)="printTransferList()">
+        <mat-icon>print</mat-icon>Print transfer list</button>
+    </div>
+    <div class="card-body2">
+      <div class="filter">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input>
+        </mat-form-field>
+      </div>
+
+      <div class="list">
+        <mat-table [dataSource]="dataSource" matSort>
+          <!-- Dispatched Room Column -->
+          <ng-container matColumnDef="dispatchRoom">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Dispatched Room </mat-header-cell>
+            <mat-cell *matCellDef="let transfer"> {{ transfer.tank_from.room?.name || 'N/A' }} </mat-cell>
+          </ng-container>
+      
+          <!-- Dispatched Tank Column -->
+          <ng-container matColumnDef="dispatchTank">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Dispatched Tank </mat-header-cell>
+            <mat-cell *matCellDef="let transfer"> {{ transfer.tank_from.name }} </mat-cell>
+          </ng-container>
+      
+          <!-- Received Room Column -->
+          <ng-container matColumnDef="receiveRoom">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Received Room </mat-header-cell>
+            <mat-cell *matCellDef="let transfer"> {{ transfer.tank_to.room?.name || 'N/A' }} </mat-cell>
+          </ng-container>
+      
+          <!-- Received Tank Column -->
+          <ng-container matColumnDef="receiveTank">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Received Tank </mat-header-cell>
+            <mat-cell *matCellDef="let transfer"> {{ transfer.tank_to.name }} </mat-cell>
+          </ng-container>
+      
+          <!-- Number of Fish Column -->
+          <ng-container matColumnDef="numberOfFish">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Number of Fish </mat-header-cell>
+            <mat-cell *matCellDef="let transfer"> {{ transfer.number_of_fish }} </mat-cell>
+          </ng-container>
+      
+          <!-- Average Weight Column -->
+          <ng-container matColumnDef="averageWeight">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Average Weight </mat-header-cell>
+            <mat-cell *matCellDef="let transfer"> {{ transfer.average_weight }} </mat-cell>
+          </ng-container>
+      
+          <!-- Date of Transfer Column -->
+          <ng-container matColumnDef="dateOfTransfer">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Date of Transfer </mat-header-cell>
+            <mat-cell *matCellDef="let transfer"> {{ transfer.date_of_transfer | date:'short' }} </mat-cell>
+          </ng-container>
+      
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
+      
+
+      
+    </div>
+  </div>
+</div>

@@ -25,20 +25,6 @@ import {Observable} from 'rxjs';
 export class SettingsComponent implements AfterViewInit ,OnInit{
 
 
-  /////////////////////stepper
-  isLinear = false;
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-  thirdFormGroup = this._formBuilder.group({
-    thirdCtrl: ['', Validators.required],
-  });
-  stepperOrientation: Observable<StepperOrientation>;
-  ///////////////////////////
-
   ELEMENT_DATA !: userelement[];
   displayedColumns: string[] = ['action','last_login','date_joined','service', 'email', 'name','logged'];
   dataSource = new MatTableDataSource<userelement>(this.ELEMENT_DATA);
@@ -70,12 +56,7 @@ export class SettingsComponent implements AfterViewInit ,OnInit{
               private http: HttpClient,
               private router: Router,
               private matsnackbar:MatSnackBar,
-              private _formBuilder: FormBuilder, breakpointObserver: BreakpointObserver
-              ) {
-                this.stepperOrientation = breakpointObserver
-      .observe('(min-width: 800px)')
-      .pipe(map(({matches}) => (matches ? 'horizontal' : 'vertical')));
-              }
+              ) {}
   ngOnInit(): void {
     this.fetchUsers();
     this.form = this.formBuilder.group({
@@ -99,13 +80,14 @@ export class SettingsComponent implements AfterViewInit ,OnInit{
     })
   }
   submit(): void {
-      if (this.form.valid) {
+      if (!this.form.valid) {
+        return
+      }
         this.http.post('http://localhost:8000/api/register', this.form.getRawValue())
         .subscribe(() => this.fetchUsers());
         this.matsnackbar.open('تمت إضافة المستعمل بنجاح','',{
           duration: 3000
         });
-      }
   }
   fetchUsers(){
     this.dataservice.listUsers().subscribe((data) =>{
@@ -121,7 +103,7 @@ export class SettingsComponent implements AfterViewInit ,OnInit{
   }
 
    /** Announce the change in sort state for assistive technology. */
-   announceSortChange(sortState: Sort) {
+  announceSortChange(sortState: Sort) {
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
     } else {

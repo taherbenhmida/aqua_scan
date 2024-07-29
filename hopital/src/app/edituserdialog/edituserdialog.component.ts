@@ -37,7 +37,6 @@ export class EdituserdialogComponent implements OnInit {
       name: ['',Validators.required],
       last_name: ['',Validators.required],
       email: ['',Validators.required],
-      password: ['',Validators.required],
       service: ['',Validators.required],
       role: ['',Validators.required],
       sexe: ['',Validators.required],
@@ -55,6 +54,7 @@ export class EdituserdialogComponent implements OnInit {
       console.log(this.id);
       this.dataService.getSingleuser(this.id).subscribe(data=>{
         this.angForm.patchValue(data);
+        console.log(data)
       })
     })
   }

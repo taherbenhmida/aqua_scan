@@ -3,6 +3,23 @@ export const navbarData=[
         routerLink:'dashboard',
         icon:'fal fa-users',
         label:'متابعة الأفراد', 
+        
+    },
+    {
+        routerLink:'add',
+        icon:'fal fa-users',
+        label:'إضافة موظف', 
+        
+    },
+    {
+        routerLink:'update',
+        icon:'fal fa-users',
+        label:'تحيين الموظفين', 
+    },
+    {
+        routerLink:'delete',
+        icon:'fal fa-users',
+        label:'نقل موظف للأرشيف', 
     },
     {
         routerLink:'products',

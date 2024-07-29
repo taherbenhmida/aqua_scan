@@ -1,0 +1,132 @@
+/* Structure */
+.dialog_body {
+  width: 80vh; /* Adjusted to viewport width for better responsiveness */
+  max-height: 90vh; /* Limit height to 90% of the viewport height */
+  overflow: hidden; /* Hide overflow to prevent scrollbars */
+  box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+  display:contents;
+}
+
+/* Title styling */
+h2 {
+  text-align: center;
+  margin: 6px 0; /* Space above and below heading */
+}
+
+
+/* Adjust search field */
+.search {
+  width: 100%;
+}
+
+/* Adjust table styling */
+table {
+  width: 100%;
+}
+
+/* Form field styling */
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Center table data */
+td {
+  text-align: center;
+}
+
+/* Table row hover effect */
+.mat-row:hover {
+  background-color: #8adeda33;
+}
+
+/* Header cell styling */
+.mat-header-cell {
+  background-color: #06245e;
+  color: #f4f7fa;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* Sorting header container alignment */
+:host ::ng-deep .mat-sort-header-container { 
+  display: flex;  
+  justify-content: center;
+}
+
+/* Form styling */
+.tank-form {
+  //margin: 15px;
+  display: grid;
+  gap: 16px; /* Space between rows */
+}
+
+/* Row styling */
+.form-row {
+  display: flex;
+  gap: 16px; /* Space between form fields */
+  flex-wrap: wrap;
+}
+
+/* Form field styling */
+.form-field {
+  flex: 1;
+  min-width: 0; /* Allow fields to shrink to fit */
+}
+
+/* Button styling */
+button {
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+  gap: 8px; /* Space between icon and text */
+}
+
+/* Icon styling */
+mat-icon {
+  font-size: 20px; /* Adjust icon size if needed */
+}
+
+/* Snackbar styling */
+.mat-snack-bar-container {
+  background-color: #4caf50; /* Green background for success */
+  color: #fff; /* White text */
+}
+
+/* Tab group styling */
+mat-tab-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center tabs horizontally */
+}
+
+/* Tab styling */
+mat-tab {
+  //padding: 16px;
+  width: 100%; /* Make sure tabs take full width of their container */
+}
+
+/* Padding for each tab content */
+.Add_Tanks, .delete_tanks {
+  padding: 16px;
+  overflow: hidden; /* Prevent content overflow */
+}
+.table_fish{
+  margin-bottom: 20px;
+}
+/* Ensure no horizontal scrollbars */
+body, html {
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
+.mat-table {
+  width: 100%;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-header-cell, .mat-cell {
+  padding: 8px;
+  text-align: center;
+}

@@ -1,48 +1,30 @@
 <div *ngIf="loaderservice.isloading | async" class="load_container">
-    <mat-progress-bar mode="indeterminate" color=warn></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate" color="warn"></mat-progress-bar>
 </div>
 <mat-toolbar class="body" color="primary" [ngClass]="getBodyClass()">
-    <mat-icon class="icon" >menu</mat-icon>
-    <span>المستشفى العسكري الأصلي للتعليم بتونس</span>
+    
+    <span><img class="hopital" src="../../assets/images/imageedit_2_9474531117.png" alt="">Hergla Fish Farming<img class="hopital" src="../../assets/images/imageedit_2_9474531117_copy.png" alt=""></span>
     <div>
         <mat-icon 
-            routerLink="/afterlogin/dashboard"
+            routerLink="/afterlogin/home"
             class="icon"
-            matTooltip="الصفحة الرئيسية"
+            matTooltip="Home"
             matTooltipPosition="below"
             matTooltipClass="tooltipclass">
             home
         </mat-icon>
-        <mat-icon 
-            class="icon" 
-            [ngClass]="{'message' :true}" 
-            matBadge="15" 
-            matBadgeColor="warn" 
-            class="icon"
-            routerLink='login'
-            matTooltip="البريد الإلكتروني"
-            matTooltipPosition="below"
-            matTooltipClass="tooltipclass"> 
-            mail_outline
-        </mat-icon>
-        <mat-icon 
-            class="icon"
-            matTooltip="الإشعارات"
-            matTooltipPosition="below"
-            matTooltipClass="tooltipclass">
-            notifications
-        </mat-icon>
+        
         <mat-icon 
             routerLink="/afterlogin/editprofile"
             class="icon" 
-            matTooltip="إدخال تغييرات في الملف الشخصي"
+            matTooltip="Account"
             matTooltipPosition="below"
             matTooltipClass="tooltipclass">
             person
         </mat-icon>
         <mat-icon 
             class="icon"
-            matTooltip="تسجيل الخروج"
+            matTooltip="Logout"
             matTooltipPosition="below"
             matTooltipClass="tooltipclass"
             (click)="logout()">

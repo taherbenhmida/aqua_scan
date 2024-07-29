@@ -20,7 +20,8 @@
 }
 .body span{
     transition:all .5s ease;
-    margin-left: 35%;
+    //margin-left: 25%;
+    margin: auto;
     font-family: 'Katibeh';
     font-size: 25px;
 }
@@ -47,4 +48,16 @@
 }
 mat-progress-bar{
     border-radius: 10px;
+}
+.hopital{
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 50px;
+    width: 50px;
+}
+.acad{
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 70px;
+    width: 50px;
 }

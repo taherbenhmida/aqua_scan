@@ -17,29 +17,28 @@
           <li><a class="link_name" routerLink="/afterloginuser/home">الصفحة الرئيسية</a></li>
         </ul>
       </li>
-      <li [ngClass]="{showMenu : showsubemployee}">
+      <li [ngClass]="{showMenu : showsubemployee}" >
         <div class="iocn-link">
-          <a routerLink="/afterloginuser/dashboard">
-            <i class='fal fa-users'></i>
+          <a >
+            <i class='fal fa-users' ></i>
             <span class="link_name">متابعة الأفراد</span>
           </a>
           <i class='fal fa-chevron-down arrow' (click)="showemployee()" ></i>
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" routerLink="/afterloginuser/dashboard">متابعة الأفراد</a></li>
-          <li><a routerLink="/afterloginuser/modification"
+          <li><a class="link_name" >متابعة الأفراد</a></li>
+          <li><a routerLink="/afterloginuser/add"
                 routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}">إضافة موظف</a></li>
-          <li><a routerLink="/afterloginuser/modification"
+                [routerLinkActiveOptions]="{exact: true}"> إضافة موظف</a></li>
+          <li><a routerLink="/afterloginuser/update"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{exact: true}">تحيين بيانات موظف</a></li>
-          <li><a routerLink="/afterloginuser/modification"
+          <li><a routerLink="/afterloginuser/delete"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{exact: true}">نقل موظف للأرشيف</a></li>
         </ul>
       </li>
-      <li   [ngClass]="{showMenu : showsubarchive}"
-            routerLink="/afterloginuser/products"
+      <li   routerLink="/afterloginuser/products"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{exact: true}">
         <div class="iocn-link">
@@ -47,20 +46,14 @@
             <i class='fal fa-box-open'></i>
             <span class="link_name">متابعة الأرشيف</span>
           </a>
-          <i class='fal fa-chevron-down arrow' (click)="showarchive()" ></i>
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" routerLink="/afterloginuser/products">متابعة الأرشيف</a></li>
-          <li><a>Web Design</a></li>
-          <li><a >Login Form</a></li>
-          <li><a >Card Design</a></li>
         </ul>
       </li>
       
-      <li   [ngClass]="{showMenu : showsubusually}"
-            routerLink="/afterloginuser/coupens" 
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">
+      
+      <li   [ngClass]="{showMenu : showsubusually}">
         <div class="iocn-link">
           <a >
             <i class='fal fa-calendar' ></i>
@@ -69,22 +62,10 @@
           <i class='fal fa-chevron-down arrow' (click)="showusualywork()" ></i>
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" routerLink="/afterloginuser/coupens">متابعة الأعمال الدورية</a></li>
-          <li><a routerLink="/afterloginuser/coupens">إعداد جدول الوسام العسكري</a></li>
-          <li><a routerLink="/afterloginuser/coupens">إعداد جدول الترقية السنوي</a></li>
-          <li><a routerLink="/afterloginuser/coupens">إعداد و متابعة الأعداد السنوية</a></li>
-          <li><a routerLink="/afterloginuser/coupens">متابعة منحة الإنتاج</a></li>
-        </ul>
-      </li>
-      <li routerLink="/afterloginuser/pages"
+          <li><a class="link_name" routerLink="/afterloginuser/rendement">متابعة الأعمال الدورية</a></li>
+          <li><a routerLink="/afterloginuser/rendement"
             routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}" >
-        <a >
-          <i class='fal fa-file' ></i>
-          <span class="link_name">متابعة الرخص و مختلف الوضعيات</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" routerLink="/afterloginuser/pages">متابعة الرخص و مختلف الوضعيات</a></li>
+            [routerLinkActiveOptions]="{exact: true}">متابعة منحة الإنتاج</a></li>
         </ul>
       </li>
       
@@ -95,8 +76,8 @@
         <img src="../../assets/images/doctor.jpg" alt="profileImg">
       </div>
       <div class="name-job">
-        <div class="profile_name">Prem Shahi</div>
-        <div class="job">User </div>
+        <div class="profile_name">{{name}}<span style="margin-left: 15px;">ال{{grade}}</span></div>
+        <div class="job">{{role}}</div>
       </div>
       <i class='fal fa-sign-out' ></i>
     </div>

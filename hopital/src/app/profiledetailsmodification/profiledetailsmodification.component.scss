@@ -11,6 +11,14 @@
     justify-content: space-between;
 }
 .card{
+    display: flex;
+    margin-left: auto;
+    margin: 15px;
+    border-radius: 20px;
+}
+.card1{
+    display: flex;
+    margin-right: auto;
     margin: 15px;
     border-radius: 20px;
 }

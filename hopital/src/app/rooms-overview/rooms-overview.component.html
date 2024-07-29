@@ -1,0 +1,249 @@
+<div class="row">
+  <div class="room-select-container">
+    <h6 class="room_selector">Select the Room :</h6>
+    <mat-form-field>
+      <mat-label>Select Room</mat-label>
+      <mat-select [(value)]="selectedRoom">
+        <mat-option *ngFor="let room of rooms" [value]="room">
+          {{ room }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fas fa-fish nc-globe text-warning"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Fish</p>
+              <p class="card-title">6500</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-refresh"></i> 2 time greater than last year
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fas fa-archive nc-money-coins text-success"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Tanks</p>
+              <p class="card-title">250</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-calendar-o"></i> Last day
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fas fa-syringe nc-favourite-28 text-primary"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8"> 
+            <div class="numbers">
+              <p class="card-category">Last vaccination</p>
+              <p class="card-title">09/04/2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-angle-double-right"></i> Next vaccination in 2 weeks
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fas fa-water nc-favourite-28 text-primary"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Last water change</p>
+              <p class="card-title">15/05/2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-angle-double-right"></i> View change history
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="card ">
+      <div class="card-header ">
+        <h5 class="card-title">Tanks Saturation :</h5>
+      </div>
+      <div  class="card-body chartEmail">
+        <canvas id="saturation_chart"></canvas>
+      </div>
+      <div class="card-footer ">
+        
+        <hr>
+        <div class="stats_category">
+          This graph represents the saturation of tanks in percentage
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card card-stats">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fas fa-weight-scale nc-globe text-warning"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Average weight </p>
+              <p class="card-title">220 g</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-angle-double-right"></i> View details 
+        </div>
+      </div>
+    </div>
+    
+    <div class="card card-stats">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fas fa-check nc-globe text-success"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Food Comsumed Today </p>
+              <p class="card-title">50 kg</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-angle-double-right"></i> View consumption history
+        </div>
+      </div>
+    </div>
+    
+    <div class="card card-stats">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fas fa-undo nc-globe text-danger"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Food Rejected Today </p>
+              <p class="card-title">12 kg</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-angle-double-right"></i> View Rejection history
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <mat-tab-group class="full-width-tabs" mat-align-tabs="center" [selectedIndex]=0 (selectedTabChange)="onTabChange($event)">
+        <mat-tab label="Fish Mortality">
+          <div class="card-header Mortality">
+            <h5 class="card-title">Mortality Monitoring</h5>
+            <p class="card-category pie">15 Days performance</p>
+          </div>
+          <div class="card-body">
+            <canvas id="chartHours" width="400" height="100"></canvas>
+          </div>
+          <div class="card-footer">
+            <hr>
+            <div class="stats">
+              <span class="mortality_span">- 380</span> Fish today
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Fish Morbidity">
+          <div class="card-header">
+            <h5 class="card-title">Morbidity Monitoring</h5>
+            <p class="card-category pie">15 Days performance</p>
+          </div>
+          <div class="card-body">
+            <canvas id="Morbidity_chart" width="400" height="100"></canvas>
+          </div>
+          <div class="card-footer">
+            <hr>
+            <div class="stats">
+              <span class="mortality_span">85</span> Fish today!
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>

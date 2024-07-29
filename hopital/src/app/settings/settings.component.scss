@@ -1,5 +1,20 @@
+.pagesbody{
+  background-color: #f4f7fa;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+}
+.titlecontainer{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+h1{
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
 .component{
-    text-align: right;
     display: flex;
     flex-direction:column;
     border-radius:20px;
@@ -15,6 +30,7 @@ table {
 .header{
     font-size: larger;
     font-weight: bold;
+    background-color: #B5D6D6;
 }
 :host ::ng-deep .mat-sort-header-container { 
     display: flex;  
@@ -30,17 +46,16 @@ td, th {
     text-align: right;
   }
 
+
 .delete{
   margin-right: 20px;
 }
 .field{
   width:20px;
-  height: 100px;
   text-align: right;
+  font-size: 12px;
 }
-input{
-  text-align: right;
-}
+
 .example-stepper {
   margin-top: 8px;
 }

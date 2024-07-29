@@ -1,162 +1,175 @@
-<div class=" d-flex justify-content-between">
-    <div class="col-sm-8 component">
-        <h4>قائمة المستعملين</h4>
-        <div class="mat-elevation-z8">
-            <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
-              
-              <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header class="header" mat-sort-header sortActionDescription="Sort by symbol"> الإسم </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-              </ng-container>
+<div class="pagesbody">
+  <div class="titlecontainer">
+    <h1>Settings <img src="../../assets/images/settings.gif" alt="" style="width: 50px; height: 50px;margin-top: -12px;"></h1>
+  </div>
+  <div class=" d-flex justify-content-between">
+      <div class="col-sm-8 component">
+          <h4>List of Users </h4>
+          <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
+                
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header class="header" mat-sort-header sortActionDescription="Sort by symbol"> First name </th>
+                  <td mat-cell *matCellDef="let element"class="td"> {{element.name}} </td>
+                </ng-container>
 
-              <ng-container matColumnDef="email">
-                <th mat-header-cell *matHeaderCellDef class="header" mat-sort-header sortActionDescription="Sort by weight"> البريد الإلكتروني </th>
-                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-              </ng-container>
-          
-              <ng-container matColumnDef="service">
-                <th mat-header-cell *matHeaderCellDef class="header" mat-sort-header sortActionDescription="Sort by name"> المصلحة </th>
-                <td mat-cell *matCellDef="let element"> {{element.service}} </td>
-              </ng-container>
-              
-              <ng-container matColumnDef="date_joined">
-                <th mat-header-cell *matHeaderCellDef class="header" mat-sort-header >تاريخ التسجيل</th>
-                <td mat-cell *matCellDef="let element"> {{element.date_joined}} </td>
-              </ng-container>
+                <ng-container matColumnDef="email">
+                  <th mat-header-cell *matHeaderCellDef class="header" mat-sort-header sortActionDescription="Sort by weight">Email</th>
+                  <td mat-cell *matCellDef="let element"class="td"> {{element.email}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="service">
+                  <th mat-header-cell *matHeaderCellDef class="header" mat-sort-header sortActionDescription="Sort by name"> Service </th>
+                  <td mat-cell *matCellDef="let element"class="td"> {{element.service}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="date_joined">
+                  <th mat-header-cell *matHeaderCellDef class="header" mat-sort-header >Date of Signup</th>
+                  <td mat-cell *matCellDef="let element"class="td"> {{element.date_joined | date:'shortDate'}} </td>
+                </ng-container>
 
-              <ng-container matColumnDef="last_login">
-                <th mat-header-cell *matHeaderCellDef class="header" mat-sort-header > آخر تسجيل دخول </th>
-                <td mat-cell *matCellDef="let element"> {{element.last_login}} </td>
-              </ng-container>
+                <ng-container matColumnDef="last_login">
+                  <th mat-header-cell *matHeaderCellDef class="header" mat-sort-header >last login</th>
+                  <td mat-cell *matCellDef="let element"class="td"> {{element.last_login}} </td>
+                </ng-container>
 
-              <ng-container matColumnDef="logged">
-                <th mat-header-cell *matHeaderCellDef class="header" mat-sort-header ></th>
-                <td mat-cell *matCellDef="let element"><i class="fa fa-circle inactive" [ngClass]="{'active': element.logged === 'true', 'inactive' : element.logged === 'false' }"></i></td>
-              </ng-container>
+                <ng-container matColumnDef="logged">
+                  <th mat-header-cell *matHeaderCellDef class="header" mat-sort-header ></th>
+                  <td mat-cell *matCellDef="let element" class="td"><i class="fa fa-circle inactive" [ngClass]="{'active': element.logged === 'true', 'inactive' : element.logged === 'false' }"></i></td>
+                </ng-container>
 
-              <ng-container matColumnDef="action" >
-                <th mat-header-cell *matHeaderCellDef class="header" mat-sort-header sortActionDescription="Sort by action"> اجراءات </th>
-                <td  mat-cell *matCellDef="let element"> 
-                  <button 
-                    class="delete"
-                    mat-mini-fab 
-                    color="warn" 
-                    (click)="deleteUser(element.id)">
-                    <mat-icon>delete</mat-icon>
-                  </button>
-                  <button (click)="opendialog(element.id)"
-                    mat-mini-fab 
-                    color="primary" >
-                    <mat-icon>edit</mat-icon>                  
-                  </button> 
-                </td>
-              </ng-container>
-       
-              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-          
-            <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                           showFirstLastButtons 
-                           aria-label="Select page of periodic elements">
-            </mat-paginator>
-          </div>
-          
-    </div>
-
-    <div class="col component">
-      <h4>إضافة مستعمل جديد</h4>
-      <form [formGroup]="form" (submit)="submit()">
+                <ng-container matColumnDef="action" >
+                  <th mat-header-cell *matHeaderCellDef class="header" mat-sort-header sortActionDescription="Sort by action"> Actions  </th>
+                  <td  mat-cell *matCellDef="let element" class="td"> 
+                    <button 
+                      class="delete"
+                      mat-icon-button
+                      color="warn" 
+                      (click)="deleteUser(element.id)">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                    <button (click)="opendialog(element.id)"
+                      mat-icon-button
+                      color="primary" >
+                      <mat-icon>edit</mat-icon>                  
+                    </button> 
+                  </td>
+                </ng-container>
         
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            
+              <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                            showFirstLastButtons 
+                            aria-label="Select page of periodic elements">
+              </mat-paginator>
+            </div>
+            
+      </div>
 
-        <div class="row">
-          <mat-form-field class="col field"  appearance="outline">
-            <mat-label>اللقب</mat-label>
-            <input  formControlName="last_name" matInput #input maxlength="10" placeholder="اللقب">
-          </mat-form-field>
-
-          <mat-form-field class="col field"  appearance="outline">
-            <mat-label>الإسم</mat-label>
-            <input  formControlName="name" matInput #input maxlength="10" placeholder="الإسم">
-          </mat-form-field>
-        </div>
-
-        <div class="row">
-          <mat-form-field class="col field"  appearance="outline">
-            <mat-label>تاريخ الميلاد</mat-label>
-            <input  formControlName="date_de_naissance" matInput #input maxlength="10" placeholder="12/12/1999">
-          </mat-form-field>
+      <div class="col component">
+        <h4>Add New User</h4>
+        <form [formGroup]="form" (submit)="submit()" dir="rtl">
           
-          <mat-form-field class="col field"  appearance="outline">
-            <mat-label>الهاتف</mat-label>
-            <input  formControlName="phone" matInput #input maxlength="10" placeholder="22000000">
-          </mat-form-field>
-        </div>
 
-        <div class="row">
-          <mat-form-field class="col field" appearance="outline">
-            <mat-label>الخطة</mat-label>
-            <mat-select formControlName="role">
-              <mat-option value="user">user</mat-option>
-              <mat-option value="teminal">terminal</mat-option>
-            </mat-select>
-          </mat-form-field>
-  
-          <mat-form-field class="col field" appearance="outline">
-            <mat-label>المصلحة</mat-label>
-            <mat-select formControlName="service">
-              <mat-option value="pediatre">pediatre</mat-option>
-              <mat-option value="neuro">neuro</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
+          <div class="row">
+            <mat-form-field class="col field"  appearance="outline">
+              <mat-label>Last name</mat-label>
+              <input  formControlName="last_name" matInput #input  placeholder="Last name">
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
 
-        <div class="row">
-          <mat-form-field class="col field" appearance="outline">
-            <mat-label>الجنس</mat-label>
-            <mat-select formControlName="sexe">
-              <mat-option value="ذكر">ذكر</mat-option>
-              <mat-option value="ٱنثى">ٱنثى</mat-option>
-            </mat-select>
-          </mat-form-field>
+            <mat-form-field class="col field"  appearance="outline">
+              <mat-label>First name</mat-label>
+              <input  formControlName="name" matInput #input  placeholder="First name">
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+          </div>
 
-          <mat-form-field class="col field" appearance="outline">
-            <mat-label>الولاية</mat-label>
-            <mat-select formControlName="state">
-              <mat-option value="بنزرت">بنزرت</mat-option>
-              <mat-option value="تونس">تونس</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
+          <div class="row">
+            <mat-form-field class="col field"  appearance="outline">
+              <mat-label>Birthday</mat-label>
+              <input formControlName="date_de_naissance" matInput [matDatepicker]="picker" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            
+            <mat-form-field class="col field"  appearance="outline">
+              <mat-label>Phone</mat-label>
+              <input  formControlName="phone" matInput #input  placeholder="22000000">
+              <mat-icon matSuffix>phone</mat-icon>
+            </mat-form-field>
+          </div>
 
-        <div class="row">
-          <mat-form-field class="col field"  appearance="outline">
-            <mat-label>مكان السكن</mat-label>
-            <input  formControlName="adresse" matInput #input maxlength="10" placeholder="مكان السكن">
-          </mat-form-field>
-  
-          <mat-form-field class="col field"  appearance="outline">
-            <mat-label>المدينة</mat-label>
-            <input  formControlName="city" matInput #input maxlength="10" placeholder="المدينة">
-          </mat-form-field>
-        </div>
+          <div class="row">
+            <mat-form-field class="col field" appearance="fill">
+              <mat-label>Role</mat-label>
+              <mat-select formControlName="role">
+                <mat-option value="user">user</mat-option>
+                <mat-option value="terminal">terminal</mat-option>
+              </mat-select>
+            </mat-form-field>
+    
+            <mat-form-field class="col field" appearance="fill">
+              <mat-label>Service</mat-label>
+              <mat-select formControlName="service">
+                <mat-option value="pediatre">pediatre</mat-option>
+                <mat-option value="neuro">neuro</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
 
-        <div class="row">
-          <mat-form-field class="col field" appearance="outline">
-            <mat-label>البريد الإلكتروني</mat-label>
-            <input formControlName="email" type="email" matInput placeholder="pat@example.com" [formControl]="email" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-          </mat-form-field>
-  
-          <mat-form-field class="col field" appearance="outline">
-            <mat-label>كلمة السر</mat-label>
-            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-          </mat-form-field>
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">تسجيل</button>
-      </form>
-    </div> 
+          <div class="row">
+            <mat-form-field class="col field" appearance="fill">
+              <mat-label>Gender</mat-label>
+              <mat-select formControlName="sexe">
+                <mat-option value="male">male</mat-option>
+                <mat-option value="female">female</mat-option>
+              </mat-select>
+              <mat-icon matSuffix>male</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="col field" appearance="fill">
+              <mat-label>State</mat-label>
+              <mat-select formControlName="state">
+                <mat-option value="Bizerte">Bizerte</mat-option>
+                <mat-option value="Tunis">Tunis</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <mat-form-field class="col field"  appearance="outline">
+              <mat-label> Adresse</mat-label>
+              <input  formControlName="adresse" matInput #input  placeholder="Adresse">
+              <mat-icon matSuffix>house</mat-icon>
+            </mat-form-field>
+    
+            <mat-form-field class="col field"  appearance="outline">
+              <mat-label>City</mat-label>
+              <input  formControlName="city" matInput #input  placeholder="City">
+              <mat-icon matSuffix>location_city</mat-icon>
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <mat-form-field class="col field" appearance="outline">
+              <mat-label> Email</mat-label>
+              <input formControlName="email" type="email" matInput placeholder="pat@example.com" [formControl]="email" required>
+              <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+    
+            <mat-form-field class="col field" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Register<mat-icon style="margin-right: 25px;vertical-align: middle;">person_add</mat-icon></button>
+        </form>
+      </div> 
+  </div>
 </div>

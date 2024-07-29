@@ -1,55 +1,61 @@
 <div class="row">
     <div class="col-md-6">
-        <img src="../../assets/images/undraw_remotely_2j6y.svg" alt="">
+        <img src="../../assets/images/undraw_fish_bowl_uu88.svg" alt="" class="image">
     </div>
     <div class="col-md-6">
 <!-- Section -->
         <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
-            <div class="container">
+            <div class="container" >
                 <div class="row justify-content-center form-bg-image" >
-                    <div class="col-12 d-flex align-items-center justify-content-center">
-                        <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                    <div class="col-12 d-flex align-items-center flex-column" >
+                        <div class="shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500" [ngClass]="{'faux_coordonees': coordonnees == false}">
                             <div class="text-center text-md-center mb-4 mt-md-0">
-                                <h1 class="mb-0 h3"> تسجيل الدخول للمنظومة</h1>
+                                <h1 class="mb-0 h3">Login Here</h1>
                             </div>
                             <form [formGroup]="form" (submit)="submit()" class="mt-4">
                                 <!-- Form -->
                                 <div class="row form">
+                                    <label for="name" class="col"> User name </label>
                                     <mat-form-field class="col" appearance="outline">
-                                        <mat-label>Enter your email</mat-label>
-                                        <input formControlName="email" matInput placeholder="pat@example.com" [formControl]="email" required>
-                                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                                        <mat-label>User name</mat-label>
+                                        <input id="name" formControlName="name" matInput placeholder="User name"  required >
                                         <button mat-icon-button matSuffix >
-                                            <mat-icon>mail</mat-icon>
+                                            <mat-icon>person_pin</mat-icon>
                                         </button>
                                     </mat-form-field>
-                                    <label for="" class="col">البريد الإلكتروني </label>
+                                    
                                 </div>
                                 
                                 <!-- End of Form -->
                                 <div class="form-group">
                                     <!-- Form -->
                                     <div class="row form">
+                                        <label for="pass" class="col">password</label>
                                         <mat-form-field class="col" appearance="outline">
-                                            <mat-label>Enter your password</mat-label>
-                                            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" >
+                                            <mat-label>password</mat-label>
+                                            <input id="pass" formControlName="password" matInput [type]="hide ? 'password' : 'text'" required>
                                             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                             </button>
                                         </mat-form-field>
-                                        <label for="" class="col">كلمة السر</label>
+                                        
                                      </div> 
                                     <!-- End of Form -->
                                     
                                 </div>
                                 <button
                                     type="submit" 
-                                    class="waves-effect waves-green"
                                     mat-raised-button 
-                                    color="primary">
-                                    تسجيل الدخول
+                                    color="primary"
+                                    [disabled]="!form.valid"
+                                    >
+                                     Login
                                 </button>
+                                
                             </form>
+                        </div>
+                        <div *ngIf="coordonnees == false" class="shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500 invalide " [ngClass]="{'faux_coordonees': coordonnees == false}">
+                            <p>Wrong data !</p>
                         </div>
                     </div>
                 </div>

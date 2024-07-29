@@ -20,9 +20,10 @@
 }
 .body span{
     transition:all .5s ease;
-    margin-left: 35%;
+    //margin-left: 25%;
+    margin: auto;
     font-family: 'Katibeh';
-    font-size: 25px;
+    font-size: 35px;
 }
 .body div{
     position: absolute;
@@ -31,14 +32,20 @@
     
 }
 .icon{
-    margin: 10px;
+    margin: 10px 10px 5px;
+    font-size: 30px;
 }
 .message{
     color: rgb(245, 61, 61);
 }
 .icon:hover{
-    color: greenyellow;
+    color: rgb(6, 227, 51);
+    
     cursor: pointer;
+  }
+
+  ::ng-deep .mat-tooltip {
+    font-size: 14px; /* Set desired font size */
   }
 .load_container{
     position: fixed;
@@ -47,4 +54,16 @@
 }
 mat-progress-bar{
     border-radius: 10px;
+}
+.hopital{
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 70px;
+    width: 70px;
+}
+.acad{
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 70px;
+    width: 50px;
 }

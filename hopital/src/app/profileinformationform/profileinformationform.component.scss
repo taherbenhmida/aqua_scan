@@ -19,3 +19,47 @@
   background-position: center;
   background-size: cover;
 }
+
+.mat-form-field--inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mat-form-field--inline .mat-form-field {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.mat-form-field--inline .mat-form-field:nth-child(1) {
+  margin-left: 20px;
+}
+.mat-form-field--inline .mat-form-field:nth-child(2) {
+  margin-left: 20px;
+}
+.mat-form-field--inline .mat-form-field:nth-child(3) {
+  margin-left: 20px;
+}
+.field{
+  font-size: 12px ; 
+  font-weight: bolder;
+  width: 50%;
+}
+.image{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+.avatar{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 70px;
+  width: 70px;
+  border-radius: 10px
+
+}
+.avatar:hover{
+  cursor: pointer;
+}

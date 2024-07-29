@@ -1,0 +1,191 @@
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6" >
+      <div class="card card-stats"(click)="openDialog_Fish()">
+        <div class="card-body " >
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="fas fa-fish nc-globe text-warning"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8" *ngIf="numFish!== undefined">
+              <div class="numbers">
+                <p class="card-category">Fish</p>
+                <p class="card-title">{{ numFish }} <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            Seabream : {{seabreamCount}} | Seabass : {{seabassCount}} 
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats"(click)="openDialog_Tank()">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="fas fa-archive nc-money-coins text-success"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8" *ngIf="numTanks!== undefined">
+              <div class="numbers">
+                <p class="card-category">Tanks</p>
+                <p class="card-title">{{ numTanks }}
+                  <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-calendar-o"></i> Last day
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6" >
+      <div class="card card-stats"(click)="openDialog_Room()">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="fas fa-archway nc-vector text-danger"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8" *ngIf="numRooms !== undefined" >
+              <div class="numbers">
+                <p class="card-category">Rooms</p>
+                <p class="card-title">{{ numRooms }}<p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-clock-o"></i> In the last hour
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="fas fa-syringe nc-favourite-28 text-primary"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category">Last vaccination</p>
+                <p class="card-title">09/04/2024
+                  <p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-angle-double-right"></i> Next vaccination in 2 weeks
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card ">
+        <div class="card-header ">
+          <h5 class="card-title">Fish Species Percentage</h5>
+          <p class="card-category pie">This department contains two species of fish</p>
+        </div>
+        <div  class="card-body chartEmail">
+          <canvas id="chartEmail" class="custom-canvas"></canvas>
+        </div>
+        <div class="card-footer ">
+          <div class="legend">
+            <p><i class="fa fa-circle " style="color: #4acccd;"></i> Seabass fish {{seabassCount}} </p>
+            <p><i class="fa fa-circle " style="color: #fcc468;"></i> Seabream fish {{seabreamCount}} </p>
+          </div>
+          <hr>
+          <div class="stats_category">
+            Fish are classified according to these 2 species
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card card-chart">
+        <div class="card-header">
+          <h5 class="card-title">Consumption Monitoring </h5>
+          <p class="card-category">Average food consumption per month</p>
+        </div>
+        <div class="card-body">
+          <canvas id="speedChart" width="400" height="180"></canvas>
+        </div>
+        <div class="card-footer">
+          <div class="chart-legend">
+            <i class="fa fa-circle text-info"></i> Food type 1
+            <i class="fa fa-circle text-warning"></i> Food type 2
+          </div>
+          <hr/>
+          <div class="card-statsk">
+            <span class="food_span"> + 50 </span> kg returned this day
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      
+      <div class="card">
+        <mat-tab-group mat-align-tabs="center" (selectedTabChange)="onTabChange($event)">
+          <mat-tab label="Fish Mortality">
+            <div class="card-header Mortality">
+              <h5 class="card-title">Mortality Monitoring</h5>
+              <p class="card-category pie">15 Days performance</p>
+            </div>
+            <div class="card-body">
+              <canvas id="chartHours" width="400" height="100"></canvas>
+            </div>
+            <div class="card-footer">
+              <hr>
+              <div class="stats">
+                <span class="mortality_span">- 380</span> Fish today
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="Fish Morbidity">
+            <div class="card-header ">
+              <h5 class="card-title">Morbidity Monitoring</h5>
+              <p class="card-category pie">15 Days performance</p>
+            </div>
+            <div class="card-body">
+              <canvas id="Morbidity_chart" width="400" height="100"></canvas>
+            </div>
+            <div class="card-footer">
+              <hr>
+              <div class="stats">
+                <span class="mortality_span">85</span> Fish today ! 
+              </div>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+      
+    </div>
+  </div>
+  

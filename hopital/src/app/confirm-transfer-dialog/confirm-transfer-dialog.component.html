@@ -1,0 +1,14 @@
+<!-- confirm-transfer-dialog.component.html -->
+<h2 mat-dialog-title>Confirm Fish Transfer</h2>
+<mat-dialog-content class="content">
+  <p>you are about to transfer {{data.numberOfFish}} fish from tank {{data.tankFromId}} to tank {{data.tankToId}}</p>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <img src="../../assets/images/envio-05.jpg" alt="Confirmation Image" class="dialog-image">
+    <p>Are you sure you want to proceed?</p>
+</mat-dialog-content>
+
+
+<mat-dialog-actions align="end">
+    <button mat-button  (click)="onCancel()">Cancel</button>
+    <button mat-raised-button color="primary" cdkFocusInitial (click)="onConfirm()">ok</button>
+</mat-dialog-actions>

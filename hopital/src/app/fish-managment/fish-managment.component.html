@@ -1,0 +1,59 @@
+<div class="dialog_body">
+    <h2 mat-dialog-title>Fish Management</h2>
+    <div class="fish_details">
+      <div class="fish_types">
+        <div class="seabream">
+          <img src="../../assets/images/seabream.jpg" alt="seabream" class="seabream_image">
+          <p>seabream fish :  {{ seabreamCount  }}</p>
+        </div>
+        <div class="seabass">
+          <img src="../../assets/images/seabass-scandinavian-fishing-year-book_5.jpg" alt="seabass" class="seabass_image">
+          <p>seabass fish :  {{ seabassCount }}</p>
+        </div>
+      </div>
+    </div>
+    <mat-dialog-content class="mat-typography">
+        <mat-form-field class="search">
+          <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+        </mat-form-field>      
+        <div class="mat-elevation-z8 table_fish">        
+          <mat-table [dataSource]="dataSource" matSort >
+
+            <!-- Tank Name Column -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Tanks </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+        
+            <!-- Room Name Column -->
+            <ng-container matColumnDef="room_name">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Rooms </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.room.name}} </mat-cell>
+            </ng-container>
+        
+            <!-- Type Column -->
+            <ng-container matColumnDef="type">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+            </ng-container>
+        
+            <!-- Number of Fish Column -->
+            <ng-container matColumnDef="number_of_fish">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Number of Fish </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.number_of_fish}} </mat-cell>
+            </ng-container>
+        
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        </div>
+      
+    </mat-dialog-content>
+  
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-raised-button color="primary" mat-dialog-close>Done</button>
+    </mat-dialog-actions>
+  </div>
+  

@@ -1,0 +1,66 @@
+<!-- tanks.component.html -->
+<mat-tab-group *ngIf="tanks.length > 0"  >
+    <mat-tab *ngFor="let tank of tanks" [label]="tank.name">
+      <form [formGroup]="tankForm" >
+        <div class=" mat-form-field--inline">
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">Nombre</mat-label>
+            <input matInput placeholder="Nombre" type="number" >
+            <mat-icon matSuffix>matSuffix</mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="outline"  class="field" >
+            <mat-label style="color: black; ">Poids Moyen</mat-label>
+            <input matInput placeholder="Poids en kg" type="number" >
+            <mat-icon matSuffix>balance</mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="field">
+            <mat-label style="color: black; "> Biomasse</mat-label>
+            <input matInput placeholder="Biomasse" type="number" >
+            <mat-icon matSuffix>pin</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class=" mat-form-field--inline">
+          <mat-form-field appearance="outline" class="field">
+            <mat-label style="color: black; ">Taux de rationnement</mat-label>
+            <input matInput placeholder="Taux de rationnement" type="number" >
+            <mat-icon matSuffix>percent</mat-icon>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="field">
+            <mat-label style="color: black; "> Quantité aliment</mat-label>
+            <input matInput placeholder="Quantité aliment" type="number" >
+            <mat-icon matSuffix>truck</mat-icon>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="field">
+            <mat-label style="color: black; "> Fournisseur</mat-label>
+            <input matInput placeholder="Fournisseur" type="number" >
+            <mat-icon matSuffix> local_shipping</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <div class=" mat-form-field--inline">
+          <mat-form-field appearance="outline" class="field">
+            <mat-label style="color: black; "> Granulométrie</mat-label>
+            <input matInput placeholder="Granulométrie" type="number" >
+            <mat-icon matSuffix>settings_ethernet</mat-icon>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="field">
+            <mat-label style="color: black; "> Numero de lot</mat-label>
+            <input matInput placeholder="Numero de lot" type="number" >
+            <mat-icon matSuffix>pin</mat-icon>
+          </mat-form-field>
+        </div>
+        <!-- Add more form controls as needed -->
+      </form>
+      <div class="tank-buttons-container">
+        <button mat-raised-button color="primary" (click)="removeTank(tank.id)">
+            <mat-icon>delete</mat-icon>Tank</button>
+        <button mat-raised-button color="primary" (click)="addTank()">
+            <mat-icon>add</mat-icon>Tank</button>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  

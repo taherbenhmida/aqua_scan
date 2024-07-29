@@ -1,0 +1,267 @@
+
+.pagesbody{
+    background-color: #f4f7fa;
+    padding: 3rem;
+    min-height: 100vh;
+}
+.titlecontainer{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+h1{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+img{
+    height: 25px;
+    width: 25px;
+}
+mat-form-field{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.mat-historique{
+    background-color: #5D576B;
+    color: #fff;
+}
+.mat-confirmer{
+    background-color: #2081C3;
+    color: #fff;
+}
+.nursery_stats{
+    height: 180vh;
+}
+.example-stepper {
+    margin-top: 8px;
+  }
+  
+  .mat-mdc-form-field {
+    margin-top: 16px;
+  }
+  .tank-tab-container {
+    
+    height: 100px;
+  }
+  
+  .tank-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Add margin to separate buttons from content */
+    margin-bottom: 20px;
+  }
+  
+  
+  
+  .mat-form-field--inline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .mat-form-field--inline .mat-form-field {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+  }
+  
+  
+  .field{
+    font-size: 12px ; 
+    width: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+.tank_selection{
+    width: 100%;
+}
+.mat-success {
+    background-color: #99e1d9;
+    color: #000;
+}
+.mat-generate {
+    width: 40%;
+    background-color: #99e1d9;
+    color: #000;
+}
+.mat-print {
+    width: 35%;
+    background-color: #5D576B;
+    color: #fff; 
+}
+
+.pagesbody{
+    background-color: #f4f7fa;
+    padding: 2rem;
+    min-height: 100vh;
+}
+.titlecontainer{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+h1{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+.card1{
+    height: 60vh;
+    background-color: #fff;
+}
+.card2{
+    height: 60vh;
+    background-color: #fff;
+
+}
+.card_performances{
+    margin-top: 20px;
+    margin-left: 13px;
+    margin-right: 13px;
+    background-color: #fff;
+}
+
+img{
+    height: 25px;
+    width: 25px;
+}
+mat-form-field{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.mat-historique{
+    background-color: #5D576B;
+    color: #fff;
+}
+.mat-confirmer{
+    background-color: #2081C3;
+    color: #fff;
+}
+
+.send{
+margin-top: 20px;}
+.Performances{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin: 20px;
+    width: 15%;
+}
+.select_tank{
+    width: 30%;
+}
+.row_1{
+    display: flex;
+    justify-content: flex-start;
+}
+.row_2{
+    margin-top: 10px;
+}
+h6{
+    text-align: center;
+}
+p{
+    margin-top: 15px;
+}
+span{
+    color: #08ae76;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card-gauge{
+    display: flex;
+    justify-content: center;
+}
+.card1-gauge{
+    height: 50vh;
+    background-color: #fff;
+}
+.card1-indice{
+    height: 10vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+}
+.indice{
+    margin-top: -10px;
+    font-size: 35px;
+}
+.fish_feeding{
+    background-image: url(../../assets/images/fish_feeding.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.card1-plot{
+    height: 80vh;
+    background-color: #fff;
+}
+.plot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+.plot-parameter-container{
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+}
+.curve_parameter{
+    width: 100%;
+}
+.thermometer-background{
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    height: 35%;
+    width: 35%;
+    margin-right: 8%;
+    margin-bottom: 50px;
+    background-image: url(../../assets/images/temperature.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+  .plot-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures the image doesn't overflow its container */
+  }
+  
+  .plot-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto; /* Ensures the image respects its aspect ratio */
+    height: auto; /* Ensures the image respects its aspect ratio */
+  }
+.actions_buttons{
+    display: flex;
+    flex-direction: column;
+    
+}
+@media print {
+    .plot-wrapper {
+      width: 100%;
+      text-align: center;
+    }
+    .plot-wrapper img {
+      width: 100%;
+      height: auto;
+    }
+  }

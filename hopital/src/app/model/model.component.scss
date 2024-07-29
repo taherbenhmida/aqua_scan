@@ -1,0 +1,96 @@
+table {
+    width: 100%;
+      }
+  .mat-row:hover {
+    background-color: #D6EADF;
+  }
+  .mat-header-cell{
+      background-color: #083D77;
+      color: #f4f7fa;
+      font-size: 15px;
+  }
+  .mat-table{
+    border-radius: 8px;
+    overflow:hidden !important;
+  }
+
+td{
+  text-align: center;
+}
+  
+
+.body{
+    background-color: #f4f7fa;
+    padding: 3rem;
+}
+.card2{
+    padding-top: 10px;
+}
+.card{
+    margin: 15px;
+    border-radius: 10px;
+    background-color: #FAFDF6;
+}
+.cardd{
+    margin: 15px;
+    border-radius: 20px;
+    background-color:#ffffff;
+    padding: 20px;
+}
+.tableau{
+    width: 98%;
+}
+.titlecontainer{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+h1{
+    margin: 0 auto;
+}
+h5{
+  margin-bottom: 0;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+.ta{
+  margin-left: 50px;
+}
+:host ::ng-deep .mat-sort-header-container { 
+  display: flex;  
+  justify-content:center;
+}
+
+
+.mat-form-field--inline {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .mat-form-field--inline .mat-form-field {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  
+  .field{
+    font-size: 12px ; 
+    width: 30%;
+  }
+button{
+  width: 50%;
+}
+img{
+  width: 45px;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+}

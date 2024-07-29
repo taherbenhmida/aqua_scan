@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'projet.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'permissions_db',
+        'NAME': 'smart_hatchery',
         'USER' : 'hama',
         'PASSWORD': 'med12345',
         'HOST' : 'localhost' , 
@@ -134,4 +134,4 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'personnel.User'
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
-
+ALLOW_UNICODE_SLUGS = True

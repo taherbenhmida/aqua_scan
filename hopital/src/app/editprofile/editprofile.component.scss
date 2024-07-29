@@ -1,12 +1,4 @@
-.content{
-    text-align: right;
-}
-input{
-    text-align: right;
-}
-select{
-    text-align: right;
-}
+
 button{
     font-size: large;
     font-weight: bold;
@@ -36,8 +28,11 @@ h1{
     box-shadow:0 .25rem .5rem #e6edef;
 }
 .upper {
-    height: 100px;
-   
+    height: 130px;
+   background-image: url(../../assets/images/fish_farm_cover.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
 }
 
 .upper img {
@@ -45,4 +40,7 @@ h1{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 100px;
+}
+mat-form-field{
+    font-size: 12px;
 }

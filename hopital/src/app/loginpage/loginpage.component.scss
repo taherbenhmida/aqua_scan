@@ -14,13 +14,28 @@ button{
 
 label{
     padding-top: 15px;
-    font-weight: bold;
+    font-weight:lighter;
     font-size: larger;
 }
 .form{
-    text-align: right;
+    //text-align: right;
     margin-bottom: 10px;
 }
-input{
-    text-align: right;
+
+.faux_coordonees{
+    background-color: rgba(255, 0, 0, 0.199);
+}
+.invalide {
+    text-align: center;
+    margin-top: 10px;
+    height: 50px;
+}
+p{
+    margin-top: -20px;
+    font-size:xx-large;
+    font-weight: bolder;
+    font-family: 'Lucida Sans';
+}
+.image{
+    width: 130%;
 }

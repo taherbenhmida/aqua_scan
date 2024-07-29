@@ -10,23 +10,11 @@ import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import {MatTreeModule} from '@angular/material/tree';
-import {MatIconModule} from '@angular/material/icon'
-import {MatToolbarModule} from '@angular/material/toolbar'
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatMenuModule} from '@angular/material/menu';
 import {MatBadgeModule} from '@angular/material/badge';
-import { DxDataGridModule } from 'devextreme-angular';
-import { DxButtonModule } from 'devextreme-angular';
-import { DxTabPanelModule } from 'devextreme-angular';
-import { DxFormModule } from 'devextreme-angular';
-import { DxTextBoxModule } from 'devextreme-angular';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { DxSelectBoxModule } from 'devextreme-angular';
-import { DxDropDownBoxModule } from 'devextreme-angular';
-import { DxListModule } from 'devextreme-angular';
-import { DxoLabelModule } from 'devextreme-angular/ui/nested';
-import { DxTextAreaModule } from 'devextreme-angular';
-import { DxTreeListModule } from 'devextreme-angular';
-import { globalConfig } from "devextreme/core/config";
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {ChartModule} from 'primeng/chart';
 import { NgChartsModule } from 'ng2-charts';
@@ -35,54 +23,52 @@ import { MatButtonModule } from '@angular/material/button';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSortModule} from '@angular/material/sort';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { GaugeChartModule } from 'angular-gauge-chart'
 
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatListModule} from '@angular/material/list';
 import { BodyComponent } from './body/body.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductsComponent } from './products/products.component';
-import { StatisticsComponent } from './statistics/statistics.component';
-import { CoupensComponent } from './coupens/coupens.component';
 import { PagesComponent } from './pages/pages.component';
 import { MediaComponent } from './media/media.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
-import { FormComponent } from './form/form.component';
 import { ProfileinformationformComponent } from './profileinformationform/profileinformationform.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 
-import { form2 } from './form2/form2.component';
-import { formmilitaire } from './formmilitaire/formmilitaire.component';
-import { formcivil } from './formcivil/formcivil.component';
-import { autreform } from './autreform/autreform.component';
-import { charts } from './charts/charts.component';
-import { MedaildialogComponent } from './medaildialog/medaildialog.component';
+import { charts } from './charts/charts.component'; 
 import { ProfiledetailaffichageComponent } from './profiledetailaffichage/profiledetailaffichage.component';
 import { ProfiledetailsmodificationComponent } from './profiledetailsmodification/profiledetailsmodification.component';
-import { DialogconfirmationsupComponent } from './dialogconfirmationsup/dialogconfirmationsup.component';
-import { UpgrademilitaireComponent } from './upgrademilitaire/upgrademilitaire.component';
-import { UpgradecivilComponent } from './upgradecivil/upgradecivil.component';
-import { ProfileinformationmatformComponent } from './profileinformationmatform/profileinformationmatform.component';
 
+import {DatePipe} from '@angular/common';
+import { PopComponent } from './pop/pop.component';
+import { ArmeComponent } from './arme/arme.component';
+import { QualificationMilitaireComponent } from './qualification-militaire/qualification-militaire.component';
+import { ServiceComponent } from './service/service.component';
+import { SpecialiteComponent } from './specialite/specialite.component';
+import { SituationComponent } from './situation/situation.component';
+import { FonctionComponent } from './fonction/fonction.component';
+import { BureauComponent } from './bureau/bureau.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import { PopArchiveComponent } from './pop-archive/pop-archive.component';
+ 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'; 
 import {MatGridListModule} from '@angular/material/grid-list';
 import { AfterloginComponent } from './afterlogin/afterlogin.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
-import { MailComponent } from './mail/mail.component';
 import { RegisterComponent } from './register/register.component';
 import { NavComponent } from './nav/nav.component';
 import { EdituserComponent } from './edituser/edituser.component';
 import { EdituserdialogComponent } from './edituserdialog/edituserdialog.component';
-import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { InterceptorService } from './loader/interceptor.service';
-import { AdminComponent } from './admin/admin.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
 import {MatStepperModule} from '@angular/material/stepper';
@@ -95,46 +81,64 @@ import { SidenavAdminComponent } from './sidenav-admin/sidenav-admin.component';
 import { SidenavUserComponent } from './sidenav-user/sidenav-user.component';
 import { AfterloginUserComponent } from './afterlogin-user/afterlogin-user.component';
 import { ToolbarUserComponent } from './toolbar-user/toolbar-user.component';
-
-
+import { ProfileinformationmatformComponent } from './profileinformationmatform/profileinformationmatform.component';
+import { AgeChartComponent } from './chart/age-chart/age-chart.component';
+import { StatisticService } from 'src/statistic_service/statistic.service';
+import { ServiceChartComponent } from './chart/service-chart/service-chart.component';
+import { CategorieGradeComponent } from './chart/categorie-grade/categorie-grade.component';
+import { LineChartComponent } from './chart/line-chart/line-chart.component';
+import { RendementComponent } from './rendement/rendement.component';
+import { PresenceComponent } from './presence/presence.component';
+import { AfterloginTerminalComponent } from './afterlogin-terminal/afterlogin-terminal.component';
+import { TerminalComponent } from './terminal/terminal.component';
+import { TerminalBodyComponent } from './terminal-body/terminal-body.component';
+import { ToolbarTerminalComponent } from './toolbar-terminal/toolbar-terminal.component';
+import { HistoriquePresenceComponent } from './historique-presence/historique-presence.component';
+import { ModelComponent } from './model/model.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { PersonnelSituationComponent } from './personnel-situation/personnel-situation.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatRadioModule} from '@angular/material/radio';
+import {FormControl} from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { RoomsComponent } from './rooms/rooms.component';
+import { TanksComponent } from './tanks/tanks.component';
+import { MapsComponent } from './maps/maps.component';
+import { NurseryDashboardStatsComponent } from './nursery-dashboard-stats/nursery-dashboard-stats.component';
+import { FishGrowthComponent } from './fish-growth/fish-growth.component';
+import { WaterQualityComponent } from './water-quality/water-quality.component';
+import { AjoutTanksComponent } from './ajout-tanks/ajout-tanks.component';
+import { AjoutRoomsComponent } from './ajout-rooms/ajout-rooms.component';
+import { FishManagmentComponent } from './fish-managment/fish-managment.component';
+import { FishHealthComponent } from './fish-health/fish-health.component';
+import { RoomsOverviewComponent } from './rooms-overview/rooms-overview.component';
+import { TanksOverviewComponent } from './tanks-overview/tanks-overview.component';
+import { ConfirmTransferDialogComponent } from './confirm-transfer-dialog/confirm-transfer-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
     SidenavComponent,
-    DashboardComponent,
     ProductsComponent,
-    StatisticsComponent,
-    CoupensComponent,
     PagesComponent,
     MediaComponent,
     SettingsComponent,
     ToolbarComponent,
-    
-    FormComponent,
     ProfileinformationformComponent,
-    LoginpageComponent,
-    
-    form2,
-    formmilitaire,
-    formcivil,
-    autreform,
+    LoginpageComponent, 
     charts,
-    MedaildialogComponent,
     ProfiledetailaffichageComponent,
     ProfiledetailsmodificationComponent,
-    DialogconfirmationsupComponent,
-    UpgrademilitaireComponent,
-    UpgradecivilComponent,
+    
     ProfileinformationmatformComponent,
     AfterloginComponent,
     EditprofileComponent,
-    MailComponent,
+  
     RegisterComponent,
     NavComponent,
     EdituserComponent,
     EdituserdialogComponent,
-    AdminComponent,
     PagenotfoundComponent,
     HomeComponent,
     ScrollToTopComponent,
@@ -143,9 +147,42 @@ import { ToolbarUserComponent } from './toolbar-user/toolbar-user.component';
     SidenavUserComponent,
     AfterloginUserComponent,
     ToolbarUserComponent,
-    
+    PopComponent,
+    ArmeComponent,
+    QualificationMilitaireComponent,
+    ServiceComponent,
+    SpecialiteComponent,
+    SituationComponent,
+    FonctionComponent,
+    BureauComponent,
+    AgeChartComponent,
+    ServiceChartComponent,
+    CategorieGradeComponent,
+    LineChartComponent,
+    RendementComponent,
+    TerminalComponent,
+    PresenceComponent,
+    AfterloginTerminalComponent,
+    TerminalBodyComponent,
+    ToolbarTerminalComponent,
+    HistoriquePresenceComponent,
+    ModelComponent,
+    PersonnelSituationComponent,
+    PopArchiveComponent,
+    RoomsComponent,
+    TanksComponent,
+    MapsComponent,
+    NurseryDashboardStatsComponent,
+    FishGrowthComponent,
+    WaterQualityComponent,
+    AjoutTanksComponent,
+    AjoutRoomsComponent,
+    FishManagmentComponent,
+    FishHealthComponent,
+    RoomsOverviewComponent,
+    TanksOverviewComponent,
+    ConfirmTransferDialogComponent
   ],
-  entryComponents:[MedaildialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -161,19 +198,9 @@ import { ToolbarUserComponent } from './toolbar-user/toolbar-user.component';
     MatToolbarModule,
     MatMenuModule,
     MatBadgeModule,
-    DxDataGridModule,
-    DxButtonModule,
-    DxTabPanelModule,
+    MatRadioModule,
     MatTooltipModule,
-    DxFormModule,
-    DxTextBoxModule,
-    MDBBootstrapModule.forRoot(),
-    DxSelectBoxModule,
-    DxDropDownBoxModule,
-    DxListModule,
-    DxoLabelModule,
-    DxTextAreaModule,
-    DxTreeListModule,
+    
     MatSlideToggleModule,
     FontAwesomeModule,
     ChartModule,
@@ -190,7 +217,13 @@ import { ToolbarUserComponent } from './toolbar-user/toolbar-user.component';
     MatOptionModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    MatStepperModule
+    MatStepperModule,
+    MatTabsModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatDividerModule,
+    MatCheckboxModule,
+    GaugeChartModule,
   ],
   providers: [
     {
@@ -198,13 +231,18 @@ import { ToolbarUserComponent } from './toolbar-user/toolbar-user.component';
       useClass:InterceptorService,
       multi:true
     },
-    AuthGuard,AuthService,
+    AuthGuard,AuthService,DatePipe,StatisticService,
     {
       provide:HTTP_INTERCEPTORS,
       useClass:TokenInterceptorService,
       multi:true
     }
   ],
+    
+    
+    
+    
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

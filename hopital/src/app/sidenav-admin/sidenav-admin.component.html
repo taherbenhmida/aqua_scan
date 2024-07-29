@@ -1,130 +1,154 @@
 
   <div class="sidebar" [ngClass]="{close : !collapsed}">
     <div class="logo-container">
-        <button class="logo" (click)="toggleCollapse()"><i class="fa fa-hospital-o"></i></button>
-        <span class="logo_name">إدارةالأفراد</span>
+        <button class="logo" (click)="toggleCollapse()"><i class="fas fa-anchor"></i></button>
+        <span class="logo_name">Fish Farming</span>
       
     </div>
     <ul class="nav-links">
-      <li routerLink="/afterlogin/home"
+      
+      <li   [ngClass]="{showMenu : showsubarchive}"
+            routerLink="/afterlogin/home"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{exact: true}">
-        <a class="link">
-          <i class='icon fal fa-home' ></i>
-          <span class="link_name">الصفحة الرئيسية</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" routerLink="/afterlogin/home">الصفحة الرئيسية</a></li>
-        </ul>
-      </li>
-      <li [ngClass]="{showMenu : showsubemployee}">
-        <div class="iocn-link">
-          <a routerLink="/afterlogin/dashboard">
-            <i class='fal fa-users'></i>
-            <span class="link_name">متابعة الأفراد</span>
+        
+          <a>
+            <i class='fal fa-home'></i>
+            <span class="link_name">Nursery</span>
           </a>
-          <i class='fal fa-chevron-down arrow' (click)="showemployee()" ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" routerLink="/afterlogin/dashboard">متابعة الأفراد</a></li>
-          <li><a routerLink="/afterlogin/modification"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}">إضافة موظف</a></li>
-          <li><a routerLink="/afterlogin/modification"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}">تحيين بيانات موظف</a></li>
-          <li><a routerLink="/afterlogin/modification"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}">نقل موظف للأرشيف</a></li>
+          
+        <ul class="sub-menu blank">
+          <li><a class="link_name" routerLink="/afterlogin/products">Nursery Department </a></li>
         </ul>
       </li>
+
+      <li   [ngClass]="{showMenu : showsubarchive}"
+            routerLink="/afterlogin/water_quality"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+        
+          <a>
+            <i class="fal fa-water"></i>
+            <span class="link_name">Water Quality</span>
+          </a>
+          
+        <ul class="sub-menu blank">
+          <li><a class="link_name" routerLink="/afterlogin/products">Water Quality </a></li>
+        </ul>
+      </li>
+
+      <li   [ngClass]="{showMenu : showsubarchive}"
+            routerLink="/afterlogin/fish_growth"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+        
+          <a>
+            <i class="fas fa-arrow-trend-up"></i>
+            <span class="link_name">Fish Growth</span>
+          </a>
+          
+        <ul class="sub-menu blank">
+          <li><a class="link_name" routerLink="/afterlogin/products">Fish Growth </a></li>
+        </ul>
+      </li>
+
+      <li   [ngClass]="{showMenu : showsubarchive}"
+            routerLink="/afterlogin/fish_health"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+        
+          <a>
+            <i class="fas fa-heart-pulse"></i>            
+            <span class="link_name">Fish Heath</span>
+          </a>
+          
+        <ul class="sub-menu blank">
+          <li><a class="link_name" routerLink="/afterlogin/products">Fish Heath </a></li>
+        </ul>
+      </li>
+      
       <li   [ngClass]="{showMenu : showsubarchive}"
             routerLink="/afterlogin/products"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{exact: true}">
-        <div class="iocn-link">
+        
           <a>
-            <i class='fal fa-box-open'></i>
-            <span class="link_name">متابعة الأرشيف</span>
+            <i class="fal fa-cart-plus"></i>
+            <span class="link_name">Fish Arrival </span>
           </a>
-          <i class='fal fa-chevron-down arrow' (click)="showarchive()" ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" routerLink="/afterlogin/products">متابعة الأرشيف</a></li>
-          <li><a>Web Design</a></li>
-          <li><a >Login Form</a></li>
-          <li><a >Card Design</a></li>
-        </ul>
-      </li>
-      <li routerLink="/afterlogin/statistics"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">
-        <a>
-          <i class='fal fa-chart-bar' ></i>
-          <span class="link_name">متابعة الإحصائيات</span>
-        </a>
+          
         <ul class="sub-menu blank">
-          <li><a class="link_name" routerLink="/afterlogin/statistics">متابعة الإحصائيات</a></li>
+          <li><a class="link_name" routerLink="/afterlogin/products">Fish Arrival </a></li>
         </ul>
       </li>
       
-      <li   [ngClass]="{showMenu : showsubusually}"
-            routerLink="/afterlogin/coupens" 
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">
+      
+      <li routerLink="/afterlogin/rendement"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
         <div class="iocn-link">
           <a >
-            <i class='fal fa-calendar' ></i>
-            <span class="link_name">متابعة الأعمال الدورية</span>
+            <i class="fal fa-retweet"></i>
+            <span class="link_name">Fish Transfer</span>
           </a>
-          <i class='fal fa-chevron-down arrow' (click)="showusualywork()" ></i>
         </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" routerLink="/afterlogin/coupens">متابعة الأعمال الدورية</a></li>
-          <li><a routerLink="/afterlogin/coupens">إعداد جدول الوسام العسكري</a></li>
-          <li><a routerLink="/afterlogin/coupens">إعداد جدول الترقية السنوي</a></li>
-          <li><a routerLink="/afterlogin/coupens">إعداد و متابعة الأعداد السنوية</a></li>
-          <li><a routerLink="/afterlogin/coupens">متابعة منحة الإنتاج</a></li>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" routerLink="/afterlogin/rendement">Fish Transfer </a></li>
         </ul>
       </li>
-      <li routerLink="/afterlogin/pages"
+
+      <li routerLink="/afterlogin/model"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{exact: true}" >
         <a >
-          <i class='fal fa-file' ></i>
-          <span class="link_name">متابعة الرخص و مختلف الوضعيات</span>
+          <i class="fal fa-syringe"></i>
+          <span class="link_name">Teatment</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" routerLink="/afterlogin/pages">متابعة الرخص و مختلف الوضعيات</a></li>
+          <li><a class="link_name" routerLink="/afterlogin/model">Treatment</a></li>
         </ul>
+
+      </li>
+
+      <li routerLink="/afterlogin/maps"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}" >
+        <a >
+          <i class="fal fa-map-marked-alt"></i>
+          <span class="link_name">Maps</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" routerLink="/afterlogin/maps">Maps</a></li>
+        </ul>
+        
       </li>
       
       <li [ngClass]="{showMenu : showsubsettings}" >
         <div class="iocn-link">
           <a >
-            <i class='fal fa-cog' ></i>
-            <span class="link_name">الإعدادات</span>
+            <i class="fal fa-cogs"></i>
+            <span class="link_name">Settings</span>
           </a>
           <i class='fal fa-chevron-down arrow' (click)="showsettings()" ></i>
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" >الإعدادات</a></li>
+          <li><a class="link_name" >Settings</a></li>
           <li><a routerLink="/afterlogin/settings"
                 routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}">متابعة المستعملين</a></li>
+                [routerLinkActiveOptions]="{exact: true}">Supervise Users</a></li>
           <li><a routerLink="/afterlogin/direction"
                 routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}">تسير</a></li>
+                [routerLinkActiveOptions]="{exact: true}">Managment</a></li>
         </ul>
       </li>
-      <li>
+      <li> 
     <div class="profile-details" routerLink="/afterlogin/editprofile">
       <div class="profile-content">
-        <img src="../../assets/images/doctor.jpg" alt="profileImg">
+        <img src="../../assets/images/{{img}}" alt="profileImg">
       </div>
       <div class="name-job">
-        <div class="profile_name">Prem Shahi</div>
-        <div class="job">Admin</div>
+        <div class="profile_name">{{name}}<span style="margin-left: 15px;">{{grade}}</span></div>
+        <div class="job">{{role}}</div>
       </div>
       <i class='fal fa-sign-out' ></i>
     </div>

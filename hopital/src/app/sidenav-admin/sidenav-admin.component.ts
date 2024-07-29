@@ -1,4 +1,5 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Output ,EventEmitter, Host, HostListener} from '@angular/core';
 import {faPeopleGroup} from '@fortawesome/free-solid-svg-icons'
 
@@ -24,6 +25,12 @@ export class SidenavAdminComponent implements OnInit {
   showsubusually!:boolean;
   showsubarchive!:boolean;
   showsubsettings!:boolean;
+  show_subnursery!:boolean;
+
+  grade!:any
+  name!:any
+  role!:any
+  img!:any
 
   @HostListener('window:resize', ['$event'])
   onResize(event:any) {
@@ -33,8 +40,18 @@ export class SidenavAdminComponent implements OnInit {
       this.onToggleSideNav.emit({collapsed:this.collapsed , screenWidth:this.screenWidth});
     }
   }
+  constructor(private http: HttpClient,){}
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
+    this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(
+      (data: any) => {
+        
+        this.grade=data.grade;
+        this.name=data.name;
+        this.role=data.role;
+        this.img=data.img
+      },
+    );
     
   }
   toggleCollapse():void{
@@ -59,4 +76,8 @@ export class SidenavAdminComponent implements OnInit {
   showsettings(){
     this.showsubsettings=!this.showsubsettings;
   }
+  show_nursery(){
+    this.show_subnursery=!this.show_subnursery;
+  }
+  
 }

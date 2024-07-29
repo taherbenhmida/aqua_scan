@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import { AuthService } from 'src/security/auth.service';
-
+import { SharedService } from '../shared.service';
 @Component({
   selector: 'app-loginpage',
   templateUrl: './loginpage.component.html',
@@ -12,6 +12,7 @@ import { AuthService } from 'src/security/auth.service';
 })
 export class LoginpageComponent implements OnInit {
   hide = true;
+  coordonnees !:boolean;
   email = new FormControl('', [Validators.required, Validators.email]);
   
   form!: FormGroup;
@@ -21,19 +22,27 @@ export class LoginpageComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private authservice:AuthService,
+    private service : SharedService,
   ) {
   }
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      email: '',
+      name: '',
       password: ''
     });
   }
 
   submit(): void {
+    if (this.form.invalid) {
+      return;
+    }
+    this.service.pwd=this.form.getRawValue()
     this.authservice.login(this.form.getRawValue())
+    console.log('get row value first !!! ')
+    this.coordonnees=this.authservice.IsloggedIn()
+    console.log('les coord',this.coordonnees)
   }
-
+  
   
 
   getErrorMessage() {

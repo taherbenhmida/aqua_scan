@@ -1,0 +1,21 @@
+.room-tab-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .room-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Add margin to separate buttons from content */
+  }
+
+  .mat-success {
+    background-color: #99e1d9;
+    color: #000;
+}
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+  

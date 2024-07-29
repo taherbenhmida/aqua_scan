@@ -45,6 +45,7 @@ export class AuthService  {
         this.role=data.role;
         if(this.role=='user'){this.router.navigate(['/afterloginuser/home']);}
         if(this.role=='admin'){this.router.navigate(['/afterlogin/home']);}
+        if(this.role=='terminal'){this.router.navigate(['/afterloginterminal/terminal']);}
         console.log('the logged user',this.id)
         localStorage.setItem('id',this.id)
         localStorage.setItem('usertype',this.role)
@@ -57,6 +58,7 @@ export class AuthService  {
         })
       },
     );
+    this.IsloggedIn()
   }
   get_unloggeduser(){
     this.http.get('http://localhost:8000/api/user', {withCredentials: true}).subscribe(

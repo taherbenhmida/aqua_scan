@@ -1,0 +1,34 @@
+<div *ngIf="loaderservice.isloading | async" class="load_container">
+    <mat-progress-bar mode="indeterminate" color=warn></mat-progress-bar>
+</div>
+<mat-toolbar class="body" color="primary" >
+    
+    <span><img class="acad" src="../../assets/images/acd.png" alt="">المستشفى العسكري الأصلي للتعليم بتونس<img class="hopital" src="../../assets/images/hopital.png" alt=""></span>
+    <div>
+        <mat-icon 
+            routerLink="/afterloginterminal/terminal"
+            class="icon"
+            matTooltip="الصفحة الرئيسية"
+            matTooltipPosition="below"
+            matTooltipClass="tooltipclass">
+            home
+        </mat-icon>
+        
+        <mat-icon 
+            routerLink="/afterloginterminal/editprofile"
+            class="icon" 
+            matTooltip="الملف الشخصي"
+            matTooltipPosition="below"
+            matTooltipClass="tooltipclass">
+            person
+        </mat-icon>
+        <mat-icon 
+            class="icon"
+            matTooltip="تسجيل الخروج"
+            matTooltipPosition="below"
+            matTooltipClass="tooltipclass"
+            (click)="logout()">
+            logout
+        </mat-icon>
+    </div>
+</mat-toolbar>

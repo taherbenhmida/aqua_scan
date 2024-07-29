@@ -1,0 +1,167 @@
+<div class="body"> 
+    <div class="titlecontainer">
+        <h1 class="title">متابعة أفراد القسم</h1>
+    </div>
+
+  <div class="container">
+      <button mat-raised-button class="presence_button" routerLink="/afterloginterminal/presence">إعداد بطاقة المناداة</button>
+      <button mat-raised-button class="situation_button" routerLink="/afterloginterminal/personnel_situation">تحيين وضعيات</button>
+      <div class="card">
+        <div  class="mat-form-field--inline"  dir="rtl">
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">الرتبة</mat-label>
+            <input matInput placeholder="الرتبة"   readonly="true" [(ngModel)]="personnelForm.grade">
+            <mat-icon matSuffix>grade</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">الإسم</mat-label>
+            <input matInput placeholder="الإسم"   readonly="true" [(ngModel)]="personnelForm.prenom">
+            <mat-icon matSuffix>person</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">اللقب</mat-label>
+            <input matInput placeholder="اللقب"   readonly="true" [(ngModel)]="personnelForm.nom">
+            <mat-icon matSuffix>person</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">cin</mat-label>
+            <input matInput placeholder="cin"   readonly="true" [(ngModel)]="personnelForm.cin">
+            <mat-icon matSuffix>credit_card</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <div  class="mat-form-field--inline"  dir="rtl">
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">الهاتف 1</mat-label>
+            <input matInput placeholder="الهاتف 1"    [(ngModel)]="personnelForm.telephone">
+            <mat-icon matSuffix>local_phone</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">الهاتف 2</mat-label>
+            <input matInput placeholder="الهاتف 2"    [(ngModel)]="personnelForm.telephone2">
+            <mat-icon matSuffix>local_phone</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <div  class="mat-form-field--inline"  dir="rtl">
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">جواز السفر 1</mat-label>
+            <input matInput placeholder="جواز السفر 1"   [(ngModel)]="personnelForm.passp1">
+            <mat-icon matSuffix>local_airport</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">جواز السفر 2</mat-label>
+            <input matInput placeholder="جواز السفر 2"    [(ngModel)]="personnelForm.passp2">
+            <mat-icon matSuffix>local_airport</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <div  class="mat-form-field--inline"  dir="rtl">
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">الطول(بصم)</mat-label>
+            <input matInput placeholder="الطول(بصم)"    [(ngModel)]="personnelForm.taille">
+            <!-- <mat-icon matSuffix>grade</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">الوزن</mat-label>
+            <input matInput placeholder="الوزن"    [(ngModel)]="personnelForm.poids">
+            <!-- <mat-icon matSuffix>person</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">مقاس الحذاء</mat-label>
+            <input matInput placeholder="مقاس الحذاء"    [(ngModel)]="personnelForm.pointure">
+            <!-- <mat-icon matSuffix>size</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">عدد الأبناء</mat-label>
+            <input matInput placeholder="عدد الأبناء"    [(ngModel)]="personnelForm.nbr_enfant">
+            <!-- <mat-icon matSuffix>size</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <div  class="mat-form-field--inline"  dir="rtl">
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">العنوان</mat-label>
+            <input matInput placeholder="العنوان"    [(ngModel)]="personnelForm.adresse">
+            <mat-icon matSuffix>place</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <div  class="mat-form-field--inline"  dir="rtl">
+          <mat-form-field appearance="outline"   class="field">
+            <mat-label style="color: black; ">الملاحظات</mat-label>
+            <input matInput placeholder="الملاحظات"    [(ngModel)]="personnelForm.obsrv">
+            <mat-icon matSuffix>book</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
+        <div class="actions">
+          <button mat-raised-button  color="Accent">إستخراج مطبوعات</button>
+          <button mat-raised-button  color="primary" (click)="onSubmit()">إضافة بيانات</button>
+        </div>
+      </div>
+      <div class="ta">
+        <mat-form-field appearance="standard"  >
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input  >
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8" >
+          <table mat-table [dataSource]="dataSource" matSort   >
+            <ng-container matColumnDef="adresse" >
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>العنوان</th>
+              <td mat-cell *matCellDef="let row" > {{row.adresse}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="nom" >
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>اللقب</th>
+              <td mat-cell *matCellDef="let row" > {{row.nom}} </td>
+            </ng-container>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="prenom" >
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>الإسم</th>
+              <td mat-cell *matCellDef="let row" > {{row.prenom}} </td>
+            </ng-container>
+        
+            <!-- Progress Column -->
+            <ng-container matColumnDef="grade">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header > الرتبة </th>
+              <td mat-cell *matCellDef="let row"> {{row.grade}} </td>
+            </ng-container>
+        
+          
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row)"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">"{{input.value}}" معلومات غير متوفرة </td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+        
+      </div>
+  </div>
+
+
+</div>

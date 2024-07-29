@@ -13,6 +13,7 @@
     background: #263238;
     z-index: 100;
     transition: all 0.5s ease;
+    //overflow: hidden;
   }
   .sidebar.close{
     width: 5rem;
@@ -29,7 +30,7 @@
   .sidebar .nav-links{
     height: 100%;
     padding: 30px 0 150px 0;
-    overflow: auto;
+    overflow:hidden;
   }
   .sidebar.close .nav-links{
     overflow: visible;
@@ -220,8 +221,7 @@
   .active{
       background: #406171;
       border-radius: 10px;
-      margin-left: 5px;
-      margin-right: 5px;
+      
   }
   ///////////////////////////////////////
    
